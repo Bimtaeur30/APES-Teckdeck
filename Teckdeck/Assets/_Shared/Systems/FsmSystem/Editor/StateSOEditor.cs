@@ -1,47 +1,52 @@
+using System.Collections.Generic;
 using System.Linq;
-using DevLib.FsmSystem.Runtime;
+using System.Reflection;
+using _Shared.Systems.FsmSystem.Runtime;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace DevLib.FsmSystem.Editor
+namespace _Shared.Systems.FsmSystem.Editor
 {
     [CustomEditor(typeof(StateSO))]
     public class StateSOEditor : UnityEditor.Editor
     {
-        [SerializeField] private VisualTreeAsset visualTreeAsset;
+        [SerializeField] private VisualTreeAsset editorView = default;
+        
         private StateSO _targetData;
         
         public override VisualElement CreateInspectorGUI()
         {
-            _targetData = target as StateSO;
-            VisualElement root = new VisualElement();
-            visualTreeAsset.CloneTree(root);
-
-            FillDropDownField(root);
+            _targetData = (StateSO)target; //target은 Editor의 내부 변수이다.
             
+            VisualElement root = new VisualElement();
+            editorView.CloneTree(root);
+
+            FillDropdownField(root);
             return root;
         }
 
-        private void FillDropDownField(VisualElement root)
+        private void FillDropdownField(VisualElement root)
         {
-            DropdownField dropdownField = root.Q<DropdownField>("ClassNameDropdown");
+            DropdownField field = root.Q<DropdownField>("ClassNameDropdown");
+
+            Assembly stateAssembly = Assembly.GetAssembly(typeof(StateSO));
+            IEnumerable<string> choices = stateAssembly.GetTypes()
+                    .Where(type => type.IsClass 
+                                   && !type.IsAbstract 
+                                   && type.IsSubclassOf(typeof(AbstractState)))
+                    .Select(type => type.FullName);
             
-            var choices = TypeCache.GetTypesDerivedFrom<AbstractState>()
-                .Where(type => type.IsClass && !type.IsAbstract)
-                .Select(type => $"{type.FullName}, {type.Assembly.GetName().Name}");
+            field.choices.AddRange(choices);
 
-            dropdownField.choices.AddRange(choices);
-
-            if (_targetData != null && 
-                !string.IsNullOrEmpty(_targetData.className)
-                && dropdownField.choices.Contains(_targetData.className))
+            if (_targetData != null && !string.IsNullOrEmpty(_targetData.className)
+                                    && field.choices.Contains(_targetData.className))
             {
-                dropdownField.value = _targetData.className;
+                field.value = _targetData.className;
             }
-            else if(_targetData != null && dropdownField.choices.Count > 0)
+            else if (_targetData != null && field.choices.Count > 0)
             {
-                _targetData.className = dropdownField.choices.First();
+                _targetData.className = field.choices.First();
                 EditorUtility.SetDirty(_targetData);
             }
             

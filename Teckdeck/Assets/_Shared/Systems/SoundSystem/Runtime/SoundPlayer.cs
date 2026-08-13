@@ -1,14 +1,14 @@
 using System;
 using System.Threading.Tasks;
-using DevLib.ObjectPool.Runtime;
+using _Shared.Systems.ObjectPool.Runtime;
 using UnityEngine;
 using UnityEngine.Audio;
 using Random = UnityEngine.Random;
 
-namespace DevLib.SoundSystem.Runtime
+namespace SoundSystem.Runtime
 {
     [RequireComponent(typeof(AudioSource))]
-    public class SoundPlayer : PoolableMono
+    public class SoundPlayer : AbstractMonoPoolable
     {
         [SerializeField] private AudioMixerGroup sfxGroup;
         [SerializeField] private AudioMixerGroup musicGroup;

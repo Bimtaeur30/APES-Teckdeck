@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace DevLib.SoundSystem.Runtime
+namespace SoundSystem.Runtime
 {
     public enum AudioTypes
     { Sfx, Music }

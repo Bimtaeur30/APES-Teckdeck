@@ -1,11 +1,11 @@
-﻿using UnityEngine;
+using UnityEngine;
 
-namespace DevLib.ObjectPool.Runtime
+namespace _Shared.Systems.ObjectPool.Runtime
 {
     public interface IPoolable
     {
-        public PoolItemSO PoolItem { get; set; }
-        public GameObject GameObject { get; }
-        public void ResetItem();
+        PoolItemSO Item { get; set; }
+        GameObject GameObject { get; }
+        void ResetItem();
     }
 }

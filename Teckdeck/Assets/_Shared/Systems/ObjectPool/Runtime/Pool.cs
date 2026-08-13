@@ -1,43 +1,42 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using UnityEngine;
 
-namespace DevLib.ObjectPool.Runtime
+namespace _Shared.Systems.ObjectPool.Runtime
 {
     public class Pool
     {
         private readonly Stack<IPoolable> _pool;
-        private readonly Transform _parent;
+        private readonly Transform _parentTrm;
         private readonly GameObject _prefab;
 
-        public Pool(PoolItemSO poolItemSO, Transform parent, int initCount)
+        public Pool(IPoolable poolable, Transform parent, int initCount)
         {
-            _parent = parent;
-            _prefab = poolItemSO.prefab;
             _pool = new Stack<IPoolable>(initCount);
+            _parentTrm = parent;
+            _prefab = poolable.GameObject;
 
             for (int i = 0; i < initCount; i++)
             {
-                GameObject gameObject = Object.Instantiate(_prefab, _parent);
-                gameObject.SetActive(false);
-                IPoolable poolable = gameObject.GetComponent<IPoolable>();
-                Debug.Assert(poolable != null, $"Poolable component not found: {gameObject.name}");
-                
-                _pool.Push(poolable);
+                GameObject go = Object.Instantiate(_prefab, _parentTrm);
+                go.SetActive(false);
+                IPoolable item = go.GetComponent<IPoolable>();
+                Debug.Assert(item != null, $"Poolable item 은 반드시 IPoolable을 구현해야합니다: {_prefab}");
+                _pool.Push(item);
             }
         }
 
         public IPoolable Pop()
         {
             IPoolable item;
-            if (_pool.Count == 0)
-            {
-                GameObject gameObject = Object.Instantiate(_prefab, _parent);
-                item = gameObject.GetComponent<IPoolable>();
-            }
-            else
+            if (_pool.Count > 0)
             {
                 item = _pool.Pop();
                 item.GameObject.SetActive(true);
+            }
+            else
+            {
+                GameObject go = Object.Instantiate(_prefab, _parentTrm);
+                item = go.GetComponent<IPoolable>();
             }
             item.ResetItem();
             return item;

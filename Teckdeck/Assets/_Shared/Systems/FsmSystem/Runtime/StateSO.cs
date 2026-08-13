@@ -1,9 +1,9 @@
-using DevLib.AnimatorSystem;
+using AnimatorSystem;
 using UnityEngine;
 
-namespace DevLib.FsmSystem.Runtime
+namespace _Shared.Systems.FsmSystem.Runtime
 {
-    [CreateAssetMenu(fileName = "State data", menuName = "Lib/Fsm/State data", order = 0)]
+    [CreateAssetMenu(fileName = "State data", menuName = "Agent/State data", order = 0)]
     public class StateSO : ScriptableObject
     {
         public string stateName;

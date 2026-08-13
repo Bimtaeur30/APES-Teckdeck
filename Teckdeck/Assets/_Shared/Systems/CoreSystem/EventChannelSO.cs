@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace DevLib.CoreSystem
+namespace CoreSystem
 {
     public abstract class GameEvent
     {

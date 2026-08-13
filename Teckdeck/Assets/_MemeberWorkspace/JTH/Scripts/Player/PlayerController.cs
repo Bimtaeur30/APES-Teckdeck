@@ -1,9 +1,39 @@
-﻿using DevLib.ModuleSystem;
+﻿using _Shared.Systems.FsmSystem.Runtime;
+using JTH.Player.InputSystem;
+using ModuleSystem;
+using UnityEngine;
 
 namespace JTH.Player
 {
     public class PlayerController : ModuleOwner
     {
+        [field: SerializeField] public PlayerInputSO PlayerInput { get; private set; }
+        [SerializeField] private StateListSO playerStates;
         
+        private IControlMovement _movement;
+        private StateMachine _stateMachine;
+
+        protected override void InitializeModules()
+        {
+            base.InitializeModules();
+            
+            _stateMachine = new StateMachine(gameObject, playerStates.states); //상태 머신을 생성한다.
+            
+            _movement = GetModule<IControlMovement>();
+            Debug.Assert(_movement != null, "플레이어 이동 관련 모듈이 없습니다.");
+        }
+
+        protected override void Start()
+        {
+            _stateMachine.ChangeState(0, transitionDuration: 0); //IDLE상태로
+        }
+
+        private void Update()
+        {
+            _stateMachine.UpdateMachine();
+        }
+
+        // public void ChangeState(PlayerState newStateIndex, float transitionDuration)
+        //     => _stateMachine.ChangeState((int)newStateIndex, transitionDuration);
     }
 }

@@ -1,10 +1,10 @@
-using DevLib.SoundSystem.Runtime;
+using SoundSystem.Runtime;
 using UnityEditor;
 using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace DevLib.SoundSystem.Editor
+namespace SoundSystem.Editor
 {
     [CustomEditor(typeof(SoundClipSO))]
     public class SoundClipSOEditor : UnityEditor.Editor

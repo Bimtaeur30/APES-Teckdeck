@@ -3,23 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace DevLib.ModuleSystem
+namespace ModuleSystem
 {
     public class ModuleOwner : MonoBehaviour
     {
-        protected Dictionary<Type, IModule> _moduleDict;
+        protected Dictionary<Type, IModule> ModuleDict;
 
         protected virtual void Awake()
         {
-            _moduleDict = GetComponentsInChildren<IModule>().ToDictionary(module => module.GetType());
+            ModuleDict = GetComponentsInChildren<IModule>().ToDictionary(module => module.GetType());
             InitializeModules();
             AfterInitializeModules();
         }
+        
         protected virtual void Start(){}
         
         protected virtual void InitializeModules()
         {
-            foreach (IModule module in _moduleDict.Values)
+            foreach (IModule module in ModuleDict.Values)
             {
                 module.Initialize(this);
             }
@@ -27,7 +28,7 @@ namespace DevLib.ModuleSystem
         
         protected virtual void AfterInitializeModules()
         {
-            foreach (IAfterInitModule module in _moduleDict.Values.OfType<IAfterInitModule>())
+            foreach (IAfterInitModule module in ModuleDict.Values.OfType<IAfterInitModule>())
             {
                 module.AfterInit();
             }
@@ -35,12 +36,12 @@ namespace DevLib.ModuleSystem
         
         public T GetModule<T>() 
         {
-            if (_moduleDict.TryGetValue(typeof(T), out IModule module))
+            if (ModuleDict.TryGetValue(typeof(T), out IModule module))
             {
-                return (T)(object)module;
+                return (T)module;
             }
 
-            IModule findModule = _moduleDict.Values.FirstOrDefault(moduleType => moduleType is T);
+            IModule findModule = ModuleDict.Values.FirstOrDefault(moduleType => moduleType is T);
             
             if(findModule is T castedModule)
                 return castedModule;

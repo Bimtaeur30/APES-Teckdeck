@@ -1,8 +1,8 @@
-namespace DevLib.FsmSystem.Editor
+﻿namespace _Shared.Systems.FsmSystem.Editor
 {
     public static class CodeFormat
     {
-        public static string EnumFormat =
+        public static string EnumFormat = 
             @"
 namespace {0}
 {{
@@ -12,5 +12,6 @@ namespace {0}
     }}
 }}
 ";
+        
     }
 }

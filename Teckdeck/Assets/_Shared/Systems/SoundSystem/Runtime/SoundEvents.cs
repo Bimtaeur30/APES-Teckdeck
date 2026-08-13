@@ -1,7 +1,7 @@
-using DevLib.CoreSystem;
+using CoreSystem;
 using UnityEngine;
 
-namespace DevLib.SoundSystem.Runtime
+namespace SoundSystem.Runtime
 {
     public static class SoundEvents
     {
