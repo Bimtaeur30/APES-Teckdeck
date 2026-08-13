@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using ModuleSystem;
 using UnityEngine;
 
 namespace _Shared.Systems.FsmSystem.Runtime
@@ -10,7 +11,7 @@ namespace _Shared.Systems.FsmSystem.Runtime
 
         private Dictionary<int, AbstractState> _stateDict;
 
-        public StateMachine(GameObject owner, StateSO[] stateList)
+        public StateMachine(ModuleOwner owner, StateSO[] stateList)
         {
             _stateDict = new Dictionary<int, AbstractState>();
             foreach (StateSO stateData in stateList)
