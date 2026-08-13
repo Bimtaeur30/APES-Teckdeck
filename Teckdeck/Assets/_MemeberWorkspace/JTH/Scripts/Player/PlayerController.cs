@@ -17,7 +17,7 @@ namespace JTH.Player
         {
             base.InitializeModules();
             
-            _stateMachine = new StateMachine(gameObject, playerStates.states); //상태 머신을 생성한다.
+            _stateMachine = new StateMachine(this, playerStates.states); //상태 머신을 생성한다.
             
             _movement = GetModule<IControlMovement>();
             Debug.Assert(_movement != null, "플레이어 이동 관련 모듈이 없습니다.");
