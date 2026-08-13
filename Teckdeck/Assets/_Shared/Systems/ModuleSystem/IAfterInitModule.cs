@@ -1,4 +1,4 @@
-﻿namespace DevLib.ModuleSystem
+﻿namespace ModuleSystem
 {
     public interface IAfterInitModule
     {

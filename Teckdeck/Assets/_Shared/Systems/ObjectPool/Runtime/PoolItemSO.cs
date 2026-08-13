@@ -1,19 +1,19 @@
-﻿using UnityEngine;
+using UnityEngine;
 
-namespace DevLib.ObjectPool.Runtime
+namespace _Shared.Systems.ObjectPool.Runtime
 {
-    [CreateAssetMenu(fileName = "Pool Item", menuName = "Lib/Object Pool/Pool Item", order = 10)]
+    [CreateAssetMenu(fileName = "PoolItem", menuName = "Lib/Pool/Item", order = 0)]
     public class PoolItemSO : ScriptableObject
     {
-        public string poolingName;
+        [HideInInspector] public string itemName;
         public GameObject prefab;
         public int initCount;
-        
+
         private void OnValidate()
         {
-            if (prefab != null && !prefab.TryGetComponent(out IPoolable poolable))
+            if (prefab != null && !prefab.TryGetComponent(out IPoolable _))
             {
-                Debug.LogError($"풀링 프리팹에는 IPoolable인터페이스를 구현한 스크립트가 적어도 1개 이상 있어야 합니다.");
+                Debug.LogError($"Poolable component not found on {prefab.name}");
                 prefab = null;
             }
         }

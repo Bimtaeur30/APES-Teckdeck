@@ -1,18 +1,17 @@
-using UnityEngine;
+using ModuleSystem;
 
-namespace DevLib.FsmSystem.Runtime
+namespace _Shared.Systems.FsmSystem.Runtime
 {
     public abstract class AbstractState
     {
-        protected GameObject _owner;
-        protected StateSO _stateSO;
-        public AbstractState(GameObject owner, StateSO stateSO)
+        protected readonly ModuleOwner Owner;
+
+        public AbstractState(ModuleOwner owner)
         {
-            _owner = owner;    
-            _stateSO = stateSO;
+            Owner = owner;
         }
-        
-        public virtual void Enter() {}
+
+        public virtual void Enter(float transitionDuration, int layerIndex = 0) { }
         public virtual void Update() {}
         public virtual void Exit() {}
     }

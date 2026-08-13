@@ -9,8 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94a2ddd8ba28464dbff889cf8506b8e1, type: 3}
+  m_Script: {fileID: 11500000, guid: 712de99e7e234af7ba3de9a04f5d967a, type: 3}
   m_Name: PoolManager
-  m_EditorClassIdentifier: PoolRuntime::DevLib.ObjectPool.Runtime.PoolManagerSO
+  m_EditorClassIdentifier: ObjectPool.Runtime.Assembly::GGMLib.ObjectPool.Runtime.PoolManagerSO
   itemList:
-  - {fileID: 11400000, guid: b000452c83267f74a8158d99ce6cd4bf, type: 2}
+  - {fileID: 11400000, guid: 0a06835a06bc2a344a02c2c920efccf9, type: 2}
+  - {fileID: 11400000, guid: 954bdf83dea898e48bd6183413f9b56b, type: 2}
+  - {fileID: 11400000, guid: 61aa0e3c7010246478c0a6b77ca15675, type: 2}

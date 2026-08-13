@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
 
-namespace DevLib.ModuleSystem
+namespace ModuleSystem
 {
     public abstract class Module : MonoBehaviour, IModule
     {
-        protected ModuleOwner _owner;
+        protected ModuleOwner Owner;
         public virtual void Initialize(ModuleOwner owner)
         {
-            _owner = owner;
+            Owner = owner;
         }
     }
 }

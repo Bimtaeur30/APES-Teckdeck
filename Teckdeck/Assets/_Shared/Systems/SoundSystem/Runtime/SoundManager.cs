@@ -1,9 +1,9 @@
 using System.Collections.Generic;
-using DevLib.CoreSystem;
-using DevLib.ObjectPool.Runtime;
+using _Shared.Systems.ObjectPool.Runtime;
+using CoreSystem;
 using UnityEngine;
 
-namespace DevLib.SoundSystem.Runtime
+namespace SoundSystem.Runtime
 {
     public class SoundManager : MonoBehaviour
     {
