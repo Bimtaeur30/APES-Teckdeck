@@ -21,19 +21,22 @@
 | 003 | 완료 | 가상 커서 위치를 오브젝트 월드 X/Z 이동에 연결 | `phases/PHASE-003.md` |
 | 004 | 완료 | 대상의 최초 위치를 X/Z 이동 중심으로 사용 | `phases/PHASE-004.md` |
 | 005 | 완료 | 월드 Canvas 전체를 동일한 픽셀 격자로 표시 | `phases/PHASE-005.md` |
+| 006 | 완료 | 에디터 애셋 기반 픽셀 화면 및 비재생 미리보기 구성 | `phases/PHASE-006.md` |
+| 007 | 완료 | 1/3 해상도 출력의 픽셀 선명도 강화 | `phases/PHASE-007.md` |
+| 008 | 완료 | 렌더 Canvas와 실제 Canvas의 Layer·Camera 분리 | `phases/PHASE-008.md` |
 
 ## 현재 재개 지점
 
-- 마지막 완료 작업: Phase 004 대상 최초 위치를 이동 중심으로 사용
+- 마지막 완료 작업: Phase 006 에디터 애셋 기반 픽셀 화면 구성
 - 현재 작업: 없음
-- 다음에 할 작업: Unity Play Mode에서 픽셀 격자·입력 유지 확인
+- 다음에 할 작업: Unity에서 씬 Reload 후 원본 UI 비노출 및 RenderTexture 출력 확인
 - 사용자 승인이 필요한 사항: 추가 CRT 연출 또는 씬 자동 연결이 필요한 경우 새 Phase 승인
-- 관련 파일: `Assets/_MemeberWorkspace/KTJ/02_Script/System/RepairShop/Computer/WorldCanvasPixelDisplay.cs`
-- 알려진 문제 또는 위험: 출력 RawImage는 원본 Canvas 밖의 별도 World Space Canvas에 배치해야 하며 캡처 Layer는 다른 용도와 겹치지 않아야 함
+- 관련 파일: `Assets/_MemeberWorkspace/KTJ/02_Script/System/RepairShop/Computer/WorldCanvasPixelDisplay.cs`, `Assets/_MemeberWorkspace/KTJ/04_Assets/ComputerScreenPixel.renderTexture`, `Assets/_MemeberWorkspace/KTJ/01_Scene/RepairShop_KTJ.unity`, `ProjectSettings/TagManager.asset`
+- 알려진 문제 또는 위험: Unity가 외부 변경된 씬의 Reload 여부를 묻는 경우 Reload해야 디스크의 새 Camera 연결이 반영됨
 
 ## 검증 요약
 
 - 수행한 검증: Phase 001 정적 참조 검증 통과
-- 수행한 검증: Phase 005 변경이 포함된 `KTJ.csproj` 빌드
+- 수행한 검증: Phase 006 변경이 포함된 `KTJ.csproj` 빌드 및 직렬화 참조 검사
 - 통과 여부: 오류 0개. 기존 `VirtualMouse.isEnabled` 미사용 경고 1개
 - 아직 검증하지 못한 항목: Unity Play Mode에서 픽셀 출력 시각 결과, 기존 입력 유지, 캡처 Layer 충돌 여부
