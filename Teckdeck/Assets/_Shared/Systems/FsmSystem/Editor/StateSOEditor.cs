@@ -1,6 +1,4 @@
-using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
 using _Shared.Systems.FsmSystem.Runtime;
 using UnityEditor;
 using UnityEngine;
@@ -30,12 +28,9 @@ namespace _Shared.Systems.FsmSystem.Editor
         {
             DropdownField field = root.Q<DropdownField>("ClassNameDropdown");
 
-            Assembly stateAssembly = Assembly.GetAssembly(typeof(StateSO));
-            IEnumerable<string> choices = stateAssembly.GetTypes()
-                    .Where(type => type.IsClass 
-                                   && !type.IsAbstract 
-                                   && type.IsSubclassOf(typeof(AbstractState)))
-                    .Select(type => type.FullName);
+            var choices = TypeCache.GetTypesDerivedFrom<AbstractState>()
+                .Where(type => type.IsClass && !type.IsAbstract)
+                .Select(type => $"{type.FullName}, {type.Assembly.GetName().Name}");
             
             field.choices.AddRange(choices);
 
