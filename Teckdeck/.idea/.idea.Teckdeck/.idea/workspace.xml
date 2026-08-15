@@ -11,61 +11,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44da0101-9d20-4f5a-9088-489447dcff59" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/AbstractPlayerState.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/AbstractPlayerState.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Board.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Board/BoardGroundChecker.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Board/BoardGroundChecker.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Board/FSM/AbstractBoardState.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Board/FSM/AbstractBoardState.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Board/Movement.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Board/Movement/BoardJumpMove.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Board/Movement/BoardJumpMove.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/IGroundChecker.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/IGroundChecker.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Movement/IJumpable.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Movement/IJumpable.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Shared/Systems/AgentSystem.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Shared/Systems/AgentSystem/AgentRenderer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Shared/Systems/AgentSystem/AgentRenderer.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Teckdeck/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Teckdeck/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/GameModules/Player/FSM.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/GameModules/Player/FSM/IDLE state.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/GameModules/Player/FSM/IDLE state.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/GameModules/Player/FSM/JUMP state.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/GameModules/Player/FSM/JUMP state.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/GameModules/Player/FSM/PUSH state.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/GameModules/Player/FSM/PUSH state.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/GameModules/Player/FSM/RIDE state.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/GameModules/Player/FSM/RIDE state.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/GameModules/Player/FSM/SPRINT state.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/GameModules/Player/FSM/SPRINT state.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scenes/PlayerMoveScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scenes/PlayerMoveScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/FSM.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Board/FSM.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/FSM/States.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Board/FSM/States.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/FSM/States/PlayerIdleState.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/FSM/States/PlayerIdleState.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/FSM/States/PlayerJumpState.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/FSM/States/PlayerJumpState.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/FSM/States/PlayerPushState.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/FSM/States/PlayerPushState.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/FSM/States/PlayerRideState.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/FSM/States/PlayerRideState.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/FSM/States/PlayerSprintState.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/FSM/States/PlayerSprintState.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/IControlMovement.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/IControlMovement.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/InputSystem/PlayerInputSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/InputSystem/PlayerInputSO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/PlayerMovement.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/PlayerMovement.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Shared/GameModules/Input/Controls.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Shared/GameModules/Input/Controls.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Shared/GameModules/Input/Controls.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Shared/GameModules/Input/Controls.inputactions" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Shared/Systems/AnimatorSystem/HashDataSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Shared/Systems/AnimatorSystem/HashDataSO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Shared/Systems/AnimatorSystem/IAnimatorRenderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Shared/Systems/AnimatorSystem/IAnimatorRenderer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/01_Scene/RepairShop_KTJ.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/01_Scene/RepairShop_KTJ.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/System/RepairShop/Computer/VirtualMouse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/System/RepairShop/Computer/VirtualMouse.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/System/RepairShop/View/ViewSwitcher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/System/RepairShop/View/ViewSwitcher.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/ComputerScreenPixel.renderTexture" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/ComputerScreenPixel.renderTexture" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/05_Etc.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/_AgentLog/PROGRESS.md" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/_AgentLog/PROGRESS.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,29 +29,75 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Board/FSM/AbstractBoardState.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Board/Movement/BoardJumpMove.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Movement/IControlMovement.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Movement/IJumpable.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_Shared/Systems/AgentSystem/AgentRenderer.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_Shared/Systems/FsmSystem/Editor/CodeFormat.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_Shared/Systems/FsmSystem/Runtime/AbstractState.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/System/RepairShop/View/ViewDefinition.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
   </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="SWEA" />
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.0" />
+      <entry key="S5" value="1.0" />
+      <entry key="S10" value="1.0" />
+      <entry key="S30" value="1.0" />
+      <entry key="S60" value="1.0" />
+      <entry key="M2" value="1.0" />
+      <entry key="M5" value="1.0000000511822282" />
+      <entry key="M10" value="1.00315016899438" />
+      <entry key="M15" value="1.1399002634314912" />
+      <entry key="M30" value="7.856040983154642" />
+      <entry key="H1" value="51.28294593868258" />
+      <entry key="H2" value="138.96609905625562" />
+      <entry key="H4" value="230.30874932482595" />
+      <entry key="D1" value="351.7951314974473" />
+      <entry key="W1" value="378.3762343924601" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="7.358407101398596E-288" />
+      <entry key="S10" value="5.064760030388389E-144" />
+      <entry key="S30" value="4.959881619585256E-48" />
+      <entry key="S60" value="5.249240502292038E-24" />
+      <entry key="M2" value="5.536956235831547E-12" />
+      <entry key="M5" value="9.174586009612588E-5" />
+      <entry key="M10" value="0.02428328192077601" />
+      <entry key="M15" value="0.18592249198735208" />
+      <entry key="M30" value="2.798352371098903" />
+      <entry key="H1" value="16.244825789439645" />
+      <entry key="H2" value="42.27793974893433" />
+      <entry key="H4" value="69.1615890069351" />
+      <entry key="D1" value="104.83921263389595" />
+      <entry key="W1" value="112.6426113156092" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="2.3582429905391744E-4" />
+      <entry key="MS500" value="0.1881558434263834" />
+      <entry key="S2" value="0.6586116788943497" />
+      <entry key="S5" value="0.8461585966002897" />
+      <entry key="S10" value="0.9198687931440492" />
+      <entry key="S30" value="0.972542588396779" />
+      <entry key="S60" value="0.9861757391037254" />
+      <entry key="M2" value="0.9930638142207353" />
+      <entry key="M5" value="0.997311234000167" />
+      <entry key="M10" value="1.0260024242123773" />
+      <entry key="M15" value="1.3246710334696632" />
+      <entry key="M30" value="10.651845040585611" />
+      <entry key="H1" value="67.52101643669556" />
+      <entry key="H2" value="181.23523608305143" />
+      <entry key="H4" value="299.46311147265004" />
+      <entry key="D1" value="456.6325116171222" />
+      <entry key="W1" value="491.0185642506946" />
+    </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
   <component name="ProjectId" id="3HoCcgankYTdYW5cbGYCJtEZiFn" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -114,7 +113,7 @@
     &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;JTH&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;KTJ&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -169,8 +168,6 @@
       <option name="presentableId" value="Default" />
       <updated>1786525117269</updated>
       <workItem from="1786525120029" duration="1000" />
-      <workItem from="1786682209484" duration="12566000" />
-      <workItem from="1786777642352" duration="32430000" />
     </task>
     <servers />
   </component>
