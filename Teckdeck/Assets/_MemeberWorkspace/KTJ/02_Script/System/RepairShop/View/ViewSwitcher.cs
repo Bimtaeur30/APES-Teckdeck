@@ -39,7 +39,9 @@ public class ViewSwitcher : MonoBehaviour
             Debug.LogAssertion("ViewDefinitions 에 " + viewId + "가 등록되지 않았습니다. 인스펙터를 확인하세요.");
         else // 성공시
         {
+            currentView.Interaction.Exit();
             currentView =  targetView;
+            currentView.Interaction.Enter();
             foreach (ViewDefinition view in viewDefinitions)
             {
                 int priority = (targetView == view) ? 10 : 0;
