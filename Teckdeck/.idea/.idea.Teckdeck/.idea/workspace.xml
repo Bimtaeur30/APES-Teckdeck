@@ -11,7 +11,61 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44da0101-9d20-4f5a-9088-489447dcff59" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/01_Scene/RepairShop_KTJ.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/01_Scene/RepairShop_KTJ.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/AbstractPlayerState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/AbstractPlayerState.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Board.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Board/BoardGroundChecker.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Board/BoardGroundChecker.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Board/FSM/AbstractBoardState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Board/FSM/AbstractBoardState.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Board/Movement.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Board/Movement/BoardJumpMove.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Board/Movement/BoardJumpMove.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/IGroundChecker.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/IGroundChecker.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Movement/IJumpable.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Movement/IJumpable.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Shared/Systems/AgentSystem.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Shared/Systems/AgentSystem/AgentRenderer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Shared/Systems/AgentSystem/AgentRenderer.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Teckdeck/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Teckdeck/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/GameModules/Player/FSM.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/GameModules/Player/FSM/IDLE state.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/GameModules/Player/FSM/IDLE state.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/GameModules/Player/FSM/JUMP state.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/GameModules/Player/FSM/JUMP state.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/GameModules/Player/FSM/PUSH state.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/GameModules/Player/FSM/PUSH state.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/GameModules/Player/FSM/RIDE state.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/GameModules/Player/FSM/RIDE state.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/GameModules/Player/FSM/SPRINT state.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/GameModules/Player/FSM/SPRINT state.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scenes/PlayerMoveScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scenes/PlayerMoveScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/FSM.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Board/FSM.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/FSM/States.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Board/FSM/States.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/FSM/States/PlayerIdleState.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/FSM/States/PlayerIdleState.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/FSM/States/PlayerJumpState.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/FSM/States/PlayerJumpState.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/FSM/States/PlayerPushState.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/FSM/States/PlayerPushState.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/FSM/States/PlayerRideState.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/FSM/States/PlayerRideState.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/FSM/States/PlayerSprintState.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/FSM/States/PlayerSprintState.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/IControlMovement.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/IControlMovement.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/InputSystem/PlayerInputSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/InputSystem/PlayerInputSO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/PlayerMovement.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/PlayerMovement.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Shared/GameModules/Input/Controls.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Shared/GameModules/Input/Controls.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Shared/GameModules/Input/Controls.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Shared/GameModules/Input/Controls.inputactions" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Shared/Systems/AnimatorSystem/HashDataSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Shared/Systems/AnimatorSystem/HashDataSO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Shared/Systems/AnimatorSystem/IAnimatorRenderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Shared/Systems/AnimatorSystem/IAnimatorRenderer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,38 +75,54 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Board/FSM/AbstractBoardState.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Board/Movement/BoardJumpMove.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Movement/IControlMovement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Movement/IJumpable.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Shared/Systems/AgentSystem/AgentRenderer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Shared/Systems/FsmSystem/Editor/CodeFormat.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Shared/Systems/FsmSystem/Runtime/AbstractState.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="SWEA" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
   <component name="ProjectId" id="3HoCcgankYTdYW5cbGYCJtEZiFn" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.readMode.enableVisualFormatting": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "cidr.known.project.marker": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "KTJ",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;JTH&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Unity 에디터에 연결.Unity 에디터에 연결">
     <configuration name="유닛 테스트(배치 모드)" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.3.10f1\Editor\Unity.exe" />
@@ -99,6 +169,8 @@
       <option name="presentableId" value="Default" />
       <updated>1786525117269</updated>
       <workItem from="1786525120029" duration="1000" />
+      <workItem from="1786682209484" duration="12566000" />
+      <workItem from="1786777642352" duration="32430000" />
     </task>
     <servers />
   </component>
