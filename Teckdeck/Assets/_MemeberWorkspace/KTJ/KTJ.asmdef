@@ -4,7 +4,8 @@
     "references": [
         "CoreSystem_assembly",
         "Unity.Cinemachine",
-        "Unity.InputSystem"
+        "Unity.InputSystem",
+        "DOTweenModules"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

@@ -8,9 +8,9 @@
 
 ## 현재 요청
 
-- 요청 요약: 가상 커서 경계를 자식 이미지가 아닌 `cursor.rect` 네 모서리 기준으로 변경
-- 승인된 범위: 커서 Clamp와 위치 정규화의 Bounds 계산 교체
-- 범위 밖 항목: 자식 이미지 크기 변경, 씬·프리팹 수정, uGUI 입력 흐름 변경
+- 요청 요약: RenderTexture 좌우 끝의 얇은 캡처 경계선 제거
+- 승인된 범위: 캡처 카메라 X축 좌우 반 픽셀 오버스캔
+- 범위 밖 항목: 씬·RenderTexture·RawImage 설정 변경, Y축 캡처 변경
 
 ## Phase 현황
 
@@ -27,21 +27,22 @@
 | 009 | 완료 | 운영체제 커서 잠금 및 상대 이동 입력 적용 | `phases/PHASE-009.md` |
 | 010 | 완료 | World Space Canvas 직접 GraphicRaycaster 입력 처리 | `phases/PHASE-010.md` |
 | 011 | 완료 | `cursor.rect` 네 모서리 기준 경계 계산 | `phases/PHASE-011.md` |
+| 012 | 완료 | RenderTexture 좌우 반 픽셀 오버스캔 | `phases/PHASE-012.md` |
 
 ## 현재 재개 지점
 
-- 마지막 완료 작업: Phase 011 `cursor.rect` 네 모서리 기준 경계 계산
+- 마지막 완료 작업: Phase 012 RenderTexture 좌우 반 픽셀 오버스캔
 - 현재 작업: 없음
-- 다음에 할 작업: Unity Play Mode에서 Cursor 자신의 4×4 Rect가 네 경계까지 이동하는지 확인
+- 다음에 할 작업: Unity RenderTexture 미리보기와 Game View에서 좌우 선 소멸 확인
 - 사용자 승인이 필요한 사항: 없음
-- 관련 파일: `Assets/_MemeberWorkspace/KTJ/02_Script/System/RepairShop/Computer/VirtualMouse.cs`
-- 알려진 문제 또는 위험: 자식 커서 이미지는 이동 영역 밖으로 표시될 수 있음
+- 관련 파일: `Assets/_MemeberWorkspace/KTJ/02_Script/System/RepairShop/Computer/WorldCanvasPixelDisplay.cs`
+- 알려진 문제 또는 위험: 원본 Canvas 좌우 내용이 각각 반 픽셀씩 잘림
 
 ## 검증 요약
 
 - 수행한 검증: Phase 001 정적 참조 검증 통과
 - 수행한 검증: Phase 006 변경이 포함된 `KTJ.csproj` 빌드 및 직렬화 참조 검사
 - 수행한 검증: Phase 009 변경이 포함된 `KTJ.csproj` 빌드 및 작업 파일 diff 검사
-- 수행한 검증: Phase 011 변경이 포함된 `KTJ.csproj` 빌드, 작업 파일 diff 검사, 이전 자식 계층 Bounds API 제거 확인
-- 통과 여부: Phase 011 빌드 경고 0개·오류 0개, 작업 파일 공백 오류 없음, `CalculateRelativeRectTransformBounds` 참조 제거
-- 아직 검증하지 못한 항목: Unity Play Mode에서 Cursor 자신의 4×4 Rect 경계 도달과 자식 이미지 돌출 상태
+- 수행한 검증: Phase 012 변경이 포함된 `KTJ.csproj` 빌드, 작업 파일 diff 검사, 534×330 기준 가로 캡처 수식 확인
+- 통과 여부: Phase 012 빌드 경고 0개·오류 0개, 작업 파일 공백 오류 없음, 좌우 각각 0.5픽셀 오버스캔 계산 확인
+- 아직 검증하지 못한 항목: Unity RenderTexture 미리보기와 Game View의 좌우 선 소멸 여부

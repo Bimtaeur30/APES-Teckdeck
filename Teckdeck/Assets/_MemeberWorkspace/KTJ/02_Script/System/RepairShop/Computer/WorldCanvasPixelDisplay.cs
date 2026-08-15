@@ -79,17 +79,18 @@ public sealed class WorldCanvasPixelDisplay : MonoBehaviour
         Vector3 center = (corners[0] + corners[2]) * 0.5f;
         float worldWidth = Vector3.Distance(corners[0], corners[3]);
         float worldHeight = Vector3.Distance(corners[0], corners[1]);
-        float textureAspect = renderTexture.width / (float)renderTexture.height;
+        float worldUnitsPerPixelX = worldWidth / renderTexture.width;
+        float captureWidth = Mathf.Max(
+            worldWidth - worldUnitsPerPixelX,
+            Mathf.Epsilon);
 
         Transform canvasTransform = sourceCanvas.transform;
         captureCamera.transform.SetPositionAndRotation(
             center - canvasTransform.forward * cameraDistance,
             Quaternion.LookRotation(canvasTransform.forward, canvasTransform.up));
 
-        captureCamera.aspect = textureAspect;
-        captureCamera.orthographicSize = Mathf.Max(
-            worldHeight * 0.5f,
-            worldWidth / (2f * textureAspect));
+        captureCamera.aspect = captureWidth / worldHeight;
+        captureCamera.orthographicSize = worldHeight * 0.5f;
         captureCamera.nearClipPlane = 0.01f;
         captureCamera.farClipPlane = cameraDistance + 1f;
     }
