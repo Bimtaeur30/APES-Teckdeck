@@ -1,5 +1,7 @@
-﻿using _Shared.Systems.FsmSystem.Runtime;
+using _Shared.Systems.FsmSystem.Runtime;
+using JTH.Player.Board.FSM;
 using JTH.Player.InputSystem;
+using JTH.Player.Movement;
 using ModuleSystem;
 using UnityEngine;
 
@@ -33,7 +35,7 @@ namespace JTH.Player
             _stateMachine.UpdateMachine();
         }
 
-        // public void ChangeState(PlayerState newStateIndex, float transitionDuration)
-        //     => _stateMachine.ChangeState((int)newStateIndex, transitionDuration);
+        public void ChangeState(BoardState newStateIndex, float transitionDuration)
+            => _stateMachine.ChangeState((int)newStateIndex, transitionDuration);
     }
 }
