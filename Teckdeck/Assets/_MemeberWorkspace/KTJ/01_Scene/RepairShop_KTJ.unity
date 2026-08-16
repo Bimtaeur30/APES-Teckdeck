@@ -4150,9 +4150,9 @@ MonoBehaviour:
   targetZRange: {x: -1, y: 1}
   invertX: 0
   invertZ: 0
-  InOutroGroup: {fileID: 0}
-  IntroGroup: {fileID: 0}
-  OutroGroup: {fileID: 0}
+  InOutroGroup: {fileID: 582855699}
+  IntroGroup: {fileID: 1791622983}
+  OutroGroup: {fileID: 1355965012}
 --- !u!1001 &890912486
 PrefabInstance:
   m_ObjectHideFlags: 0

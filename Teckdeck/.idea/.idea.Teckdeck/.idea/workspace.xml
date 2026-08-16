@@ -11,14 +11,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44da0101-9d20-4f5a-9088-489447dcff59" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Teckdeck/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Teckdeck/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/01_Scene/RepairShop_KTJ.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/01_Scene/RepairShop_KTJ.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/System/RepairShop/Computer/VirtualMouse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/System/RepairShop/Computer/VirtualMonitor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/System/RepairShop/Computer/VirtualMouse.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/System/RepairShop/Computer/VirtualMonitor.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/System/RepairShop/Computer/WorldCanvasPixelDisplay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/System/RepairShop/Computer/WorldCanvasPixelDisplay.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/Font/SB 어그로 M SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/Font/SB 어그로 M SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/KTJ.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/KTJ.asmdef" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/_AgentLog/PROGRESS.md" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/_AgentLog/PROGRESS.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
