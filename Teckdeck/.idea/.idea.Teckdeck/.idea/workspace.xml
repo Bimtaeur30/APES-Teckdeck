@@ -21,9 +21,71 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/System/RepairShop/View/ViewDefinition.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.0" />
+      <entry key="S5" value="1.0" />
+      <entry key="S10" value="1.0" />
+      <entry key="S30" value="1.0" />
+      <entry key="S60" value="1.000000000000116" />
+      <entry key="M2" value="1.0000009083662176" />
+      <entry key="M5" value="1.017784300533432" />
+      <entry key="M10" value="1.7762495606469035" />
+      <entry key="M15" value="4.113709190943111" />
+      <entry key="M30" value="14.397640897109094" />
+      <entry key="H1" value="34.45496072060416" />
+      <entry key="H2" value="86.9160887712861" />
+      <entry key="H4" value="181.51352217771912" />
+      <entry key="D1" value="379.312770408398" />
+      <entry key="W1" value="434.0501063459972" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="4.24591007473418E-169" />
+      <entry key="S10" value="1.398992191504174E-84" />
+      <entry key="S30" value="4.321857394174727E-28" />
+      <entry key="S60" value="7.080157250249887E-14" />
+      <entry key="M2" value="9.89702441411239E-7" />
+      <entry key="M5" value="0.02072252291132746" />
+      <entry key="M10" value="0.6435777105999332" />
+      <entry key="M15" value="2.1320455039122255" />
+      <entry key="M30" value="7.4118273762130835" />
+      <entry key="H1" value="15.70925726410872" />
+      <entry key="H2" value="33.07716180253193" />
+      <entry key="H4" value="62.20135975922615" />
+      <entry key="D1" value="121.68508414559314" />
+      <entry key="W1" value="138.03161791497357" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="0.21763764082403103" />
+      <entry key="MS500" value="0.7371346086455506" />
+      <entry key="S2" value="0.9265880618903709" />
+      <entry key="S5" value="0.9699619103417348" />
+      <entry key="S10" value="0.9848664428955506" />
+      <entry key="S30" value="0.9949298176622132" />
+      <entry key="S60" value="0.9974616873156498" />
+      <entry key="M2" value="0.9987319256052377" />
+      <entry key="M5" value="1.0379111835709804" />
+      <entry key="M10" value="2.4179890156572657" />
+      <entry key="M15" value="6.241767161046848" />
+      <entry key="M30" value="21.802042819118086" />
+      <entry key="H1" value="50.1561525616162" />
+      <entry key="H2" value="119.98518064965906" />
+      <entry key="H4" value="243.70765580115358" />
+      <entry key="D1" value="500.99558411678004" />
+      <entry key="W1" value="572.0813582664961" />
+    </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -33,26 +95,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.readMode.enableVisualFormatting": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "cidr.known.project.marker": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "KTJ",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;KTJ&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Unity 에디터에 연결.Unity 에디터에 연결">
     <configuration name="유닛 테스트(배치 모드)" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.3.10f1\Editor\Unity.exe" />

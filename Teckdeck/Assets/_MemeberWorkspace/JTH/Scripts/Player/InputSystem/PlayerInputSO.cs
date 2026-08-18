@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using UnityEngine;
 using static UnityEngine.InputSystem.InputAction;
 
@@ -9,6 +9,8 @@ namespace JTH.Player.InputSystem
     {
         public event Action<Vector2> OnMovementChange;
         public event Action OnSprintKeyPressed;
+        public event Action OnJumpKeyPressed;
+        public Vector2 CurrentMove { get; private set; }
 
         private Controls _controls;
 
@@ -30,13 +32,20 @@ namespace JTH.Player.InputSystem
 
         public void OnMove(CallbackContext context)
         {
-            OnMovementChange?.Invoke(context.ReadValue<Vector2>());
+            CurrentMove = context.ReadValue<Vector2>();
+            OnMovementChange?.Invoke(CurrentMove);
         }
 
         public void OnSprint(CallbackContext context)
         {
             if (context.performed)
                 OnSprintKeyPressed?.Invoke();
+        }
+
+        public void OnJump(CallbackContext context)
+        {
+            if (context.performed)
+                OnJumpKeyPressed?.Invoke();
         }
     }
 }

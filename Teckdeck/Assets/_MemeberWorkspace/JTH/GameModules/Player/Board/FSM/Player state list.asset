@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae446381aaad4bc299dfcaebf1359257, type: 3}
+  m_Name: Player state list
+  m_EditorClassIdentifier: FsmSystem_runtime_assembly::_Shared.Systems.FsmSystem.Runtime.StateListSO
+  generatePath: D:/GameDev_C/Projects/Unity/2026-graduation-Project_T/Teckdeck/Assets/_MemeberWorkspace/JTH/Scripts/Player/Board/FSM
+  enumName: BoardState
+  states:
+  - {fileID: 11400000, guid: 6ae6d83b0693533449da9868679de494, type: 2}
+  - {fileID: 11400000, guid: e3b8cf883393cce40bd464dbc70607cf, type: 2}
+  - {fileID: 11400000, guid: cb8c7ca070928424096ed0d9ba897862, type: 2}
+  - {fileID: 11400000, guid: e9b3d2db0b6b35c4984811f7fd89a064, type: 2}
+  - {fileID: 11400000, guid: f3238f025d9834143a0465a66d4b87c5, type: 2}
+  - {fileID: 11400000, guid: e88426b30acd77d46887f63cbfa6d978, type: 2}
