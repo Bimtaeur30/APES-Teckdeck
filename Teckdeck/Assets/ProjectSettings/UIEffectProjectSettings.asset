@@ -56,6 +56,8 @@ ShaderVariantCollection:
       variants:
       - keywords: COLOR_FILTER
         passType: 0
+      - keywords: COLOR_FILTER UNITY_UI_ALPHACLIP
+        passType: 0
   - first: {fileID: 4800000, guid: 935b7be1c88464d2eb87204fdfab5a38, type: 3}
     second:
       variants:
