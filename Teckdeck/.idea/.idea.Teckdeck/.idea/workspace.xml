@@ -11,87 +11,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44da0101-9d20-4f5a-9088-489447dcff59" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Vehicles/Board/FSM/BoardStateUtil.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Vehicles/Board/FSM/BoardStateUtil.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Teckdeck/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Teckdeck/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/PC_Renderer.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/PC_Renderer.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/GameModules/Player/Board/Movement/BoardMovementSO.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/GameModules/Player/Board/Movement/BoardMovementSO.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/GameModules/Player/Board/Physics/Wheel Physics Material.physicMaterial" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/GameModules/Player/Board/Physics/Wheel Physics Material.physicMaterial" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProjectSettings/UIEffectProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectSettings/UIEffectProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/GameModules/Player/Board/FSM/Brake state.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/GameModules/Player/Board/FSM/Brake state.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/GameModules/Player/Board/FSM/Idle state.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/GameModules/Player/Board/FSM/Idle state.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/GameModules/Player/Board/FSM/Jump state.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/GameModules/Player/Board/FSM/Jump state.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/GameModules/Player/Board/FSM/Push State.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/GameModules/Player/Board/FSM/Push State.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/GameModules/Player/Board/FSM/Ride State.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/GameModules/Player/Board/FSM/Ride State.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/GameModules/Player/Board/FSM/Tuck State.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/GameModules/Player/Board/FSM/Tuck State.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scenes/PlayerMoveScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scenes/PlayerMoveScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/AbstractPlayerState.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/AbstractPlayerState.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Board.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Board/BoardGroundChecker.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Board/BoardGroundChecker.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Board/BoardTrigger.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Board/BoardTrigger.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Board/FSM.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Board/FSM/AbstractBoardState.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Board/FSM/AbstractBoardState.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Board/FSM/BoardState.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Board/FSM/BoardState.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Board/FSM/States.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Board/FSM/States/BoardBrakeState.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Board/FSM/States/BoardBrakeState.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Board/FSM/States/BoardIdleState.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Board/FSM/States/BoardIdleState.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Board/FSM/States/BoardJumpState.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Board/FSM/States/BoardJumpState.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Board/FSM/States/BoardPushState.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Board/FSM/States/BoardPushState.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Board/FSM/States/BoardRideState.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Board/FSM/States/BoardRideState.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Board/FSM/States/BoardTuckState.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Board/FSM/States/BoardTuckState.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Board/Movement.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Board/Movement/BoardBrakeMove.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Board/Movement/BoardBrakeMove.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Board/Movement/BoardJumpMove.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Board/Movement/BoardJumpMove.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Board/Movement/BoardMovement.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Board/Movement/BoardMovement.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Board/Movement/BoardMovementSO.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Board/Movement/BoardMovementSO.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Board/Movement/BoardPushMove.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Board/Movement/BoardPushMove.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Board/Movement/BoardSpeedBand.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Board/Movement/BoardSpeedBand.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/IGroundChecker.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/IGroundChecker.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/InputSystem.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/InputSystem/PlayerInputSO.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/InputSystem/PlayerInputSO.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Movement.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Movement/IBrakable.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Movement/IBrakable.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Movement/IControlMovement.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Movement/IControlMovement.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Movement/IJumpable.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Movement/IJumpable.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Movement/IPushable.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Movement/IPushable.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Movement/SO.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Movement/SO/BrakeMoveSO.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Movement/SO/BrakeMoveSO.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Movement/SO/DriftMoveSO.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Movement/SO/DriftMoveSO.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Movement/SO/JumpMoveSO.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Movement/SO/JumpMoveSO.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Movement/SO/MovementSO.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Movement/SO/MovementSO.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Movement/SO/PushMoveSO.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/Movement/SO/PushMoveSO.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/PlayerController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/PlayerController.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Test/Graphics/PlayerMat.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Test/Graphics/PlayerMat.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Vehicles/Board/Movement/BoardMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Vehicles/Board/Movement/BoardMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Vehicles/Board/Movement/BoardMovementSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Vehicles/Board/Movement/BoardMovementSO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Vehicles/Movement/Module/DriftMove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Vehicles/Movement/Module/DriftMove.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Test/Scripts/TestCam.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Test/Scripts/TestCam.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/_AgentLog/PROGRESS.md" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/_AgentLog/PROGRESS.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Shared/Systems/FsmSystem/Runtime/StateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Shared/Systems/FsmSystem/Runtime/StateMachine.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Shared/Systems/SoundSystem/Editor/SoundClipSOEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Shared/Systems/SoundSystem/Editor/SoundClipSOEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Shared/Systems/SoundSystem/Editor/SoundClipSoEditor.uss" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Shared/Systems/SoundSystem/Editor/SoundClipSoEditor.uss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Shared/Systems/SoundSystem/Editor/SoundClipSoEditor.uxml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Shared/Systems/SoundSystem/Editor/SoundClipSoEditor.uxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Shared/Systems/SoundSystem/Runtime/SoundClipSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Shared/Systems/SoundSystem/Runtime/SoundClipSO.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,6 +35,8 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/002b69dce75247dd8985f202c13cee2f1a00/46/690e34e9/02000006pdb4.il" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/008e6fdf24a849c99aae95a40f282c09c200/58/71cc32d2/02000006pdb34.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/02f826854e4f4e318d0fae577d902315aa00/b6/10715c98/02000007pdb25.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/038d41ab962448f1a7f8fed63a1415b7aa00/52/7fc38f84/02000007pdb25.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/045059485e66446882f7f965820cba011c00/84/6151c4fa/02000005pdb3.il" root0="FORCE_HIGHLIGHTING" />
@@ -112,21 +47,31 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/0b8139fe9a904bff8f58f6cc0562b79bae00/03/f110f65e/02000007pdb25.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/0cad792ba16640cba3a1c4fc78265ea6bc00/2c/5afb58c2/0200000Epdb20.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/0cad792ba16640cba3a1c4fc78265ea6bc00/fe/ec7c8068/02000017pdb24.il" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/0d25e618fe864c82a15ddde542be1f2fc200/88/a4ee9e49/02000006pdb34.il" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/0d8029e2943b43b5a5303bc0403d590ec200/03/ff0bb1d7/0200001Dpdb13.il" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/0d8029e2943b43b5a5303bc0403d590ec200/81/e85040ce/0200001Epdb14.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/0da39b0250a547e6a44ae6073f464556bc00/7d/d55dfd55/02000008pdb1.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/0da39b0250a547e6a44ae6073f464556bc00/e2/91190b15/0200001Apdb5.il" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/0f35042cc28f4a8eaebbd4befcb09b94c200/11/113a7cfc/0200001Epdb14.il" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/0f35042cc28f4a8eaebbd4befcb09b94c200/35/94bd752c/02000006pdb34.il" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/0f35042cc28f4a8eaebbd4befcb09b94c200/b2/0b962945/0200001Dpdb13.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/0f8ffe2c45fc434b817e257cae58c848b800/8f/2c91925b/0200001Dpdb7.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/0f8ffe2c45fc434b817e257cae58c848b800/9f/67a41735/02000005pdb28.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/108458e9341e4cb8aea4534a38a03d49be00/1d/43a8ac7e/0200001Epdb13.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/108458e9341e4cb8aea4534a38a03d49be00/79/732fe23c/0200000Epdb20.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/108458e9341e4cb8aea4534a38a03d49be00/f4/2a0d39a9/02000017pdb24.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/125c78f785ca462894f0f87a595c1769b600/00/2994eb2f/02000005pdb28.il" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/12bc5b397a9e4beeae828d6ead9299a7c200/5d/0f72b30d/02000016pdb25.il" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/12bc5b397a9e4beeae828d6ead9299a7c200/de/e0cb1618/0200001Dpdb13.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/1436464284ff4bfb9076e9959198c1b4a600/61/29ccfd32/02000012pdb14.il" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/14d8216e25864d01ae7b33e64b8f2d36c200/ae/e19ca272/02000006pdb34.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/150b890670c64663ab78d32fddbf8d12b800/7b/0c49767c/02000012pdb25.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/17e0bb8969b54761b103cbe7dcb5860eae00/28/6b5178fd/02000007pdb25.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/1833de8ecd954d9b8f3d4f7ea74a11bfc600/1a/338e1c6b/0200000Epdb21.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/1833de8ecd954d9b8f3d4f7ea74a11bfc600/54/25a14e2c/02000009pdb16.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/1833de8ecd954d9b8f3d4f7ea74a11bfc600/68/9ae3664f/0200001Epdb13.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/1833de8ecd954d9b8f3d4f7ea74a11bfc600/70/5bee7161/02000017pdb25.il" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/19c987e55902427eaca0f77b787601e2c400/54/9afeca95/0200001Epdb14.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/1a91e648418e478598216751a9009403ae00/1d/296cb6b1/02000007pdb25.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/1bf0ff15324c48218641eed8e9344561ae00/a6/da07f110/02000007pdb25.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/1c14b23cffed4e83a61bcf2a74759af9ba00/de/39ca75df/02000012pdb25.il" root0="FORCE_HIGHLIGHTING" />
@@ -147,6 +92,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/257378930f52459a9c597035a4723d78aa00/57/ace9682b/02000007pdb25.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/26f7211db58045c698174277ecdf13dcbc00/a7/87888eb7/02000006pdb34.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/273aa8eada814cccbbb3b7c9db468bfbae00/02/33163ded/02000007pdb25.il" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/2bb4aee9ef554b83b394699de1b86cd8c200/11/544f5c36/02000006pdb34.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/2c766d4224ce43e4a6fb8c7e463f6171ae00/34/59cdfb5b/02000007pdb25.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/2efe2e34ad5c4626ae9ca2bc295ec151be00/0c/9ca0a63d/02000012pdb29.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/2efe2e34ad5c4626ae9ca2bc295ec151be00/c4/fb3dc4e1/0200001Epdb14.il" root0="FORCE_HIGHLIGHTING" />
@@ -172,10 +118,13 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/44171059c4fa4922921eb73e0e5c51e8b800/ea/46c3c989/02000009pdb16.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/44269502094346b981ef208d29945d6f1c00/99/a38c9e49/02000005pdb3.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/450e486b1fd944d880a43fd4ac24e8e3ba00/05/9422f3e9/02000012pdb25.il" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/45ff85eed1a445d5b7792f95edf96ddac200/77/f8f215e4/02000016pdb25.il" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/45ff85eed1a445d5b7792f95edf96ddac200/b1/e147dc81/02000006pdb34.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/4621ad7ece754d3c93c4be35935d4771bc00/25/b30a928a/0200001Epdb13.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/4621ad7ece754d3c93c4be35935d4771bc00/c3/a207f301/02000009pdb15.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/4834ed6f8dd84cd4bb846e69f42f420eb200/e1/b0cdf854/02000005pdb28.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/484c5e037ffe4bfbae7b623df593df58bc00/13/974d620b/02000006pdb34.il" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/48e113f60eb54d96b484860ed5bf9584c400/e1/65687fd0/0200001Epdb14.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/49fc415aad174df0bd4a6b77243a3b8fc000/dc/18dfa0cc/02000020pdb5.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/4a17382cfbec433dac9d3695f2d55a3dc000/21/a87422fe/0200000Bpdb32.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/4a17382cfbec433dac9d3695f2d55a3dc000/5c/dbefe896/02000008pdb1.il" root0="FORCE_HIGHLIGHTING" />
@@ -208,6 +157,9 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/54e576f4930749aebb1adcf2dd8620b8ba00/29/bbae2881/0200001Apdb14.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/54e576f4930749aebb1adcf2dd8620b8ba00/ea/d22b9ec0/02000012pdb25.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/55d6f2218b254b2dbe1ba3b3ed6ddccfbe00/6c/6a006371/02000017pdb24.il" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/5742397f2f62456e8d8b9e6feba1de98c200/42/15f6c5ab/02000016pdb25.il" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/5742397f2f62456e8d8b9e6feba1de98c200/8c/5eaffc1d/0200001Dpdb13.il" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/5742397f2f62456e8d8b9e6feba1de98c200/9a/72b607fd/02000006pdb34.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/58d0e48cb0204fc998b505fc6965f497ae00/48/07b0f554/02000007pdb25.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/58d0e48cb0204fc998b505fc6965f497ae00/7a/b6a28501/02000008pdb26.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/58d0e48cb0204fc998b505fc6965f497ae00/88/66f29639/02000005pdb1.il" root0="FORCE_HIGHLIGHTING" />
@@ -268,6 +220,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/7aabfde080094182a2e95ed4879852feae00/64/ec33ae4e/02000007pdb25.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/7b7fd1ab92354aa89a079f3cc0ea777b2a00/c6/ffafd1e1/02000004pdb1.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/7c4a23f2e9324df09b7acbb64669a045bc00/4b/9cb9cb60/02000006pdb34.il" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/7eab1107227e48e79f3595e042f97f82c200/29/4c078cfc/02000006pdb34.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/7f7952196490479080705e39fba55770b800/58/ac97a071/02000019pdb13.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/7f7952196490479080705e39fba55770b800/77/26cb442d/02000011pdb24.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/7fc9822e53864faab4f1582c5ef86411bc00/8a/22e94d85/02000017pdb24.il" root0="FORCE_HIGHLIGHTING" />
@@ -287,6 +240,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/8d9c71ceec6f464fb6d2d582ef30af17b000/cb/e19bc138/02000002pdb28.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/97e98c7e258f4ace91e346101efa9100aa00/ac/4095d342/02000007pdb25.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/97e98c7e258f4ace91e346101efa9100aa00/cf/7411b15c/02000013pdb14.il" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/9a86d766179a46cfa78434861b6d1a95c200/2b/a698ef06/02000006pdb34.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/9ab097cd5043453dba2414c69ff96415bc00/5e/bbf99185/02000017pdb24.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/9caa04193286463c82de8882a541a40abe00/3e/031f4d72/02000014pdb30.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/9d366d29fd9c495ab5ed86b2a6c0f747bc00/12/d7c0268a/02000017pdb24.il" root0="FORCE_HIGHLIGHTING" />
@@ -305,6 +259,8 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/b13ad27eff0f4230b644b909c0a4ee29b200/50/5958f4a6/02000005pdb28.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/b13ad27eff0f4230b644b909c0a4ee29b200/82/d0ab0c9c/02000016pdb16.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/b13ad27eff0f4230b644b909c0a4ee29b200/aa/c2c117cf/02000015pdb15.il" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/b1cd2bce80724fe0bc955d64c2ffe3f5c000/23/7cec2f00/02000025pdb10.il" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/b1cd2bce80724fe0bc955d64c2ffe3f5c000/c6/53e1d4f5/02000006pdb34.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/b34bcf9765494a1d961245a757d07083b600/17/c650c04e/02000018pdb24.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/b34bcf9765494a1d961245a757d07083b600/8a/45b0ae8a/02000019pdb25.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/b34bcf9765494a1d961245a757d07083b600/a7/676dda7b/0200001Apdb26.il" root0="FORCE_HIGHLIGHTING" />
@@ -318,6 +274,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/bd957191729e4a5f98c857c7fd9afee1be00/7c/b79f1dac/02000022pdb7.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/c0d1ab05ef2e49ae9c20cc212413436f6600/9a/0c25ca6f/02000002pdb1.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/c0d1ab05ef2e49ae9c20cc212413436f6600/d9/3e68a448/02000003pdb1.il" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/c4bbb33734914200ac96696f8974b487c200/e7/b9874bf2/02000006pdb34.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/c63b1c80abec4aa7951744d2b23d347fbe00/d9/6ceeba8b/02000017pdb24.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/c68f31001b42441388bbae1d4d126fd3be00/13/3acaa32d/02000014pdb30.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/c68f31001b42441388bbae1d4d126fd3be00/1a/3fd939d3/02000012pdb28.il" root0="FORCE_HIGHLIGHTING" />
@@ -326,6 +283,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/cb4dd40e9f034f25bdacaf7464e67697bc00/90/a4ca40dc/02000012pdb29.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/cb4dd40e9f034f25bdacaf7464e67697bc00/fb/1a0c1503/02000006pdb34.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/cd4ca20a7ca6475dbe159858c641ebcabe00/84/a1dff27f/0200001Epdb13.il" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/ceb60d8f22104acbb437af1dd62bc433c200/97/b10c0942/02000006pdb34.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/d10ca8e413d14e41a267bc98e940379e1c00/6e/ec599028/02000005pdb3.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/d121e3f07e5049f6bdc39cd1b9ed69d2b800/27/4aaaa906/02000007pdb30.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/d6280460462a4b7b8621488fc7f30c9bb000/38/bcdb67d4/02000008pdb27.il" root0="FORCE_HIGHLIGHTING" />
@@ -347,6 +305,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/e0e34dbccf5f40c8a432812fd94b0227bc00/15/6b751d09/0200001Apdb2.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/e0e34dbccf5f40c8a432812fd94b0227bc00/20/f16d5c8a/02000006pdb34.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/e0e34dbccf5f40c8a432812fd94b0227bc00/cc/f779bde8/0200001Epdb14.il" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/e20f73cc89cc4d2384de39c8dcaed0d8c200/41/94a8e61f/02000006pdb34.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/e228b489c98c41bca13b7d15f45e9915be00/85/535fcb1d/02000012pdb28.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/e54eadff7a0b4386912c844a255df6eabc00/5e/da8c92df/02000006pdb34.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/e54eadff7a0b4386912c844a255df6eabc00/fc/40d68ce4/02000017pdb24.il" root0="FORCE_HIGHLIGHTING" />
@@ -366,8 +325,10 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/ef8f5fc543f1400b842b80ac6860ca68c000/a8/fd4602f9/02000008pdb1.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/ef8f5fc543f1400b842b80ac6860ca68c000/f9/50f0475b/02000024pdb9.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/f33a2f75b65f48e9893173a834eaabb6b800/4f/f0a32c82/02000017pdb14.il" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/f4f320b23e974697ab6c1251e285eb4ec000/02/71cf2843/02000028pdb13.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/f4f320b23e974697ab6c1251e285eb4ec000/46/bf66566f/02000023pdb8.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/f4f320b23e974697ab6c1251e285eb4ec000/8c/965c5744/02000008pdb1.il" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/f4f320b23e974697ab6c1251e285eb4ec000/8d/e46a5b3a/02000026pdb11.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/f58291ea327b4bb99ec5943e658939cebe00/77/82bde925/02000012pdb28.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/f58291ea327b4bb99ec5943e658939cebe00/d9/0fbde9fc/02000017pdb24.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/f5e4f131c12742218e503a8a5789ab6cbe00/64/78ec2e21/02000017pdb24.il" root0="FORCE_HIGHLIGHTING" />
@@ -540,7 +501,7 @@
       <workItem from="1787490750753" duration="5504000" />
       <workItem from="1787533185704" duration="24337000" />
       <workItem from="1787615871496" duration="1089000" />
-      <workItem from="1787639768389" duration="6845000" />
+      <workItem from="1787639768389" duration="10409000" />
     </task>
     <servers />
   </component>

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Ride State
   m_EditorClassIdentifier: FsmSystem_runtime_assembly::_Shared.Systems.FsmSystem.Runtime.StateSO
   stateName: Ride
-  className: JTH.Player.Board.FSM.States.BoardRideState, Assembly-CSharp
+  className: JTH.Vehicles.Board.FSM.States.BoardRideState, Assembly-CSharp
   assetIndex: 3
   stateParam: {fileID: 11400000, guid: 71ac29d4c05cdd843907412ca87e805b, type: 2}

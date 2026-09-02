@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Tuck State
   m_EditorClassIdentifier: FsmSystem_runtime_assembly::_Shared.Systems.FsmSystem.Runtime.StateSO
   stateName: Tuck
-  className: JTH.Player.Board.FSM.States.BoardTuckState, Assembly-CSharp
+  className: JTH.Vehicles.Board.FSM.States.BoardTuckState, Assembly-CSharp
   assetIndex: 4
   stateParam: {fileID: 11400000, guid: f4e1e80f52bac7d4fa5996252efa3235, type: 2}

@@ -96,9 +96,13 @@ namespace JTH.Vehicles.Board.Movement
             if (_jumpable.IsJumping == false && _groundChecker.IsGrounded)
             {
                 float frontVel = Vector3.Dot(rbCompo.linearVelocity, _owner.transform.forward);
-                if (Mathf.Abs(frontVel) >= boardMovementData.RotationThreshold)
+                if (Mathf.Abs(frontVel) >= boardMovementData.RotationThreshold || _driftable.DoDrift)
                 {
-                    float turnSpeed = _turnSpeed * (_driftable.DoDrift ? boardMovementData.DriftTurnSpeed : 1);
+                    float turnSpeed = _turnSpeed;
+                    if (_driftable.DoDrift)
+                        turnSpeed *= boardMovementData.DoDriftTurnSpeed;
+                    else if (_driftable.IsDrifting)
+                        turnSpeed *= boardMovementData.DriftTurnSpeed;
                     Quaternion yaw = Quaternion.AngleAxis(turnSpeed * Time.fixedDeltaTime, up);
                     rbCompo.MoveRotation(yaw * rbCompo.rotation);
                 }

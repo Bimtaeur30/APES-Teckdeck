@@ -2,6 +2,7 @@ using UnityEngine;
 
 namespace JTH.Test.Scripts
 {
+    [ExecuteAlways]
     public class TestCam : MonoBehaviour
     {
         [SerializeField] private float distance = 15f;
@@ -9,7 +10,9 @@ namespace JTH.Test.Scripts
         [SerializeField] private float angle;
         [SerializeField] private float yawSwitchAngle = 45f;
         [SerializeField] private float rollPerSideVel;
+        [SerializeField] private float maxRoll;
         [SerializeField] private Transform playerTrm;
+        [SerializeField] private Vector3 offset;
 
         private Rigidbody _playerRb;
         private float _yaw;
@@ -18,15 +21,31 @@ namespace JTH.Test.Scripts
         private void Awake()
         {
             Debug.Assert(playerTrm != null, "TestCam: playerTrm이 없습니다.");
-            Debug.Assert(decel != null && decel.Length > 0, "TestCam: decel 배열이 비어 있습니다.");
+            CachePlayerRb();
+        }
 
-            if (playerTrm != null)
-                _playerRb = playerTrm.GetComponent<Rigidbody>();
+        private void OnValidate()
+        {
+            CachePlayerRb();
+
+#if UNITY_EDITOR
+            if (Application.isPlaying == false)
+                UnityEditor.EditorApplication.QueuePlayerLoopUpdate();
+#endif
         }
 
         private void Update()
         {
-            if (playerTrm == null || decel == null || decel.Length == 0)
+            if (playerTrm == null)
+                return;
+
+            if (Application.isPlaying == false)
+            {
+                ApplyCamera(playerTrm.eulerAngles.y, GetRoll());
+                return;
+            }
+
+            if (decel == null || decel.Length == 0)
                 return;
 
             float targetYaw = playerTrm.eulerAngles.y;
@@ -39,24 +58,39 @@ namespace JTH.Test.Scripts
             float yawDelta = Mathf.Abs(Mathf.DeltaAngle(_yaw, targetYaw));
             int decelIndex = yawDelta > yawSwitchAngle && decel.Length > 1 ? 1 : 0;
             float decay = -decel[decelIndex];
-
+            Debug.Log(decelIndex);
             _yaw = Mathf.LerpAngle(
                 _yaw,
                 targetYaw,
                 1f - Mathf.Exp(decay * Time.deltaTime)
             );
 
-            float roll = 0f;
-            if (_playerRb != null)
-            {
-                float sideVel = Vector3.Dot(_playerRb.linearVelocity, playerTrm.right);
-                roll = sideVel * rollPerSideVel;
-            }
+            ApplyCamera(_yaw, GetRoll());
+        }
 
-            Quaternion posRot = Quaternion.Euler(angle, _yaw, 0f);
+        private void CachePlayerRb()
+        {
+            _playerRb = playerTrm != null ? playerTrm.GetComponent<Rigidbody>() : null;
+        }
+
+        private float GetRoll()
+        {
+            if (_playerRb == null)
+                CachePlayerRb();
+
+            if (_playerRb == null)
+                return 0f;
+
+            float sideVel = Vector3.Dot(_playerRb.linearVelocity, playerTrm.right);
+            return Mathf.Min(maxRoll, Mathf.Abs(sideVel * rollPerSideVel)) * (sideVel > 0 ? 1 : -1);
+        }
+
+        private void ApplyCamera(float yaw, float roll)
+        {
+            Quaternion posRot = Quaternion.Euler(angle, yaw, 0f);
             transform.SetPositionAndRotation(
-                playerTrm.position + posRot * (Vector3.back * distance),
-                Quaternion.Euler(angle, _yaw, roll)
+                playerTrm.position + posRot * (Vector3.back * distance) + offset,
+                Quaternion.Euler(angle, yaw, roll)
             );
         }
     }

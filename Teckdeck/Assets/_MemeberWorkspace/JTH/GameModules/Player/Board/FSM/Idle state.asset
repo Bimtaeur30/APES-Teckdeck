@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Idle state
   m_EditorClassIdentifier: FsmSystem_runtime_assembly::_Shared.Systems.FsmSystem.Runtime.StateSO
   stateName: Idle
-  className: JTH.Player.Board.FSM.States.BoardIdleState, Assembly-CSharp
+  className: JTH.Vehicles.Board.FSM.States.BoardIdleState, Assembly-CSharp
   assetIndex: 0
   stateParam: {fileID: 11400000, guid: 94a597ce80ebf314a9aab8d547379c18, type: 2}

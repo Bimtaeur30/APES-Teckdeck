@@ -6,8 +6,9 @@ namespace JTH.Vehicles.Board.Movement
     public class BoardMovementSO : ScriptableObject
     {
         [field: Header("Turn Settings")]
-        [field: SerializeField] public float DriftTurnSpeed { get; private set; } = 2f;
-        [field: SerializeField] public float MaxTurnSpeed { get; private set; } = 50f;
+        [field: SerializeField] public float DriftTurnSpeed { get; private set; } = 2.5f;
+        [field: SerializeField] public float DoDriftTurnSpeed { get; private set; } = 2f;
+        [field: SerializeField] public float MaxTurnSpeed { get; private set; } = 100f;
         [field: SerializeField] public float Decay { get; private set; } = 6.3f;
         [field: SerializeField] public float RotationThreshold { get; private set; } = 1f;
         [field: Header("Resistance")]

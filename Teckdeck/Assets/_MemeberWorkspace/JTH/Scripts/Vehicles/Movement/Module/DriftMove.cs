@@ -10,6 +10,7 @@ namespace JTH.Vehicles.Movement.Module
         [SerializeField] private Rigidbody rbCompo;
         
         public bool DoDrift { get; set; }
+        public bool IsDrifting { get; private set; }
         
         private bool CanDrift => _jumpable.IsJumping == false
                                  && _groundChecker.IsGrounded;
@@ -19,7 +20,6 @@ namespace JTH.Vehicles.Movement.Module
         private IGroundChecker _groundChecker;
         
         private float _driftStartTime;
-        private bool _driftThisFrame;
         
         public void Initialize(ModuleOwner owner)
         {
@@ -49,20 +49,20 @@ namespace JTH.Vehicles.Movement.Module
 
             // 드리프트가 켜져있었다면 MinDriftTime을 넘었을 때 CutAngle보다 작으면 false, 꺼져있었다면 드리프트를 할 수 있는 상태에서 
             //각도가 0 이상이면 true
-            bool driftLastFrame = _driftThisFrame;
+            bool driftLastFrame = IsDrifting;
             if ((driftLastFrame && (Time.time - _driftStartTime < movementData.MinDriftTime 
                                     || movementData.DriftCutAngle < absAngle
                                     || isTurning) && CanDrift)
-                || (DoDrift && driftLastFrame == false && CanDrift && absAngle > 0))
-                _driftThisFrame = true;
+                || (driftLastFrame == false && DoDrift  && CanDrift && absAngle > 0))
+                IsDrifting = true;
             else
-                _driftThisFrame = false;
+                IsDrifting = false;
             
-            if (driftLastFrame == false && _driftThisFrame)
+            if (driftLastFrame == false && IsDrifting)
                 _driftStartTime = Time.time;
 
             rbCompo.linearVelocity = forwardVel + vertical;
-            if (_driftThisFrame)
+            if (IsDrifting)
                 Drift(forwardVel.normalized, sideVel);
         }
         
