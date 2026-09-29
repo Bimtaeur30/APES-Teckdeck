@@ -65,7 +65,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Metallic_Texture:
-        m_Texture: {fileID: 2800000, guid: bfd887a03685a4ae5a0544ff6dc60dcd, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Metallic_Txture:
@@ -81,7 +81,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Side_Texture:
-        m_Texture: {fileID: 2800000, guid: 3caf7d008b0124c71a072740ac78c491, type: 3}
+        m_Texture: {fileID: 2800000, guid: dddf130f96654413e88fb786eb7395ba, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Sides_Texture:
@@ -89,7 +89,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Top_Texture:
-        m_Texture: {fileID: 2800000, guid: 3caf7d008b0124c71a072740ac78c491, type: 3}
+        m_Texture: {fileID: 2800000, guid: 5a64d6e2a2f3e47b5bd7fefb70dfad1d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -152,7 +152,7 @@ Material:
     - _Side_Offset: {r: 0, g: 0, b: 0, a: 0}
     - _Sides_Color: {r: 0.32941177, g: 0.34117648, b: 0.34901962, a: 0}
     - _Sides_Offset: {r: 0, g: 0, b: 0, a: 0}
-    - _Top_Color: {r: 0.8396226, g: 0.52829754, b: 0.0039604935, a: 1}
+    - _Top_Color: {r: 0.4339623, g: 0.4339623, b: 0.4339623, a: 1}
     - _Top_Offset: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

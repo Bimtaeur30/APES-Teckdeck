@@ -11,7 +11,78 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44da0101-9d20-4f5a-9088-489447dcff59" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/01_Scene/RepairShop_KTJ.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/01_Scene/RepairShop_KTJ.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Teckdeck/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Teckdeck/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Decimate/Grid Master/URP/Materials/GM-Grid-05-URP.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Decimate/Grid Master/URP/Materials/GM-Grid-05-URP.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/DOTweenSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/DOTweenSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/InputSystem.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/InputSystem/PlayerInputSO.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/Player/InputSystem/PlayerInputSO.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/01_Scene/RepairShop_KTJ.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/01_Scene/RepairShop_KTJ.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/01_Scene/Trick_KTJ.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/01_Scene/Trick_KTJ.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Events.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Events/RepairshopEvents.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Events/RepairshopEvents.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/System.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/System/RepairShop.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/System/RepairShop/Computer.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/System/RepairShop/Computer/VirtualMonitor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/System/RepairShop/Computer/VirtualMonitor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/System/RepairShop/Computer/WorldCanvasPixelDisplay.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/System/RepairShop/Computer/WorldCanvasPixelDisplay.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/System/RepairShop/Customizer.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/System/RepairShop/Customizer/Customizer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/System/RepairShop/Customizer/Customizer.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/System/RepairShop/RepairShop.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/System/RepairShop/RepairShop.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/System/RepairShop/View.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/System/RepairShop/View/IViewInteraction.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/System/RepairShop/View/IViewInteraction.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/System/RepairShop/View/ViewDefinition.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/System/RepairShop/View/ViewDefinition.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/System/RepairShop/View/ViewSwitchRequester.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/System/RepairShop/View/ViewSwitchRequester.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/System/RepairShop/View/ViewSwitcher.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/System/RepairShop/View/ViewSwitcher.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/UI.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/UI/Toggle.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/UI/Toggle/UIAlphaToggle.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/UI/Toggle/UIAlphaToggle.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/UI/Toggle/UIColorToggle.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/UI/Toggle/UIColorToggle.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/UI/Toggle/UIPointerEventRelay.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/UI/Toggle/UIPointerEventRelay.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/UI/Toggle/UISizeToggle.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/UI/Toggle/UISizeToggle.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/UI/Toggle/UIToggleComponent.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/UI/Toggle/UIToggleComponent.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/UI/Toggle/UITogglePlaybackCondition.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/UI/Toggle/UITogglePlaybackCondition.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/ComputerScreenPixel.renderTexture" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/ComputerScreenPixel.renderTexture" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/Material/BoardMat.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/Material/BoardMat.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/Material/ComputerMat.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/Material/ComputerMat.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/Material/HandMat.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/Material/HandMat.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/Material/ScreenMat.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/Material/ScreenMat.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/Material/SkateboardMat.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/Material/SkateboardMat.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/Material/TableMat.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/Material/TableMat.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/Material/Wall.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/Material/Wall.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/Material/Window.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/Material/Window.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/KTJ.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/KTJ.asmdef" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Shared/GameModules/Input/Controls.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Shared/GameModules/Input/Controls.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Shared/GameModules/Input/Controls.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Shared/GameModules/Input/Controls.inputactions" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,60 +102,60 @@
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
       <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0" />
-      <entry key="S5" value="1.0" />
-      <entry key="S10" value="1.0" />
-      <entry key="S30" value="1.0" />
-      <entry key="S60" value="1.000000000000116" />
-      <entry key="M2" value="1.0000009083662176" />
-      <entry key="M5" value="1.017784300533432" />
-      <entry key="M10" value="1.7762495606469035" />
-      <entry key="M15" value="4.113709190943111" />
-      <entry key="M30" value="14.397640897109094" />
-      <entry key="H1" value="34.45496072060416" />
-      <entry key="H2" value="86.9160887712861" />
-      <entry key="H4" value="181.51352217771912" />
-      <entry key="D1" value="379.312770408398" />
-      <entry key="W1" value="434.0501063459972" />
+      <entry key="MS500" value="1.000000000035117" />
+      <entry key="S2" value="1.00455140622833" />
+      <entry key="S5" value="1.2456115649908184" />
+      <entry key="S10" value="2.2170509961780462" />
+      <entry key="S30" value="7.423333534929566" />
+      <entry key="S60" value="12.425513699791932" />
+      <entry key="M2" value="17.573665660974346" />
+      <entry key="M5" value="24.97307790424253" />
+      <entry key="M10" value="31.03077617187169" />
+      <entry key="M15" value="34.55524472442812" />
+      <entry key="M30" value="42.78766199455267" />
+      <entry key="H1" value="60.08854774959321" />
+      <entry key="H2" value="106.72513193909924" />
+      <entry key="H4" value="199.2895250695652" />
+      <entry key="D1" value="416.3172740377266" />
+      <entry key="W1" value="480.2361084378495" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="0.0" />
-      <entry key="S2" value="0.0" />
-      <entry key="S5" value="4.24591007473418E-169" />
-      <entry key="S10" value="1.398992191504174E-84" />
-      <entry key="S30" value="4.321857394174727E-28" />
-      <entry key="S60" value="7.080157250249887E-14" />
-      <entry key="M2" value="9.89702441411239E-7" />
-      <entry key="M5" value="0.02072252291132746" />
-      <entry key="M10" value="0.6435777105999332" />
-      <entry key="M15" value="2.1320455039122255" />
-      <entry key="M30" value="7.4118273762130835" />
-      <entry key="H1" value="15.70925726410872" />
-      <entry key="H2" value="33.07716180253193" />
-      <entry key="H4" value="62.20135975922615" />
-      <entry key="D1" value="121.68508414559314" />
-      <entry key="W1" value="138.03161791497357" />
+      <entry key="MS100" value="2.1886357588386982E-83" />
+      <entry key="MS500" value="2.937884365991995E-17" />
+      <entry key="S2" value="7.362218025292406E-5" />
+      <entry key="S5" value="0.022223040094410482" />
+      <entry key="S10" value="0.1490739437167448" />
+      <entry key="S30" value="0.534717466153998" />
+      <entry key="S60" value="0.9145278875326025" />
+      <entry key="M2" value="2.081362258175378" />
+      <entry key="M5" value="4.961704226267418" />
+      <entry key="M10" value="7.203850426704761" />
+      <entry key="M15" value="8.41550857783335" />
+      <entry key="M30" value="11.593779675171465" />
+      <entry key="H1" value="18.589701476346914" />
+      <entry key="H2" value="34.737694923413635" />
+      <entry key="H4" value="63.99503075700413" />
+      <entry key="D1" value="130.17871377178662" />
+      <entry key="W1" value="149.4576853021433" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.21763764082403103" />
-      <entry key="MS500" value="0.7371346086455506" />
-      <entry key="S2" value="0.9265880618903709" />
-      <entry key="S5" value="0.9699619103417348" />
-      <entry key="S10" value="0.9848664428955506" />
-      <entry key="S30" value="0.9949298176622132" />
-      <entry key="S60" value="0.9974616873156498" />
-      <entry key="M2" value="0.9987319256052377" />
-      <entry key="M5" value="1.0379111835709804" />
-      <entry key="M10" value="2.4179890156572657" />
-      <entry key="M15" value="6.241767161046848" />
-      <entry key="M30" value="21.802042819118086" />
-      <entry key="H1" value="50.1561525616162" />
-      <entry key="H2" value="119.98518064965906" />
-      <entry key="H4" value="243.70765580115358" />
-      <entry key="D1" value="500.99558411678004" />
-      <entry key="W1" value="572.0813582664961" />
+      <entry key="MS100" value="0.9012504626108302" />
+      <entry key="MS500" value="0.979420297598814" />
+      <entry key="S2" value="0.9979074439681002" />
+      <entry key="S5" value="1.2206332137192044" />
+      <entry key="S10" value="2.259522643069803" />
+      <entry key="S30" value="7.845677954446304" />
+      <entry key="S60" value="13.253459450213422" />
+      <entry key="M2" value="19.592654826164882" />
+      <entry key="M5" value="29.89797567724521" />
+      <entry key="M10" value="38.2120061884572" />
+      <entry key="M15" value="42.95396054710889" />
+      <entry key="M30" value="54.370106263051746" />
+      <entry key="H1" value="78.66896149995237" />
+      <entry key="H2" value="141.45431226320352" />
+      <entry key="H4" value="263.2770214635219" />
+      <entry key="D1" value="546.493531343602" />
+      <entry key="W1" value="629.6933932714751" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
