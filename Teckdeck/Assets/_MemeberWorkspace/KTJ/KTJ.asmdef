@@ -5,7 +5,9 @@
         "CoreSystem_assembly",
         "Unity.Cinemachine",
         "Unity.InputSystem",
-        "DOTweenModules"
+        "DOTweenModules",
+        "ModuleSystem",
+        "InputSystem_assembly"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
