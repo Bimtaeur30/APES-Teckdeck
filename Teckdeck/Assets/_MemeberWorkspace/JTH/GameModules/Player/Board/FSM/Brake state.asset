@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Brake state
   m_EditorClassIdentifier: FsmSystem_runtime_assembly::_Shared.Systems.FsmSystem.Runtime.StateSO
   stateName: Brake
-  className: JTH.Vehicles.Board.FSM.States.BoardBrakeState, Assembly-CSharp
+  className: JTH.Player.Board.FSM.States.BoardBrakeState, Assembly-CSharp
   assetIndex: 5
   stateParam: {fileID: 11400000, guid: fbfccdce628746042b61ce9b1a918ed7, type: 2}

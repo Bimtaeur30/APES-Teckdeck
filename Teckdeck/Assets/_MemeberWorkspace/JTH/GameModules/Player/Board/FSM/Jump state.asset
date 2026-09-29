@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Jump state
   m_EditorClassIdentifier: FsmSystem_runtime_assembly::_Shared.Systems.FsmSystem.Runtime.StateSO
   stateName: Jump
-  className: JTH.Vehicles.Board.FSM.States.BoardJumpState, Assembly-CSharp
+  className: JTH.Player.Board.FSM.States.BoardJumpState, Assembly-CSharp
   assetIndex: 1
   stateParam: {fileID: 11400000, guid: d7b41d7ba3ccc92418c793864975eb74, type: 2}

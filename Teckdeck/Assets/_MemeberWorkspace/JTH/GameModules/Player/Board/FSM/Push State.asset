@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Push State
   m_EditorClassIdentifier: FsmSystem_runtime_assembly::_Shared.Systems.FsmSystem.Runtime.StateSO
   stateName: Push
-  className: JTH.Vehicles.Board.FSM.States.BoardPushState, Assembly-CSharp
+  className: JTH.Player.Board.FSM.States.BoardPushState, Assembly-CSharp
   assetIndex: 2
   stateParam: {fileID: 0}

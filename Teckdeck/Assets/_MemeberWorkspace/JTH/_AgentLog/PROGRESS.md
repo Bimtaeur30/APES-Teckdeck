@@ -4,13 +4,13 @@
 
 - 이름/이니셜: `JTH`
 - 작업폴더: `Assets/_MemeberWorkspace/JTH/`
-- 마지막 갱신: `2026-08-25 19:55 (KST)`
+- 마지막 갱신: `2026-08-25 19:45 (KST)`
 
 ## 현재 요청
 
-- 요청 요약: TestCam 에디터에서 프로퍼티 변경 즉시 반영
-- 승인된 범위: PHASE-021
-- 범위 밖 항목: 씬 값 수정, Play Mode Exp 동작 변경, `_Shared`
+- 요청 요약: AbstractBoardState 삭제 후 보드 상태를 AbstractVehicleState + 필드/GetModule로 고침
+- 승인된 범위: PHASE-020
+- 범위 밖 항목: 상태 전환 로직, 씬/프리팹, `_Shared`
 
 ## Phase 현황
 
@@ -36,18 +36,17 @@
 | 018 | 완료 | SoundClipSO loop 시 random blend 필드 | `phases/PHASE-018.md` |
 | 019 | 완료 | TestCam 보드 뒤 Exp 추적 | `phases/PHASE-019.md` |
 | 020 | 완료 | Board 상태 AbstractVehicleState 이전 | `phases/PHASE-020.md` |
-| 021 | 완료 | TestCam 에디터 즉시 반영 | `phases/PHASE-021.md` |
 
 ## 현재 재개 지점
 
-- 마지막 완료 작업: PHASE-021
+- 마지막 완료 작업: PHASE-020
 - 다음에 할 작업: 없음
 - 사용자 승인이 필요한 사항: 없음
-- 관련 파일: `Assets/_MemeberWorkspace/JTH/Test/Scripts/TestCam.cs`
-- 알려진 문제 또는 위험: 에디트 모드에서 카메라를 손으로 옮기면 Update가 다시 붙임
+- 관련 파일: `Assets/_MemeberWorkspace/JTH/Scripts/Vehicles/Board/FSM/States/`
+- 알려진 문제 또는 위험: `BoardController`는 모듈이 아니라 owner 캐스트. 보드 상태가 아닌 컨트롤러에서 생성되면 실패
 
 ## 검증 요약
 
-- 수행한 검증: `validate_script` 에러 0, 콘솔 TestCam 에러 0
-- 통과 여부: 컴파일 통과. 인스펙터 드래그 체감은 사용자 확인
-- 아직 검증하지 못한 항목: 에디터에서 Distance/Angle 드래그
+- 수행한 검증: 6개 상태 `validate_script` 에러 0, Unity 컴파일 후 콘솔 `AbstractBoardState` 에러 0
+- 통과 여부: 컴파일 통과
+- 아직 검증하지 못한 항목: Play Mode 상태 전환 체감
