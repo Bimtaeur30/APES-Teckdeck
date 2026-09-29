@@ -8,6 +8,7 @@ namespace _Shared.Systems.FsmSystem.Runtime
     public class StateMachine
     {
         public AbstractState CurrentState { get; private set; }
+        public int CurrentStateIdx { get; private set; }
 
         private Dictionary<int, AbstractState> _stateDict;
 
@@ -33,6 +34,7 @@ namespace _Shared.Systems.FsmSystem.Runtime
             Debug.Assert(newState != null, $"찾고자하는 인덱스의 상태가 없습니다. : {newStateIndex}");
             
             CurrentState = newState;
+            CurrentStateIdx = newStateIndex;
             CurrentState.Enter(transitionDuration);
         }
         

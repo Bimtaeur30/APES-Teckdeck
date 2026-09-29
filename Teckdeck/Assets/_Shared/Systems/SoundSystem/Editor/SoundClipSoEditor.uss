@@ -30,3 +30,7 @@
     width: 90px;
     height: 24px;
 }
+
+#random-blend-times {
+    margin-left: 16px;
+}

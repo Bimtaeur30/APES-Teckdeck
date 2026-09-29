@@ -4,13 +4,13 @@
 
 - 이름/이니셜: `JTH`
 - 작업폴더: `Assets/_MemeberWorkspace/JTH/`
-- 마지막 갱신: `2026-08-16 06:45 (KST)`
+- 마지막 갱신: `2026-08-25 19:45 (KST)`
 
 ## 현재 요청
 
-- 요청 요약: Brake를 IBrakable 모듈로 분리. 수정분 재리뷰. Idle 제동은 제외.
-- 승인된 범위: PHASE-012
-- 범위 밖 항목: `_Shared`, Idle→Brake
+- 요청 요약: AbstractBoardState 삭제 후 보드 상태를 AbstractVehicleState + 필드/GetModule로 고침
+- 승인된 범위: PHASE-020
+- 범위 밖 항목: 상태 전환 로직, 씬/프리팹, `_Shared`
 
 ## Phase 현황
 
@@ -28,17 +28,25 @@
 | 010 | 완료 | Break에 속도 임계 | `phases/PHASE-010.md` |
 | 011 | 완료 | Push를 BoardPushMove로 분리 | `phases/PHASE-011.md` |
 | 012 | 완료 | Brake를 BoardBrakeMove로 분리 | `phases/PHASE-012.md` |
+| 013 | 완료 | Space 홀드 점프/드리프트 뼈대 | `phases/PHASE-013.md` |
+| 014 | 완료 | 회전 적용 앞속도 임계 | `phases/PHASE-014.md` |
+| 015 | 완료 | 축 회전 테스트 컴포넌트 | `phases/PHASE-015.md` |
+| 016 | 완료 | 축별 월드/로컬 회전 | `phases/PHASE-016.md` |
+| 017 | 완료 | 이동 SO 모듈별 분리 | `phases/PHASE-017.md` |
+| 018 | 완료 | SoundClipSO loop 시 random blend 필드 | `phases/PHASE-018.md` |
+| 019 | 완료 | TestCam 보드 뒤 Exp 추적 | `phases/PHASE-019.md` |
+| 020 | 완료 | Board 상태 AbstractVehicleState 이전 | `phases/PHASE-020.md` |
 
 ## 현재 재개 지점
 
-- 마지막 완료 작업: PHASE-012
-- 다음에 할 작업: 씬 BrakeMove 슬롯 확인, Play Mode
+- 마지막 완료 작업: PHASE-020
+- 다음에 할 작업: 없음
 - 사용자 승인이 필요한 사항: 없음
-- 관련 파일: `IBrakable`, `BoardBrakeMove`, `BoardMovement`, FSM
-- 알려진 문제 또는 위험: SpeedBand가 앞속도만 봐서 후진은 Stopped로 떨어질 수 있음.
+- 관련 파일: `Assets/_MemeberWorkspace/JTH/Scripts/Vehicles/Board/FSM/States/`
+- 알려진 문제 또는 위험: `BoardController`는 모듈이 아니라 owner 캐스트. 보드 상태가 아닌 컨트롤러에서 생성되면 실패
 
 ## 검증 요약
 
-- 수행한 검증: 코드/SO 필드 추가
-- 통과 여부: 구현 완료. Play Mode는 사용자 튜닝
-- 아직 검증하지 못한 항목: Play Mode
+- 수행한 검증: 6개 상태 `validate_script` 에러 0, Unity 컴파일 후 콘솔 `AbstractBoardState` 에러 0
+- 통과 여부: 컴파일 통과
+- 아직 검증하지 못한 항목: Play Mode 상태 전환 체감
