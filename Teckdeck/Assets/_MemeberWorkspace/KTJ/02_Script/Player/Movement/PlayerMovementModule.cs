@@ -8,54 +8,70 @@ public class PlayerMovementModule : MonoBehaviour, IModule, IPlayerMovementModul
     [SerializeField] private float overlapSphereRadius = 5f;
     [SerializeField] private float jumpForce = 10f;
     
-    [SerializeField] private bool IsWall = false;
     private readonly Collider[] colliders = new Collider[8];
     private Player _player;
-    private Rigidbody _rigidbody;
+    private MovementVector _currentMovementVector;
     
+    private bool isWall = false;
+    private bool isJumping;
+    private bool leftStartWall;
     public void Initialize(ModuleOwner owner)
     {
         _player = owner as Player;
-        _rigidbody = _player.Rigidbody;
     }
 
     private void Update()
     {
         CheckIsWall();
+        Jump();
     }
 
-    public void JumpTo(Vector3 dir)
+    private void Jump()
     {
-        if (!IsWall) return;
-        _rigidbody.AddForce(dir * jumpForce, ForceMode.Impulse);
+        if (!isJumping) return;
+
+        if (!isWall)
+            leftStartWall = true;
+
+        if (leftStartWall && isWall)
+        {
+            isJumping = false;
+            OnWallEnter();
+            return;
+        }
+
+        _player.transform.position +=
+            _currentMovementVector.Direction * (jumpForce * Time.deltaTime);
     }
 
-    private void OnWallEnter()
+    public void JumpStart(MovementVector vector)
     {
-        _rigidbody.linearVelocity = Vector3.zero;
+        if (!isWall || isJumping) return;
+
+        _currentMovementVector = vector;
+        leftStartWall = false;
+        isJumping = true;
     }
+
+    private void OnWallEnter(){}
 
     private void CheckIsWall()
     {
         if (Physics.OverlapSphereNonAlloc(transform.position, overlapSphereRadius, colliders , wallLayer) > 0)
         {
-            if (!IsWall)
+            if (!isWall)
                 OnWallEnter();
-            IsWall = true;
+            isWall = true;
         }
         else
         {
-            IsWall = false;
+            isWall = false;
         }
     }
 
     private void OnDrawGizmos()
     {
-        if (IsWall)
-            Gizmos.color = Color.green;
-        else
-            Gizmos.color = Color.red;
-
+        Gizmos.color = isWall ? Color.green : Color.red;
         Gizmos.DrawWireSphere(transform.position, overlapSphereRadius);
     }
 }

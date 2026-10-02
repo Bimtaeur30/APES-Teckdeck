@@ -2,5 +2,5 @@
 
 public interface IPlayerMovementModule
 {
-    void JumpTo(Vector3 dir);
+    void JumpStart(MovementVector vector);
 }

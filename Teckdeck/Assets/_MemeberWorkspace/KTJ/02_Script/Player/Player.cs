@@ -10,13 +10,14 @@ using UnityEngine;
 - 무브먼트 모듈(점프, 이동)
 - 헬스 모듈(체력관리)
 */
+
 public class Player : ModuleOwner
 {
-    [field:SerializeField] public PlayerInputSO PlayerInputSO { get; private set; }
-    [field:SerializeField] public Rigidbody Rigidbody { get; private set; }
+    [field: SerializeField] public PlayerInputSO PlayerInputSO { get; private set; }
     [SerializeField] private LineRenderer lineRenderer;
     private IPlayerMovementModule _playerMovementModule;
-    
+    private Vector3 wallNormal;
+
     protected override void InitializeModules()
     {
         base.InitializeModules();
@@ -32,12 +33,13 @@ public class Player : ModuleOwner
 
     private void Update()
     {
-        Vector3 dir = GetMouseDirection();
-        if (Physics.Raycast(transform.position, dir, out RaycastHit hit, 100f))
+        MovementVector vector;
+        bool getMouseMovement = TryGetMouseMovement(out vector);
+        if (Physics.Raycast(transform.position, vector.Direction, out RaycastHit hit, 100f) && IsEnableJumpAngle(vector.Direction))
         {
             float distance = hit.distance;
             Vector3 hitPoint = hit.point;
-            
+
             // 여기에 라인랜더러로 거리 미리보기 표시하기.
             lineRenderer.positionCount = 2;
             lineRenderer.SetPosition(0, hitPoint);
@@ -49,26 +51,57 @@ public class Player : ModuleOwner
         }
     }
 
-    private void HandleOnJumpKeyPressed()
+    private bool IsEnableJumpAngle(Vector3 direction)
     {
-        Vector3 dir = GetMouseDirection();
-        _playerMovementModule.JumpTo(dir);
+        // 벽 노말과 점프하고자 하는 방향을 내적해서 
+        bool isWithin90 = Vector3.Dot(wallNormal.normalized, direction.normalized) >= 0f;
+        return isWithin90;
     }
 
-    private Vector3 GetMouseDirection()
+    private void HandleOnJumpKeyPressed()
+    {
+        MovementVector vector;
+        bool getMouseMovement = TryGetMouseMovement(out vector);
+        if (IsEnableJumpAngle(vector.Direction))
+        {
+            _playerMovementModule.JumpStart(vector);
+        }
+    }
+
+    private bool TryGetMouseMovement(out MovementVector movement)
     {
         Vector2 screenMousePos = PlayerInputSO.GetMouseScreenPosition();
         Ray ray = Camera.main.ScreenPointToRay(screenMousePos);
         Plane plane = new Plane(Vector3.up, transform.position);
 
-        if (plane.Raycast(ray, out float distance))
+        if (!plane.Raycast(ray, out float rayDistance))
         {
-            Vector3 mouseWorldPos = ray.GetPoint(distance); // GetPoint는 앞에서 구한 거리만큼 광선을 따라 이동해 실제 교차점의 월드 좌표를 구한다.
-            mouseWorldPos.y = transform.position.y;
-            return (mouseWorldPos - transform.position).normalized;
+            movement = default; 
+            return false;
         }
 
-        return Vector3.zero;
+        Vector3 mouseWorldPos = ray.GetPoint(rayDistance);
+        mouseWorldPos.y = transform.position.y;
+
+        Vector3 offset = mouseWorldPos - transform.position;
+        movement = new MovementVector(offset.normalized, offset.magnitude);
+        return true;
+    }
+
+    private void OnCollisionStay(Collision other)
+    {
+        bool didFindWall = false;
+        for (int i = 0; i < other.contactCount; i++)
+        {
+            Vector3 normal = other.GetContact(i).normal;
+
+            if (!didFindWall)
+                if (Mathf.Abs(Vector3.Dot(normal, Vector3.up)) < 0.3f)
+                {
+                    wallNormal = normal;
+                    didFindWall = true;
+                }
+        }
     }
 
     private void HandleOnMovementChanged(Vector2 obj)
