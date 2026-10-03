@@ -291,7 +291,6 @@ MonoBehaviour:
     m_Bits: 256
   overlapSphereRadius: 0.51
   jumpForce: 20
-  isWall: 0
 --- !u!1 &817418921
 GameObject:
   m_ObjectHideFlags: 0
@@ -763,6 +762,7 @@ GameObject:
   - component: {fileID: 1108822837}
   - component: {fileID: 1108822841}
   - component: {fileID: 1108822842}
+  - component: {fileID: 1108822843}
   m_Layer: 0
   m_Name: Monkey
   m_TagString: Untagged
@@ -877,7 +877,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4531d530ed223d44fb7190b43f3c3ffa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: KTJ::Player
-  <PlayerInputSO>k__BackingField: {fileID: 11400000, guid: 648d02e4091224748a57cf8d2da891fc, type: 2}
+  <PlayerInputSO>k__BackingField: {fileID: 11400000, guid: 76207adeafa6b8d4b954d0bc50f5ffe6, type: 2}
   lineRenderer: {fileID: 1108822842}
 --- !u!120 &1108822842
 LineRenderer:
@@ -987,6 +987,33 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
+--- !u!54 &1108822843
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1108822836}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &1134736576
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -22,6 +22,7 @@ public class Player : ModuleOwner
     {
         base.InitializeModules();
         _playerMovementModule = GetModule<IPlayerMovementModule>();
+        _playerMovementModule.Configure(transform, GetComponent<SphereCollider>());
     }
 
     protected override void Awake()
@@ -35,7 +36,7 @@ public class Player : ModuleOwner
     {
         MovementVector vector;
         bool getMouseMovement = TryGetMouseMovement(out vector);
-        if (Physics.Raycast(transform.position, vector.Direction, out RaycastHit hit, 100f) && IsEnableJumpAngle(vector.Direction))
+        if (getMouseMovement && Physics.Raycast(transform.position, vector.Direction, out RaycastHit hit, 100f) && IsEnableJumpAngle(vector.Direction))
         {
             float distance = hit.distance;
             Vector3 hitPoint = hit.point;
@@ -54,7 +55,7 @@ public class Player : ModuleOwner
     private bool IsEnableJumpAngle(Vector3 direction)
     {
         // 벽 노말과 점프하고자 하는 방향을 내적해서 
-        bool isWithin90 = Vector3.Dot(wallNormal.normalized, direction.normalized) >= 0f;
+        bool isWithin90 = Vector3.Dot(wallNormal.normalized, direction.normalized) > 0f;
         return isWithin90;
     }
 
@@ -62,7 +63,7 @@ public class Player : ModuleOwner
     {
         MovementVector vector;
         bool getMouseMovement = TryGetMouseMovement(out vector);
-        if (IsEnableJumpAngle(vector.Direction))
+        if (IsEnableJumpAngle(vector.Direction) && getMouseMovement)
         {
             _playerMovementModule.JumpStart(vector);
         }
@@ -90,17 +91,20 @@ public class Player : ModuleOwner
 
     private void OnCollisionStay(Collision other)
     {
-        bool didFindWall = false;
-        for (int i = 0; i < other.contactCount; i++)
+        if (other.gameObject.layer == LayerMask.NameToLayer("Wall"))
         {
-            Vector3 normal = other.GetContact(i).normal;
+            bool didFindWall = false;
+            for (int i = 0; i < other.contactCount; i++)
+            {
+                Vector3 normal = other.GetContact(i).normal;
 
-            if (!didFindWall)
-                if (Mathf.Abs(Vector3.Dot(normal, Vector3.up)) < 0.3f)
-                {
-                    wallNormal = normal;
-                    didFindWall = true;
-                }
+                if (!didFindWall)
+                    if (Mathf.Abs(Vector3.Dot(normal, Vector3.up)) < 0.3f)
+                    {
+                        wallNormal = normal;
+                        didFindWall = true;
+                    }
+            }
         }
     }
 

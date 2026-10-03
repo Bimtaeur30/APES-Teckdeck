@@ -9,39 +9,73 @@ public class PlayerMovementModule : MonoBehaviour, IModule, IPlayerMovementModul
     [SerializeField] private float jumpForce = 10f;
     
     private readonly Collider[] colliders = new Collider[8];
-    private Player _player;
+    private Transform _body;
+    private SphereCollider _bodyCollider;
     private MovementVector _currentMovementVector;
     
     private bool isWall = false;
     private bool isJumping;
-    private bool leftStartWall;
+
     public void Initialize(ModuleOwner owner)
     {
-        _player = owner as Player;
+        // ModuleOwner의 공통 초기화 후 Player가 Configure에서 필요한 참조를 전달한다.
+    }
+
+    public void Configure(Transform body, SphereCollider bodyCollider)
+    {
+        if (body == null) throw new ArgumentNullException(nameof(body));
+        if (bodyCollider == null) throw new ArgumentNullException(nameof(bodyCollider));
+
+        _body = body;
+        _bodyCollider = bodyCollider;
     }
 
     private void Update()
     {
         CheckIsWall();
-        Jump();
+        JumpUpdate();
     }
 
-    private void Jump()
+    private void JumpUpdate()
     {
         if (!isJumping) return;
 
-        if (!isWall)
-            leftStartWall = true;
+        Vector3 movement = _currentMovementVector.Direction * (jumpForce * Time.deltaTime);
+        float distance = movement.magnitude;
+        if (distance <= 0f) return;
 
-        if (leftStartWall && isWall)
+        Vector3 direction = movement / distance;
+        Vector3 center = _bodyCollider.transform.TransformPoint(_bodyCollider.center);
+        Vector3 scale = _bodyCollider.transform.lossyScale;
+        float radius = _bodyCollider.radius * Mathf.Max(
+            Mathf.Abs(scale.x), Mathf.Max(Mathf.Abs(scale.y), Mathf.Abs(scale.z)));
+
+        float allowedDistance = distance;
+        bool wallAhead = false;
+
+        // SphereCast는 시작 위치에서 이미 겹친 가까운 벽을 놓칠 수 있다.
+        if (Physics.Raycast(center, direction, out RaycastHit rayHit,
+                distance + radius, wallLayer, QueryTriggerInteraction.Ignore))
         {
-            isJumping = false;
-            OnWallEnter();
-            return;
+            allowedDistance = Mathf.Min(allowedDistance,
+                Mathf.Max(0f, rayHit.distance - radius));
+            wallAhead = true;
         }
 
-        _player.transform.position +=
-            _currentMovementVector.Direction * (jumpForce * Time.deltaTime);
+        if (Physics.SphereCast(center, radius, direction, out RaycastHit sphereHit,
+                distance, wallLayer, QueryTriggerInteraction.Ignore))
+        {
+            allowedDistance = Mathf.Min(allowedDistance,
+                Mathf.Max(0f, sphereHit.distance));
+            wallAhead = true;
+        }
+
+        _body.position += direction * allowedDistance;
+
+        if (!wallAhead) return;
+
+        isJumping = false;
+        OnWallEnter();
     }
 
     public void JumpStart(MovementVector vector)
@@ -49,7 +83,6 @@ public class PlayerMovementModule : MonoBehaviour, IModule, IPlayerMovementModul
         if (!isWall || isJumping) return;
 
         _currentMovementVector = vector;
-        leftStartWall = false;
         isJumping = true;
     }
 
@@ -57,7 +90,8 @@ public class PlayerMovementModule : MonoBehaviour, IModule, IPlayerMovementModul
 
     private void CheckIsWall()
     {
-        if (Physics.OverlapSphereNonAlloc(transform.position, overlapSphereRadius, colliders , wallLayer) > 0)
+        Vector3 center = _bodyCollider.transform.TransformPoint(_bodyCollider.center);
+        if (Physics.OverlapSphereNonAlloc(center, overlapSphereRadius, colliders , wallLayer) > 0)
         {
             if (!isWall)
                 OnWallEnter();
