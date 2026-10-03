@@ -10,7 +10,22 @@
     <configurations />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="44da0101-9d20-4f5a-9088-489447dcff59" name="변경" comment="" />
+    <list default="true" id="44da0101-9d20-4f5a-9088-489447dcff59" name="변경" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Teckdeck/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Teckdeck/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/01_Scene/PlayerTestScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/01_Scene/PlayerTestScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/FSM/IdleState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/FSM/IdleState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/FSM/JumpState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/FSM/JumpState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/FSM/WalkState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/FSM/WalkState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/Movement/IPlayerMovementModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/Movement/IPlayerMovementModule.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/Movement/PlayerMovementModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/Movement/PlayerMovementModule.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/03_Library/State list data.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/03_Library/State list data.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/_AgentLog/PROGRESS.md" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/_AgentLog/PROGRESS.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Shared/Systems/FsmSystem/Runtime/AbstractState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Shared/Systems/FsmSystem/Runtime/AbstractState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Shared/Systems/FsmSystem/Runtime/FsmSystem_runtime_assembly.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Shared/Systems/FsmSystem/Runtime/FsmSystem_runtime_assembly.asmdef" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Shared/Systems/FsmSystem/Runtime/StateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Shared/Systems/FsmSystem/Runtime/StateMachine.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,6 +36,8 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/dc764b59c049482b93bebc78a7e33a04212600/e1/246a2425/Gizmos.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/FSM/IStateTransition.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@191c0d7e3b69/Runtime/VisualScripting.State/IStateTransition.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="McpProjectServerCommands">
     <commands />
@@ -28,62 +45,65 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="7.91527235272779E-158" />
-      <entry key="MS500" value="3.7992846434553045E-32" />
-      <entry key="S2" value="1.5006213869271583E-8" />
-      <entry key="S5" value="0.001219681559510462" />
-      <entry key="S10" value="0.07810924979700312" />
-      <entry key="S30" value="1.878147156606054" />
-      <entry key="S60" value="5.858261946398755" />
-      <entry key="M2" value="13.561654434208695" />
-      <entry key="M5" value="26.49023074775795" />
-      <entry key="M10" value="38.798280306521455" />
-      <entry key="M15" value="51.78755553601349" />
-      <entry key="M30" value="93.72211575502928" />
-      <entry key="H1" value="159.99633758282593" />
-      <entry key="H2" value="251.61080763981718" />
-      <entry key="H4" value="388.98123589603927" />
-      <entry key="D1" value="800.2292462604635" />
-      <entry key="W1" value="955.6078208443773" />
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="3.3227684315382697E-158" />
+      <entry key="S2" value="6.858796856387226E-40" />
+      <entry key="S5" value="4.218362985171011E-16" />
+      <entry key="S10" value="4.4831953653194535E-8" />
+      <entry key="S30" value="0.014727651042128106" />
+      <entry key="S60" value="0.4225318282585979" />
+      <entry key="M2" value="2.383864294543092" />
+      <entry key="M5" value="6.8616143667997465" />
+      <entry key="M10" value="9.796452372679113" />
+      <entry key="M15" value="11.117881016872065" />
+      <entry key="M30" value="15.53036554557014" />
+      <entry key="H1" value="36.88187810484133" />
+      <entry key="H2" value="89.32705886751424" />
+      <entry key="H4" value="187.84283580011603" />
+      <entry key="D1" value="792.3454510601599" />
+      <entry key="W1" value="1175.4477093122414" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0000000196622" />
-      <entry key="S2" value="1.01184153597901" />
-      <entry key="S5" value="1.1699132785350115" />
-      <entry key="S10" value="1.4516194404026064" />
-      <entry key="S30" value="3.0394687563868747" />
-      <entry key="S60" value="5.917130092658096" />
-      <entry key="M2" value="10.103395554596766" />
-      <entry key="M5" value="15.528890200587925" />
-      <entry key="M10" value="20.51642232287916" />
-      <entry key="M15" value="26.129653765036586" />
-      <entry key="M30" value="46.666277778801444" />
-      <entry key="H1" value="82.30421883159168" />
-      <entry key="H2" value="129.1866106199403" />
-      <entry key="H4" value="188.87312345092235" />
-      <entry key="D1" value="338.8748975853107" />
-      <entry key="W1" value="391.77243985424366" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.0000000000000073" />
+      <entry key="S5" value="1.0000022249432974" />
+      <entry key="S10" value="1.001491643582515" />
+      <entry key="S30" value="1.1192921388302286" />
+      <entry key="S60" value="1.4591047617510071" />
+      <entry key="M2" value="2.1818164712274255" />
+      <entry key="M5" value="3.3798996307505074" />
+      <entry key="M10" value="4.0715822516702005" />
+      <entry key="M15" value="4.377165087414445" />
+      <entry key="M30" value="5.604642618077823" />
+      <entry key="H1" value="12.062705988923602" />
+      <entry key="H2" value="29.806858488240188" />
+      <entry key="H4" value="70.01762843571724" />
+      <entry key="D1" value="321.17250536207536" />
+      <entry key="W1" value="471.10015618954844" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.004245058056742414" />
-      <entry key="MS500" value="0.33541056222218896" />
-      <entry key="S2" value="0.7698184141044644" />
-      <entry key="S5" value="1.0484773565965593" />
-      <entry key="S10" value="1.445469119953894" />
-      <entry key="S30" value="4.8202212396787605" />
-      <entry key="S60" value="11.665747742979574" />
-      <entry key="M2" value="23.57016714670709" />
-      <entry key="M5" value="41.96154638210045" />
-      <entry key="M10" value="59.27534175940167" />
-      <entry key="M15" value="77.88211377714477" />
-      <entry key="M30" value="140.35434625449173" />
-      <entry key="H1" value="242.2692187306405" />
-      <entry key="H2" value="380.7720598296379" />
-      <entry key="H4" value="577.8352523150735" />
-      <entry key="D1" value="1139.098221708382" />
-      <entry key="W1" value="1347.3792768343437" />
+      <entry key="MS100" value="1.0193944328959577E-4" />
+      <entry key="MS500" value="0.15909936690949283" />
+      <entry key="S2" value="0.6315636309229037" />
+      <entry key="S5" value="0.8320851570604336" />
+      <entry key="S10" value="0.913520866273521" />
+      <entry key="S30" value="1.0992906007424794" />
+      <entry key="S60" value="1.8544088443830002" />
+      <entry key="M2" value="4.536290678628874" />
+      <entry key="M5" value="10.216671720012686" />
+      <entry key="M10" value="13.851444573523876" />
+      <entry key="M15" value="15.482757791606435" />
+      <entry key="M30" value="21.12723018381429" />
+      <entry key="H1" value="48.937543068477225" />
+      <entry key="H2" value="119.12647406755025" />
+      <entry key="H4" value="257.85253372772524" />
+      <entry key="D1" value="1113.5122351214613" />
+      <entry key="W1" value="1646.5466687237442" />
     </decayedShown>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4

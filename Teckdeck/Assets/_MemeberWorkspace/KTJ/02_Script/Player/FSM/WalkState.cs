@@ -1,16 +1,13 @@
+using _Shared.Systems.FsmSystem.Runtime;
+using ModuleSystem;
 using UnityEngine;
 
-public class WalkState : MonoBehaviour
+public class WalkState : AbstractState
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public WalkState(ModuleOwner owner, int stateClipHash = 0) : base(owner, stateClipHash)
     {
-        
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
+    
 }

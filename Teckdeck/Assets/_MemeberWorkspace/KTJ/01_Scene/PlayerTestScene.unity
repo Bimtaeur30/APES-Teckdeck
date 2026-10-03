@@ -879,7 +879,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: KTJ::Player
   <PlayerInputSO>k__BackingField: {fileID: 11400000, guid: 76207adeafa6b8d4b954d0bc50f5ffe6, type: 2}
-  lineRenderer: {fileID: 1108822842}
+  <LineRenderer>k__BackingField: {fileID: 1108822842}
+  <WallNormal>k__BackingField: {x: 0, y: 0, z: 0}
+  stateListSO: {fileID: 11400000, guid: 9647d7bb789194346a43ead31e50cd89, type: 2}
 --- !u!120 &1108822842
 LineRenderer:
   serializedVersion: 3

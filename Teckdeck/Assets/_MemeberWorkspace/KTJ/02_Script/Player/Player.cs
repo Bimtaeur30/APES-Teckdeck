@@ -1,5 +1,6 @@
 using System;
 using _MemeberWorkspace.KTJ._02_Script.Player.InputSystem;
+using _Shared.Systems.FsmSystem.Runtime;
 using ModuleSystem;
 using UnityEngine;
 
@@ -14,15 +15,17 @@ using UnityEngine;
 public class Player : ModuleOwner
 {
     [field: SerializeField] public PlayerInputSO PlayerInputSO { get; private set; }
-    [SerializeField] private LineRenderer lineRenderer;
-    private IPlayerMovementModule _playerMovementModule;
-    private Vector3 wallNormal;
+    [field:SerializeField] public LineRenderer LineRenderer { get; private set; }
+    [field:SerializeField] public StateMachine Fsm { get; private set; }
+    [field:SerializeField] public IPlayerMovementModule MovementModule { get; private set; }
+    [field:SerializeField] public Vector3 WallNormal { get; private set; }
+    [SerializeField] private StateListSO stateListSO;
 
     protected override void InitializeModules()
     {
         base.InitializeModules();
-        _playerMovementModule = GetModule<IPlayerMovementModule>();
-        _playerMovementModule.Configure(transform, GetComponent<SphereCollider>());
+        MovementModule = GetModule<IPlayerMovementModule>();
+        MovementModule.Configure(transform, GetComponent<SphereCollider>());
     }
 
     protected override void Awake()
@@ -30,65 +33,15 @@ public class Player : ModuleOwner
         base.Awake();
         PlayerInputSO.OnJumpKeyPressed += HandleOnJumpKeyPressed;
         PlayerInputSO.OnMovementChange += HandleOnMovementChanged;
+
+        Fsm = new StateMachine(this, stateListSO.states);
+        Fsm.ChangeState(0);
     }
 
     private void Update()
     {
-        MovementVector vector;
-        bool getMouseMovement = TryGetMouseMovement(out vector);
-        if (getMouseMovement && Physics.Raycast(transform.position, vector.Direction, out RaycastHit hit, 100f) && IsEnableJumpAngle(vector.Direction))
-        {
-            float distance = hit.distance;
-            Vector3 hitPoint = hit.point;
-
-            // 여기에 라인랜더러로 거리 미리보기 표시하기.
-            lineRenderer.positionCount = 2;
-            lineRenderer.SetPosition(0, hitPoint);
-            lineRenderer.SetPosition(1, transform.position);
-        }
-        else
-        {
-            lineRenderer.positionCount = 0;
-        }
+        Fsm.UpdateMachine();
     }
-
-    private bool IsEnableJumpAngle(Vector3 direction)
-    {
-        // 벽 노말과 점프하고자 하는 방향을 내적해서 
-        bool isWithin90 = Vector3.Dot(wallNormal.normalized, direction.normalized) > 0f;
-        return isWithin90;
-    }
-
-    private void HandleOnJumpKeyPressed()
-    {
-        MovementVector vector;
-        bool getMouseMovement = TryGetMouseMovement(out vector);
-        if (IsEnableJumpAngle(vector.Direction) && getMouseMovement)
-        {
-            _playerMovementModule.JumpStart(vector);
-        }
-    }
-
-    private bool TryGetMouseMovement(out MovementVector movement)
-    {
-        Vector2 screenMousePos = PlayerInputSO.GetMouseScreenPosition();
-        Ray ray = Camera.main.ScreenPointToRay(screenMousePos);
-        Plane plane = new Plane(Vector3.up, transform.position);
-
-        if (!plane.Raycast(ray, out float rayDistance))
-        {
-            movement = default; 
-            return false;
-        }
-
-        Vector3 mouseWorldPos = ray.GetPoint(rayDistance);
-        mouseWorldPos.y = transform.position.y;
-
-        Vector3 offset = mouseWorldPos - transform.position;
-        movement = new MovementVector(offset.normalized, offset.magnitude);
-        return true;
-    }
-
     private void OnCollisionStay(Collision other)
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Wall"))
@@ -101,12 +54,22 @@ public class Player : ModuleOwner
                 if (!didFindWall)
                     if (Mathf.Abs(Vector3.Dot(normal, Vector3.up)) < 0.3f)
                     {
-                        wallNormal = normal;
+                        WallNormal = normal;
                         didFindWall = true;
                     }
             }
         }
     }
+
+    private void HandleOnJumpKeyPressed()
+    {
+        if (Fsm.CurrentState is IdleState)
+        {
+            IdleState idleState = (IdleState)Fsm.CurrentState;
+            idleState.StartJump();
+        }
+    }
+    
 
     private void HandleOnMovementChanged(Vector2 obj)
     {

@@ -15,6 +15,7 @@ public class PlayerMovementModule : MonoBehaviour, IModule, IPlayerMovementModul
     
     private bool isWall = false;
     private bool isJumping;
+    private Action OnJumpLand;
 
     public void Initialize(ModuleOwner owner)
     {
@@ -78,23 +79,26 @@ public class PlayerMovementModule : MonoBehaviour, IModule, IPlayerMovementModul
         OnWallEnter();
     }
 
-    public void JumpStart(MovementVector vector)
+    public void JumpStart(MovementVector vector, Action onJumpLand)
     {
         if (!isWall || isJumping) return;
 
         _currentMovementVector = vector;
         isJumping = true;
+        OnJumpLand = onJumpLand;
     }
 
-    private void OnWallEnter(){}
+    private void OnWallEnter()
+    {
+        Debug.Log("OnWallEnter");
+        OnJumpLand?.Invoke();
+    }
 
     private void CheckIsWall()
     {
         Vector3 center = _bodyCollider.transform.TransformPoint(_bodyCollider.center);
         if (Physics.OverlapSphereNonAlloc(center, overlapSphereRadius, colliders , wallLayer) > 0)
         {
-            if (!isWall)
-                OnWallEnter();
             isWall = true;
         }
         else

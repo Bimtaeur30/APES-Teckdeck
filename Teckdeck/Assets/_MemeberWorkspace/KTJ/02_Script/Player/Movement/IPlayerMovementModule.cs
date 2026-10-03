@@ -1,7 +1,8 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public interface IPlayerMovementModule
 {
     void Configure(Transform body, SphereCollider bodyCollider);
-    void JumpStart(MovementVector vector);
+    void JumpStart(MovementVector vector, Action onJumpLand);
 }

@@ -8,9 +8,9 @@
 
 ## 현재 요청
 
-- 요청 요약: Player와 PlayerMovementModule 사이의 SOLID 의존 구조 정리
-- 승인된 범위: Player가 이동 모듈에 Transform과 SphereCollider를 주입하고 Player 구체 클래스 캐스팅 제거
-- 범위 밖 항목: 씬·프리팹·공용 ModuleOwner 변경, 입력·조준 판정 및 점프 동작 변경
+- 요청 요약: KTJ와 공용 FSM 런타임 간 어셈블리 순환 참조 해결
+- 승인된 범위: 전환 인터페이스를 FSM 런타임으로 이동, FSM 런타임의 KTJ 참조 제거, 누락된 상태 전환 연결 보완
+- 범위 밖 항목: 다른 상태 로직, 씬·프리팹, 공용 ModuleOwner 변경
 
 ## Phase 현황
 
@@ -32,14 +32,15 @@
 | 014 | 완료 | UI 토글 포인터 입력 대상 분리 | `phases/PHASE-014.md` |
 | 015 | 완료 | 가까운 앞 벽에서 점프 이동 정지 | `phases/PHASE-015.md` |
 | 016 | 완료 | Player와 이동 모듈의 구체 클래스 의존 제거 | `phases/PHASE-016.md` |
+| 017 | 완료 | FSM 어셈블리 순환 참조 해결 | `phases/PHASE-017.md` |
 
 ## 현재 재개 지점
 
-- 마지막 완료 작업: Phase 016 Player와 이동 모듈의 구체 클래스 의존 제거
+- 마지막 완료 작업: Phase 017 FSM 어셈블리 순환 참조 해결
 - 현재 작업: 없음
-- 다음에 할 작업: Unity Play Mode에서 점프 입력, 벽 접촉, 재점프 확인
-- 사용자 승인이 필요한 사항: 없음 (Phase 016 승인됨)
-- 관련 파일: `Assets/_MemeberWorkspace/KTJ/02_Script/Player/Player.cs`, `Assets/_MemeberWorkspace/KTJ/02_Script/Player/Movement/`
+- 다음에 할 작업: Unity Play Mode에서 상태 전환과 점프 동작 확인
+- 사용자 승인이 필요한 사항: 없음 (Phase 017 공용 파일 변경 승인됨)
+- 관련 파일: `Assets/_Shared/Systems/FsmSystem/Runtime/`, `Assets/_MemeberWorkspace/KTJ/02_Script/Player/FSM/`
 - 알려진 문제 또는 위험: 플레이어 중심이 이미 벽 Collider 내부에 있으면 Raycast와 SphereCast가 해당 벽을 놓칠 수 있음. Phase 015의 초기 정지 간격 때문에 재점프가 막힌 문제는 같은 Phase에서 수정함
 
 ## 검증 요약
@@ -52,5 +53,6 @@
 - 수행한 검증: Phase 014 Unity 참조 기반 전체 UI 컴포넌트 별도 컴파일, 등록·해제 흐름 정적 검사, 공백 검사
 - 수행한 검증: Phase 015 `KTJ.csproj` 빌드 성공(오류 0개, 기존 참조 충돌 경고 8개), 작업 파일 `git diff --check` 통과
 - 수행한 검증: Phase 016 `KTJ.csproj` 빌드 성공(오류 0개, 기존 참조 충돌 경고 8개), 변경 파일 공백 검사 및 초기화 순서 정적 확인
-- 통과 여부: Phase 016 C# 빌드와 공백 검사 통과
-- 아직 검증하지 못한 항목: Phase 014 UI 포인터 동작 및 Phase 015~016 점프 흐름의 Unity Play Mode 확인
+- 수행한 검증: Phase 017 FSM 런타임 및 KTJ 빌드 성공(오류 0개), 참조 방향 검사, Unity Editor 최신 컴파일 구간의 어셈블리 재로드 확인
+- 통과 여부: Phase 017 어셈블리 참조 순환 제거 및 C# 빌드 통과
+- 아직 검증하지 못한 항목: Phase 014 UI 포인터 동작 및 Phase 015~017 상태 전환·점프 흐름의 Unity Play Mode 확인
