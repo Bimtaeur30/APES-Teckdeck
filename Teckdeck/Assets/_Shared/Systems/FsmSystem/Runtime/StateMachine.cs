@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using ModuleSystem;
 using UnityEngine;
 
 namespace _Shared.Systems.FsmSystem.Runtime
@@ -7,10 +8,11 @@ namespace _Shared.Systems.FsmSystem.Runtime
     public class StateMachine
     {
         public AbstractState CurrentState { get; private set; }
+        public int CurrentStateIdx { get; private set; }
 
         private Dictionary<int, AbstractState> _stateDict;
 
-        public StateMachine(GameObject owner, StateSO[] stateList)
+        public StateMachine(ModuleOwner owner, StateSO[] stateList)
         {
             _stateDict = new Dictionary<int, AbstractState>();
             foreach (StateSO stateData in stateList)
@@ -32,6 +34,7 @@ namespace _Shared.Systems.FsmSystem.Runtime
             Debug.Assert(newState != null, $"찾고자하는 인덱스의 상태가 없습니다. : {newStateIndex}");
             
             CurrentState = newState;
+            CurrentStateIdx = newStateIndex;
             CurrentState.Enter(transitionDuration);
         }
         

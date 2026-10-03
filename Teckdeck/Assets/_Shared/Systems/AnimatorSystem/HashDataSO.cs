@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace AnimatorSystem
 {
-    [CreateAssetMenu(fileName = "Hash data", menuName = "Lib/Animator Hash data", order = 5)]
+    [CreateAssetMenu(fileName = "Hash data", menuName = "Lib/Hash data", order = 5)]
     public class HashDataSO : ScriptableObject
     {
         [field: SerializeField] public string HashName { get; private set; }

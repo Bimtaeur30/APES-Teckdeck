@@ -1,0 +1,21 @@
+{
+    "name": "KTJ",
+    "rootNamespace": "",
+    "references": [
+        "CoreSystem_assembly",
+        "Unity.Cinemachine",
+        "Unity.InputSystem",
+        "DOTweenModules",
+        "ModuleSystem",
+        "FsmSystem_runtime_assembly"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

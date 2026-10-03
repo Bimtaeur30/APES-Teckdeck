@@ -1,0 +1,16 @@
+using UnityEngine;
+
+public class Customizer : MonoBehaviour, IViewInteraction
+{
+    public void Enter()
+    {
+    }
+
+    public void Exit()
+    {
+    }
+
+    public void HandleInput()
+    {
+    }
+}
