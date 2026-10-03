@@ -10,7 +10,7 @@ namespace _Shared.Systems.FsmSystem.Runtime
         protected readonly int StateClipHash; //해당 상태의 애니메이션 클립 해시
         protected readonly IAnimatorRenderer Renderer;
 
-        public AbstractState(ModuleOwner owner, int stateClipHash)
+        public AbstractState(ModuleOwner owner, int stateClipHash = 0)
         {
             Owner = owner;
             
@@ -20,7 +20,8 @@ namespace _Shared.Systems.FsmSystem.Runtime
 
         public virtual void Enter(float transitionDuration, int layerIndex = 0)
         {
-            Renderer.PlayClip(StateClipHash, 0f, transitionDuration, layerIndex);
+            if(StateClipHash != 0)
+                Renderer.PlayClip(StateClipHash, 0f, transitionDuration, layerIndex);
         }
 
         public virtual void Update() {}

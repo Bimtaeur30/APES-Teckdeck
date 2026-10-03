@@ -7,7 +7,7 @@
         "Unity.InputSystem",
         "DOTweenModules",
         "ModuleSystem",
-        "InputSystem_assembly"
+        "FsmSystem_runtime_assembly"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
