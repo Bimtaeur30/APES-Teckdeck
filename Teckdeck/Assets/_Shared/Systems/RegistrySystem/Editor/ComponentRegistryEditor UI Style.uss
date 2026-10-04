@@ -1,0 +1,154 @@
+.registry__section {
+    margin-bottom: 6px;
+}
+
+.registry__error {
+    display: none;
+    color: rgb(235, 95, 95);
+    white-space: normal;
+    margin: 2px 3px;
+}
+
+.registry__error--compact {
+    margin: 3px 0 0 0;
+    font-size: 11px;
+}
+
+.registry__error--visible {
+    display: flex;
+}
+
+.registry__list {
+    max-height: 360px;
+    margin-top: 2px;
+}
+
+.registry__pending {
+    display: none;
+    margin-top: 2px;
+}
+
+.registry__pending--active {
+    display: flex;
+}
+
+.registry__list-buttons {
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-bottom: 6px;
+}
+
+.registry__list-button {
+    width: 24px;
+}
+
+.registry-row {
+    padding: 3px 4px;
+    border-left-width: 3px;
+    border-left-color: rgba(0, 0, 0, 0);
+}
+
+.registry-row__body {
+    flex-direction: row;
+    align-items: center;
+}
+
+.registry-row__key-field {
+    flex-grow: 1;
+    margin: 0;
+    -unity-font-style: bold;
+}
+
+.registry-row__type {
+    min-width: 120px;
+    padding: 0 4px;
+    color: rgb(150, 150, 150);
+    -unity-text-align: middle-right;
+}
+
+.registry-row__type:hover {
+    color: rgb(210, 210, 210);
+}
+
+.registry-row__hint {
+    margin-bottom: 3px;
+    font-size: 11px;
+    color: rgb(150, 150, 150);
+    white-space: normal;
+}
+
+.registry-row--editing {
+    padding-top: 6px;
+    padding-bottom: 6px;
+    border-left-color: rgb(80, 140, 230);
+    background-color: rgba(80, 140, 230, 0.15);
+}
+
+.registry-row--editing .registry-row__type:hover {
+    color: rgb(150, 150, 150);
+}
+
+.registry-row--invalid {
+    border-left-color: rgb(230, 70, 70);
+    background-color: rgba(230, 70, 70, 0.15);
+}
+
+.registry-row--open .registry-row__type {
+    color: rgb(110, 170, 255);
+    -unity-font-style: bold;
+}
+
+.registry__inspector {
+    display: none;
+    margin-bottom: 8px;
+    border-width: 1px;
+    border-color: rgba(128, 128, 128, 0.4);
+    border-radius: 3px;
+}
+
+.registry__inspector--open {
+    display: flex;
+}
+
+.registry__inspector-header {
+    flex-direction: row;
+    align-items: center;
+    padding: 2px 4px;
+    background-color: rgba(128, 128, 128, 0.15);
+}
+
+.registry__inspector-title {
+    flex-grow: 1;
+    -unity-font-style: bold;
+}
+
+.registry__inspector-close {
+    width: 20px;
+}
+
+.registry__inspector-body {
+    padding: 4px;
+}
+
+.registry__enum {
+    padding-top: 6px;
+    border-top-width: 1px;
+    border-top-color: rgba(128, 128, 128, 0.4);
+}
+
+.registry__enum-row {
+    flex-direction: row;
+}
+
+.registry__enum-name {
+    flex-grow: 1;
+}
+
+.registry__generate {
+    min-width: 140px;
+}
+
+.registry__generate--dirty {
+    color: rgb(255, 255, 255);
+    background-color: rgb(190, 130, 40);
+}

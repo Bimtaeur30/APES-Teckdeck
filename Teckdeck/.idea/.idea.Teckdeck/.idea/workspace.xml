@@ -11,16 +11,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44da0101-9d20-4f5a-9088-489447dcff59" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/IPlayerMovementModule.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/IPlayerMovementModule.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/PlayerMovementModule.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Editor/CodeFormat.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Editor/CodeFormat.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Editor/ComponentRegistrySOEditor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Editor/ComponentRegistrySOEditor.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Runtime/ComponentRegistrySO.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Runtime/ComponentRegistrySO.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Teckdeck/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Teckdeck/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/01_Scene/PlayerTestScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/01_Scene/PlayerTestScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/InputSystem/Input/Controls.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/InputSystem/Input/Controls.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/MovementModule.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/MovementModule.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/PlayerMovementModule.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scenes/Test-Skill_Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scenes/Test-Skill_Scene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Shared/Systems/ObjectDictSystem.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Shared/Systems/ObjectPool/Editor/ObjectPoolEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Shared/Systems/ObjectPool/Editor/ObjectPoolEditor.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +31,12 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/dc764b59c049482b93bebc78a7e33a04212600/e1/246a2425/Gizmos.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/49fcb209645d4ccfb3e373da32345d37a6aa00/2e/b257c714/MonoScript.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/49fcb209645d4ccfb3e373da32345d37a6aa00/81/962c4f99/AdvancedDropdownState.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Editor/CodeFormat.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Editor/ComponentRegistrySOEditor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Runtime/ComponentRegistrySO.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.annulusgames.alchemy@4d291ce19319/Runtime/Inspector/InspectorAttributes.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="McpProjectServerCommands">
     <commands />
@@ -112,6 +117,7 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
@@ -119,7 +125,7 @@
     "SearchEverywhere.PersistedScope.SymbolSearchEverywhereContributor": "모든 위치",
     "cidr.known.project.marker": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "KTJ",
+    "git-widget-placeholder": "JTH",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -174,6 +180,10 @@
       <option name="presentableId" value="Default" />
       <updated>1786525117269</updated>
       <workItem from="1786525120029" duration="1000" />
+      <workItem from="1790911468000" duration="1623000" />
+      <workItem from="1790939622033" duration="4096000" />
+      <workItem from="1791000450192" duration="6016000" />
+      <workItem from="1791083265381" duration="52483000" />
     </task>
     <servers />
   </component>
