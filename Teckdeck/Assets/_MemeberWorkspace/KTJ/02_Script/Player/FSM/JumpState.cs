@@ -14,7 +14,8 @@ public class JumpState : AbstractState, IStateEnter<MovementVector>
 
     public void EnterWith(MovementVector data, float duration)
     {
-        player.MovementModule.JumpStart(data, HandleOnJumpLand);
+        if (!player.MovementModule.JumpStart(data, HandleOnJumpLand))
+            Transition.ChangeState((int)StateEnum.Idle);
     }
 
     private void HandleOnJumpLand()

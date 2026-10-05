@@ -15,11 +15,13 @@ public class PlayerMovementModule : MonoBehaviour, IModule, IPlayerMovementModul
     
     private bool isWall = false;
     private bool isJumping;
-    private Action OnJumpLand;
+    private Action onJumpLand;
+    private Player player;
 
     public void Initialize(ModuleOwner owner)
     {
-        // ModuleOwner의 공통 초기화 후 Player가 Configure에서 필요한 참조를 전달한다.
+        // ModuleOwner의 공통 초기화 후 Player가 Configure에서 필요한 참조를 전달한다
+        player = owner as Player;
     }
 
     public void Configure(Transform body, SphereCollider bodyCollider)
@@ -61,6 +63,7 @@ public class PlayerMovementModule : MonoBehaviour, IModule, IPlayerMovementModul
             allowedDistance = Mathf.Min(allowedDistance,
                 Mathf.Max(0f, rayHit.distance - radius));
             wallAhead = true;
+            RotateTo(rayHit.normal);
         }
 
         if (Physics.SphereCast(center, radius, direction, out RaycastHit sphereHit,
@@ -69,35 +72,66 @@ public class PlayerMovementModule : MonoBehaviour, IModule, IPlayerMovementModul
             allowedDistance = Mathf.Min(allowedDistance,
                 Mathf.Max(0f, sphereHit.distance));
             wallAhead = true;
+            RotateTo(sphereHit.normal);
         }
 
         _body.position += direction * allowedDistance;
 
-        if (!wallAhead) return;
+        Vector3 wallNormal = default;
+        if (!wallAhead && !TryGetArrivalWallNormal(center + direction * allowedDistance, radius, direction, out wallNormal))
+            return;
+
+        if (!wallAhead)
+            RotateTo(wallNormal);
 
         isJumping = false;
         OnWallEnter();
     }
 
-    public void JumpStart(MovementVector vector, Action onJumpLand)
+    public bool JumpStart(MovementVector vector, Action onJumpLand)
     {
-        if (!isWall || isJumping) return;
+        CheckIsWall();
+        if (!isWall || isJumping || vector.Direction.sqrMagnitude <= 0f) return false;
 
         _currentMovementVector = vector;
         isJumping = true;
-        OnJumpLand = onJumpLand;
+        this.onJumpLand = onJumpLand;
+        RotateTo(vector.Direction); // 진행방향 바라보기
+        return true;
+    }
+
+    private bool TryGetArrivalWallNormal(Vector3 center, float radius, Vector3 direction, out Vector3 wallNormal)
+    {
+        wallNormal = default;
+        int count = Physics.OverlapSphereNonAlloc(center, radius + 0.01f, colliders,
+            wallLayer, QueryTriggerInteraction.Ignore);
+
+        for (int i = 0; i < count; i++)
+        {
+            Vector3 closest = colliders[i].ClosestPoint(center);
+            Vector3 awayFromWall = center - closest;
+            if (awayFromWall.sqrMagnitude <= 0.000001f ||
+                Vector3.Dot(awayFromWall.normalized, direction) >= -0.1f)
+                continue;
+
+            wallNormal = awayFromWall.normalized;
+            return true;
+        }
+
+        return false;
     }
 
     private void OnWallEnter()
     {
         Debug.Log("OnWallEnter");
-        OnJumpLand?.Invoke();
+        onJumpLand?.Invoke();
     }
 
     private void CheckIsWall()
     {
         Vector3 center = _bodyCollider.transform.TransformPoint(_bodyCollider.center);
-        if (Physics.OverlapSphereNonAlloc(center, overlapSphereRadius, colliders , wallLayer) > 0)
+        if (Physics.OverlapSphereNonAlloc(center, overlapSphereRadius, colliders,
+                wallLayer, QueryTriggerInteraction.Ignore) > 0)
         {
             isWall = true;
         }
@@ -111,5 +145,11 @@ public class PlayerMovementModule : MonoBehaviour, IModule, IPlayerMovementModul
     {
         Gizmos.color = isWall ? Color.green : Color.red;
         Gizmos.DrawWireSphere(transform.position, overlapSphereRadius);
+    }
+
+    private void RotateTo(Vector3 target)
+    {
+        target.y = 0;
+        _body.rotation = Quaternion.LookRotation(target);
     }
 }

@@ -27,8 +27,8 @@ public class IdleState : AbstractState
 
     private bool IsEnableJumpAngle(Vector3 direction)
     {
-        // 벽 노말과 점프하고자 하는 방향을 내적해서 
-        bool isWithin90 = Vector3.Dot(player.WallNormal.normalized, direction.normalized) > 0f;
+        // 벽 노말과 점프하고자 하는 방향을 내적해서
+        bool isWithin90 = Vector3.Dot(player.transform.forward, direction.normalized) >= 0f;
         return isWithin90;
     }
     
@@ -77,7 +77,7 @@ public class IdleState : AbstractState
     {
         MovementVector vector;
         bool getMouseMovement = TryGetMouseMovement(out vector);
-        if (IsEnableJumpAngle(vector.Direction) && getMouseMovement)
+        if (getMouseMovement && vector.Direction.sqrMagnitude > 0f && IsEnableJumpAngle(vector.Direction))
         {
             //_playerMovementModule.JumpStart(vector);
             Transition.ChangeState<MovementVector>((int)StateEnum.Jump, vector);
