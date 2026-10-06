@@ -14,8 +14,8 @@ TagManager:
   - Ground
   - MonitorRender
   - Wall
-  - 
-  - 
+  - Player
+  - Enemy
   - 
   - 
   - 
