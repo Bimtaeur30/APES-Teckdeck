@@ -17,10 +17,11 @@ namespace _Shared.Systems.RegistrySystem.Editor
     [CustomEditor(typeof(RegistrySO))]
     public class RegistrySOEditor : UnityEditor.Editor
     {
-        enum ObjectFieldError { GuidIsNull, NoMeta, NoObject }
-
         private const string MissingTypeMsg = "타입을 찾을 수 없습니다. 클래스 이름을 바꿨다면 [MovedFrom]으로 이전 이름을 알려주세요";
         private const string NoInstanceMsg = "인스턴스가 없습니다. 인스펙터를 다시 열면 생성을 다시 시도합니다";
+        private const string GuidIsNull = "GUID가 존재하지 않습니다";
+        private const string NoMeta = "GUID에 해당하는 .meta가 존재하지 않습니다";
+        private const string NoObject = "Object가 존재하지 않습니다";
 
         [SerializeField] private VisualTreeAsset viewAsset = default;
         [SerializeField] private VisualTreeAsset rowAsset = default;
@@ -494,11 +495,11 @@ namespace _Shared.Systems.RegistrySystem.Editor
             string errorMsg = null;
             
             if (evt.newValue == null)
-                errorMsg = GetObjectFieldErrorMsg(ObjectFieldError.NoObject);
+                errorMsg = NoObject;
             
             string guid = GetGuid(evt.newValue);
             if (string.IsNullOrEmpty(guid))
-                errorMsg = string.IsNullOrEmpty(errorMsg) ? GetObjectFieldErrorMsg(ObjectFieldError.NoMeta) : errorMsg;
+                errorMsg = string.IsNullOrEmpty(errorMsg) ? NoMeta : errorMsg;
   
             _targetData.enumFolderGuid = guid;
             SetErrorMsg(_enumError, errorMsg);
@@ -589,15 +590,15 @@ namespace _Shared.Systems.RegistrySystem.Editor
             string errorMsg = null;
             
             if (string.IsNullOrEmpty(guid))
-                errorMsg = GetObjectFieldErrorMsg(ObjectFieldError.GuidIsNull);
+                errorMsg = GuidIsNull;
             
             string assetPath = AssetDatabase.GUIDToAssetPath(guid);
             if (string.IsNullOrEmpty(assetPath))
-                errorMsg = string.IsNullOrEmpty(errorMsg) ? GetObjectFieldErrorMsg(ObjectFieldError.NoMeta) : errorMsg;
+                errorMsg = string.IsNullOrEmpty(errorMsg) ? NoMeta : errorMsg;
             
             Object asset = AssetDatabase.LoadAssetAtPath<Object>(assetPath);
             if (asset == null)
-                errorMsg = string.IsNullOrEmpty(errorMsg) ? GetObjectFieldErrorMsg(ObjectFieldError.NoObject) : errorMsg;
+                errorMsg = string.IsNullOrEmpty(errorMsg) ? NoObject : errorMsg;
             
             //Undo를 한 후에 이 메서드가 호출되어 value가 바뀌면 다시 So에 값이 할당되는데, 그럼 Redo가 지워지기 때문에 WithoutNotify
             field.SetValueWithoutNotify(asset);
@@ -605,15 +606,7 @@ namespace _Shared.Systems.RegistrySystem.Editor
             if (errorMsgLbl != null)
                 SetErrorMsg(errorMsgLbl, errorMsg);
         }
-
-        private string GetObjectFieldErrorMsg(ObjectFieldError error) => error switch
-        {
-            ObjectFieldError.GuidIsNull => "GUID가 존재하지 않습니다",
-            ObjectFieldError.NoMeta => "GUID에 해당하는 .meta가 존재하지 않습니다",
-            ObjectFieldError.NoObject => "Object가 존재하지 않습니다",
-            _ => ""
-        };
-
+        
         private void FillEntryList()
         {
             if (_entryList == null)

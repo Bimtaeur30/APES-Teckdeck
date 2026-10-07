@@ -12,9 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55eee9fca617441294486e25bc466dec, type: 3}
   m_Name: Test
   m_EditorClassIdentifier: RegistrySystem_runtime_assembly::_Shared.Systems.RegistrySystem.Runtime.RegistrySO
-  rootScriptGuid: 
-  entries: []
-  prefabFolderGuid: 
+  baseTypeName: JTH.RegistryTest.IRegistryTestSkill, Assembly-CSharp
+  entries:
+  - enumValue: 0
+    enumKeyName: RegistryTestViaInterfaceItem
+    typeName: JTH.RegistryTest.RegistryTestViaInterfaceItem, Assembly-CSharp
+    registryItem:
+      rid: 1971265077631254676
   enumName: 
   enumFolderGuid: 
-  lastEnumValue: -1
+  lastEnumValue: 0
+  lastEnums: []
+  skipNamespaces: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 1971265077631254676
+      type: {class: RegistryTestViaInterfaceItem, ns: JTH.RegistryTest, asm: Assembly-CSharp}
+      data:
+        a: 0

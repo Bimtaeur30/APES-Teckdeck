@@ -32,6 +32,7 @@ namespace JTH.RegistryTest
     //PHASE-011 베이스 후보 검증용
     public interface IRegistryTestSkill : IRegistryItem { }
 
+    [Serializable]
     public class RegistryTestViaInterfaceItem : IRegistryTestSkill
     {
         [SerializeField] private int a;

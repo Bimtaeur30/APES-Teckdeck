@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace _Shared.Systems.RegistrySystem.Editor
+namespace _Shared.Systems.RegistrySystem.Runtime
 {
     //타입 정보는 다시 컴파일될 때만 바뀌고, 그때 도메인 리로드로 static 캐시도 비워지기 때문에 따로 무효화하지 않는다.
     public static class RegistryItemValidator

@@ -12,12 +12,19 @@
   <component name="ChangeListManager">
     <list default="true" id="44da0101-9d20-4f5a-9088-489447dcff59" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Teckdeck/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Teckdeck/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/GameModules/RegistryTest/ComponentRegistrySO.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/GameModules/RegistryTest/ComponentRegistrySO.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/GameModules/RegistryTest/Prefabs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/GameModules/RegistryTest/Prefabs/RegistryTestFireball.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/GameModules/RegistryTest/Prefabs/RegistryTestFireball.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/GameModules/RegistryTest/Prefabs/RegistryTestSlash.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/GameModules/RegistryTest/Prefabs/RegistryTestSlash.prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/_AgentLog/PROGRESS.md" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/_AgentLog/PROGRESS.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Editor/RegistryEditorUIStyle.uss" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Editor/RegistryEditorUIStyle.uss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Editor/RegistryRowUI.uxml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Editor/RegistryRowUI.uxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Editor/RegistryItemValidator.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Editor/RegistryItemValidator.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Editor/RegistrySOEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Editor/RegistrySOEditor.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Editor/RegistryTypeDropdown.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Editor/RegistryTypeDropdown.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Runtime/RegistryRuntime.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Runtime/RegistryRuntime.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,8 +38,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/49fcb209645d4ccfb3e373da32345d37a6aa00/2e/b257c714/MonoScript.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/49fcb209645d4ccfb3e373da32345d37a6aa00/81/962c4f99/AdvancedDropdownState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Editor/CodeFormat.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Editor/ComponentRegistrySOEditor.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Runtime/ComponentRegistrySO.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Editor/RegistrySOChecker.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Runtime/IInitRegistryItem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Runtime/IRegistryItem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.annulusgames.alchemy@4d291ce19319/Runtime/Inspector/InspectorAttributes.cs" root0="SKIP_HIGHLIGHTING" />
