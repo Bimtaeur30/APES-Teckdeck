@@ -46,5 +46,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::_MemeberWorkspace.JTH.Scripts.RegistryTest.RegistryTestFireball
   cooldown: 1
   skillRange: 2
-  explosionRadius: 3
+  explosionRadius: 2
+  explosisonRadius: 3
   effectPrefab: {fileID: 0}

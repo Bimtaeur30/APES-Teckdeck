@@ -2,6 +2,20 @@
     margin-bottom: 6px;
 }
 
+.registry__base-type-row {
+    flex-direction: row;
+    align-items: center;
+}
+
+.registry__base-type-field {
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+.registry__base-type-btn {
+    min-width: 48px;
+}
+
 .registry__error {
     display: none;
     color: rgb(235, 95, 95);

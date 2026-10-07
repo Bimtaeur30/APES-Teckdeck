@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
+using System.Runtime.CompilerServices;
 using _Shared.Systems.RegistrySystem.Runtime;
 using UnityEditor;
 using UnityEditor.IMGUI.Controls;
@@ -16,14 +18,17 @@ namespace _Shared.Systems.RegistrySystem.Editor
     public class ComponentRegistrySOEditor : UnityEditor.Editor
     {
         enum ObjectFieldError { GuidIsNull, NoMeta, NoObject }
-        
+
+        private const string MissingTypeMsg = "타입을 찾을 수 없습니다. 클래스 이름을 바꿨다면 [MovedFrom]으로 이전 이름을 알려주세요";
+
         [SerializeField] private VisualTreeAsset viewAsset = default;
         [SerializeField] private VisualTreeAsset rowAsset = default;
 
         private VisualElement _root;
         private ComponentRegistrySO _targetData;
 
-        private ObjectField _baseScriptField;
+        private TextField _baseTypeField;
+        private Button _baseTypeBtn;
         private Label _settingError;
         
         private ListView _entryList;
@@ -62,8 +67,9 @@ namespace _Shared.Systems.RegistrySystem.Editor
             viewAsset.CloneTree(_root);
             _targetData = (ComponentRegistrySO)target;
             
-            //필요한 에셋 대입하기
-            _baseScriptField = Q<ObjectField>("base-script-field");
+            //필요한 element 대입하기
+            _baseTypeField = Q<TextField>("base-type-field");
+            _baseTypeBtn = Q<Button>("base-type-btn");
             _settingError = Q<Label>("settings-error");
             
             _entryList = Q<ListView>("entry-list");
@@ -89,36 +95,24 @@ namespace _Shared.Systems.RegistrySystem.Editor
             Undo.undoRedoPerformed -= UndoRedoPerformedHandle;
             Undo.undoRedoPerformed += UndoRedoPerformedHandle;
             
+            _baseTypeBtn.clicked += HandleBaseTypeBtn;
+            _baseTypeField.RegisterCallback<ClickEvent>(_ => HandleBaseTypeBtn());
+            _enumFolderField.RegisterValueChangedCallback(HandleEnumFolderObjectFieldChange);
+            
             _entryList.bindItem += HandleBindItem;
             _entryList.unbindItem += HandleUnbindItem;
             _addBtn.clicked += HandleAddBtn;
             _removeBtn.clicked += HandleRemoveBtn;
-            _inspectorCloseBtn.clicked += HandleInspectorCloseBtn;
-            _generateBtn.clicked += HandleGenerateBtn;
+            
             _pendingKeyField.RegisterCallback<KeyDownEvent>(HandlePendingKeyFieldKeyDown, TrickleDown.TrickleDown);
             _pendingKeyField.RegisterValueChangedCallback(HandlePendingKeyFieldValueChange);
-
-            _baseScriptField.RegisterValueChangedCallback(evt 
-                => HandleObjectFieldChange(evt, true, _settingError, "Change BaseScript"));
-            _enumFolderField.RegisterValueChangedCallback(evt 
-                => HandleObjectFieldChange(evt, false, _enumError, "Change Enum Folder"));
             
+            _inspectorCloseBtn.clicked += HandleInspectorCloseBtn;
+            
+            _generateBtn.clicked += HandleGenerateBtn;
+
             //값을 채우기
             FillValues();
-
-            if (AssetDatabase.IsValidFolder(AssetDatabase.GUIDToAssetPath(_targetData.prefabFolderGuid)))
-            {
-                HashSet<string> prefabsInComponents = _targetData.components
-                    .Select(c => AssetDatabase.GetAssetPath(c.component))
-                    .ToHashSet();
-                IEnumerable<string> prefabsInFolder = AssetDatabase.FindAssets("t:Prefab"
-                        , new[] { AssetDatabase.GUIDToAssetPath(_targetData.prefabFolderGuid) })
-                    .Select(AssetDatabase.GUIDToAssetPath)
-                    .Where(path => !string.IsNullOrEmpty(path) && !prefabsInComponents.Contains(path));
-                foreach (string path in prefabsInFolder)
-                    AssetDatabase.DeleteAsset(path);
-            }
-            Undo.ClearUndo(_targetData);
             
             return _root;
         }
@@ -127,7 +121,7 @@ namespace _Shared.Systems.RegistrySystem.Editor
 
         private void FillValues()
         {
-            FillObjectField(_baseScriptField, _targetData.baseScriptGuid, _settingError);
+            FillBaseTypeField();
 
             CheckKeysValid();
             FillEntryList();
@@ -152,15 +146,17 @@ namespace _Shared.Systems.RegistrySystem.Editor
             
             Label typeLabel = element.Q<Label>("type-label");
             typeLabel.userData = item;
-            typeLabel.text = item.component == null ? null : item.component.name;
+            typeLabel.text = item.registryItem == null ? "Missing" : item.registryItem.GetType().Name;
             typeLabel.RegisterCallback<ClickEvent>(HandleItemTypeLblClick);
 
-            Label error = element.Q<Label>("error");
+            Label itemError = element.Q<Label>("error");
             _errorMsgDict.TryGetValue(_targetData.components[index], out string errorMsg);
-            SetErrorMsg(error, errorMsg);
+            if (item.registryItem == null && string.IsNullOrEmpty(errorMsg))
+                errorMsg = MissingTypeMsg;
+            SetErrorMsg(itemError, errorMsg);
             
             TextField keyField = element.Q<TextField>("key-field");
-            keyField.userData = index;
+            keyField.userData = item;
             keyField.SetValueWithoutNotify(item.enumKeyName);
             keyField.RegisterValueChangedCallback(HandleKeyFieldValueChange);
             
@@ -182,14 +178,13 @@ namespace _Shared.Systems.RegistrySystem.Editor
         {
             Undo.RecordObject(_targetData, "Change Key Field");
             
-            TextField field = evt.currentTarget as TextField;
-            int idx = (int)field!.userData;
-            _targetData.components[idx].enumKeyName = evt.newValue;
+            TextField field = (TextField)evt.currentTarget;
+            ComponentListItem item = (ComponentListItem)field.userData;
+            item.enumKeyName = evt.newValue;
 
             CheckKeysValid();
             GenerateBtnDirtyCheck();
             _entryList.RefreshItems();
-            EditorUtility.SetDirty(_targetData);
         }
 
         private void HandleItemTypeLblClick(ClickEvent evt)
@@ -205,21 +200,30 @@ namespace _Shared.Systems.RegistrySystem.Editor
             string openClass = "registry__inspector--open";
 
             _inspectorPanel.EnableInClassList(openClass, shouldOpen);
+            _entryList.RefreshItems();
 
             _inspectorBody.Clear();
             if (shouldOpen == false)
                 return;
-
-            if (_openedItem.component == null)
+            
+            if (_openedItem.registryItem == null)
             {
-                _inspectorPanel.RemoveFromClassList(openClass);
-                CheckKeysValid();
+                _inspectorTitle.text = "Missing";
+                _inspectorBody.Add(new Label(MissingTypeMsg));
                 return;
             }
+
+            _inspectorTitle.text = _openedItem.registryItem.GetType().Name;
+            int idx = _targetData.components.IndexOf(item);
+            serializedObject.Update();
+            SerializedProperty itemProp = serializedObject
+                .FindProperty("components")
+                .GetArrayElementAtIndex(idx)
+                .FindPropertyRelative("registryItem");
             
-            _inspectorTitle.text = _openedItem.component.name;
-            _inspectorBody.Add(new InspectorElement(_openedItem.component));
-            _entryList.RefreshItems();
+            var field = new PropertyField(itemProp);
+            field.Bind(serializedObject);
+            _inspectorBody.Add(field);
         }
 
         private void HandleAddBtn()
@@ -228,9 +232,11 @@ namespace _Shared.Systems.RegistrySystem.Editor
             if (isOpened)
                 return;
 
-            Type baseType = (_baseScriptField.value as MonoScript)?.GetClass();
-            SetErrorMsg(_settingError, baseType == null ? "baseScript가 존재하지 않습니다." : null);
-            
+            Type baseType = GetBaseType();
+
+            if (baseType == null || !IsBaseTypeSelectable(baseType))
+                return;
+
             new ComponentTypeDropdown(new AdvancedDropdownState(), baseType, HandleTypeSelected)
                 .Show(_addBtn.worldBound);
         }
@@ -256,7 +262,9 @@ namespace _Shared.Systems.RegistrySystem.Editor
 
         private bool CheckPendingKeyValid()
         {
-            string errorMsg = GetKeyError(_pendingKeyField.text, true);
+            string errorMsg = GetKeyError(_pendingKeyField.text, false);
+            if (string.IsNullOrEmpty(errorMsg))
+                errorMsg = GetIdentifierError(_pendingKeyField.text, "Pending");
             return !SetErrorMsg(_pendingError, errorMsg);
         }
         
@@ -283,68 +291,53 @@ namespace _Shared.Systems.RegistrySystem.Editor
         private bool TryAddToComponentList()
         {
             string enumName = _pendingKeyField.text;
-            
-            GameObject go = new GameObject(enumName);
+            IRegistryItem registryItem;
             try
             {
-                //GO 생성
-                go.AddComponent(_pendingComponentType);
-                bool isValidFolder =
-                    AssetDatabase.IsValidFolder(AssetDatabase.GUIDToAssetPath(_targetData.prefabFolderGuid));
-            
-                //만약 처음 추가한다면 SO와 같은 레벨에 폴더 추가하기
-                if (isValidFolder == false)
-                {
-                    string soPath = Path.GetDirectoryName(AssetDatabase.GetAssetPath(_targetData));
-                    soPath = soPath?.Replace('\\', '/');
-                    string prefabFolderPath = soPath + '/' + $"{_targetData.name}'s prefabs";
-                    _targetData.prefabFolderGuid = AssetDatabase.IsValidFolder(prefabFolderPath)
-                        ? AssetDatabase.AssetPathToGUID(prefabFolderPath) 
-                        : AssetDatabase.CreateFolder(soPath, $"{_targetData.name}'s prefabs");
-                    
-                    if (string.IsNullOrEmpty(_targetData.prefabFolderGuid))
-                    {
-                        SetErrorMsg(_pendingError, "폴더 생성에 실패하였습니다.");
-                        return false;
-                    }
-                }
-            
-                string guidPath = AssetDatabase.GUIDToAssetPath(_targetData.prefabFolderGuid);
-                string savePath = AssetDatabase.GenerateUniqueAssetPath($"{guidPath}/{go.name}.prefab");
-                //프리팹으로 저장
-                GameObject prefab = PrefabUtility.SaveAsPrefabAsset(go, savePath);
-                if (prefab == null)
-                {
-                    SetErrorMsg(_pendingError, $"프리팹 생성에 실패했습니다. " +
-                                               $"guidPath: {string.IsNullOrEmpty(guidPath)}" +
-                                               $", savePath = {string.IsNullOrEmpty(savePath)}");
-                    return false;
-                }
-            
-                ComponentListItem item = new ComponentListItem
-                {
-                    enumValue = ++_targetData.lastEnumValue,
-                    enumKeyName = enumName,
-                    component = prefab.GetComponent(_pendingComponentType) as MonoBehaviour
-                };
-            
-                _targetData.components.Add(item);
-                OnComponentItemFocus(item);
-                return true;
+                registryItem = CreateRegistryItem(_pendingComponentType);
             }
-            finally
+            catch (Exception e)
             {
-                DestroyImmediate(go);
-                _entryList.RefreshItems();
-                GenerateBtnDirtyCheck();
-                EditorUtility.SetDirty(_targetData);
-                Undo.ClearUndo(_targetData);
+                SetErrorMsg(_pendingError, $"인스턴스를 생성할 수 없습니다: {(e.InnerException ?? e).Message}");
+                return false;
             }
+
+            if (registryItem == null)
+            {
+                SetErrorMsg(_pendingError, "IRegistryItem을 구현한 타입이 아닙니다");
+                return false;
+            }
+
+            Undo.RecordObject(_targetData, "Add Component Item");
+
+            ComponentListItem item = new ComponentListItem
+            {
+                enumValue = ++_targetData.lastEnumValue,
+                enumKeyName = enumName,
+                registryItem = registryItem
+            };
+            
+            _targetData.components.Add(item);
+            OnComponentItemFocus(item);
+            GenerateBtnDirtyCheck();
+
+            return true;
+        }
+
+        //기본 생성자(private 포함)가 있으면 필드 초기값이 적용되도록 생성자로 만들고, 없으면 생성자 없이 만든다.
+        private static IRegistryItem CreateRegistryItem(Type type)
+        {
+            ConstructorInfo defaultCtor = type.GetConstructor(
+                BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic, null, Type.EmptyTypes, null);
+            object instance = defaultCtor != null
+                ? defaultCtor.Invoke(null)
+                : RuntimeHelpers.GetUninitializedObject(type);
+            return instance as IRegistryItem;
         }
 
         private void HandleRemoveBtn()
         {
-            var selectedItems = _entryList.selectedItems;
+            var selectedItems = _entryList.selectedItems.ToList();
             if (!selectedItems.Any())
                 return;
             
@@ -352,9 +345,8 @@ namespace _Shared.Systems.RegistrySystem.Editor
             
             _targetData.components.RemoveAll(c => selectedItems.Contains(c));
             CheckKeysValid();
-            
+            GenerateBtnDirtyCheck();
             HandleInspectorCloseBtn();
-            EditorUtility.SetDirty(_targetData);
         }
 
         private void HandleInspectorCloseBtn()
@@ -363,14 +355,13 @@ namespace _Shared.Systems.RegistrySystem.Editor
             _inspectorBody.Clear();
             _openedItem = null;
             _entryList.RefreshItems();
-            GenerateBtnDirtyCheck();
         }
 
         private void HandleGenerateBtn()
         {
             if (string.IsNullOrEmpty(_targetData.enumName) || string.IsNullOrEmpty(_targetData.enumFolderGuid))
             {
-                SetErrorMsg(_enumError, "폴더명 또는 부모 폴더가 존재하지 않습니다.");
+                SetErrorMsg(_enumError, "Enum의 이름 또는 저장할 폴더가 존재하지 않습니다.");
                 return;
             }
             if (_targetData.components.Count == 0)
@@ -419,25 +410,102 @@ namespace _Shared.Systems.RegistrySystem.Editor
             EditorUtility.SetDirty(_targetData);
         }
         
-        private void HandleObjectFieldChange(ChangeEvent<Object> evt
-            , bool isBaseScript, Label errorLbl = null, string undoName = null)
+        private void HandleEnumFolderObjectFieldChange(ChangeEvent<Object> evt)
         {
-            Undo.RecordObject(_targetData, undoName);
+            Undo.RecordObject(_targetData, "Change Enum Folder");
 
             string errorMsg = null;
             
             if (evt.newValue == null)
                 errorMsg = GetObjectFieldErrorMsg(ObjectFieldError.NoObject);
             
-            string assetPath = AssetDatabase.GetAssetPath(evt.newValue);
-            string guid = AssetDatabase.AssetPathToGUID(assetPath);
+            string guid = GetGuid(evt.newValue);
             if (string.IsNullOrEmpty(guid))
                 errorMsg = string.IsNullOrEmpty(errorMsg) ? GetObjectFieldErrorMsg(ObjectFieldError.NoMeta) : errorMsg;
   
-            if (isBaseScript) _targetData.baseScriptGuid = guid;
-            else _targetData.enumFolderGuid = guid;
-            EditorUtility.SetDirty(_targetData);
-            SetErrorMsg(errorLbl, errorMsg);
+            _targetData.enumFolderGuid = guid;
+            SetErrorMsg(_enumError, errorMsg);
+        }
+
+        private void HandleBaseTypeBtn()
+        {
+            new ComponentTypeDropdown(new AdvancedDropdownState(), typeof(IRegistryItem), HandleBaseTypeSelected
+                    , "베이스 타입", IsBaseTypeSelectable)
+                .Show(_baseTypeField.worldBound);
+        }
+
+        private void HandleBaseTypeSelected(Type selectedType)
+        {
+            if (selectedType == null)
+                return;
+
+            string typeName = $"{selectedType.FullName}, {selectedType.Assembly.GetName().Name}";
+            if (typeName == _targetData.baseTypeName)
+                return;
+
+            int itemCount = _targetData.components.Count;
+            if (itemCount > 0 && !EditorUtility.DisplayDialog("베이스 타입 변경",
+                    $"베이스 타입을 {selectedType.Name}(으)로 바꾸면 항목 {itemCount}개가 모두 삭제됩니다.\n" +
+                    "Ctrl+Z로 되돌릴 수 있습니다. 계속할까요?", "변경", "취소"))
+                return;
+
+            Undo.RecordObject(_targetData, "Change Base Type");
+            _targetData.baseTypeName = typeName;
+            _targetData.components.Clear();
+
+            //이전 베이스 기준으로 열려 있던 입력 줄, 인스펙터, 키 오류, enum 버튼 상태를 정리
+            ClosePending();
+            HandleInspectorCloseBtn();
+            GenerateBtnDirtyCheck();
+            FillBaseTypeField();
+        }
+
+        //베이스 타입은 IRegistryItem 또는 IInitRegistryItem을 직접 구현한 타입만 고를 수 있다. 추상 클래스와 인터페이스도 된다.
+        private static bool IsBaseTypeSelectable(Type type)
+        {
+            if (type == typeof(IRegistryItem) || type == typeof(IInitRegistryItem))
+                return false;
+            if (type.ContainsGenericParameters || typeof(Object).IsAssignableFrom(type))
+                return false;
+
+            return GetDirectInterfaces(type).Any(i => i == typeof(IRegistryItem) || i == typeof(IInitRegistryItem));
+        }
+
+        //부모 클래스나 다른 인터페이스를 거쳐 들어온 인터페이스를 빼고, 이 타입이 직접 선언한 인터페이스만 남긴다.
+        private static IEnumerable<Type> GetDirectInterfaces(Type type)
+        {
+            //부모한테서 온 인터페이스는 빠지고, 인터페이스를 통해 따라온 인터페이스가 남는다.
+            Type[] inherited = type.BaseType?.GetInterfaces() ?? Type.EmptyTypes;
+            Type[] introduced = type.GetInterfaces().Except(inherited).ToArray();
+            //other가 i를 구현하고 있다? 그럼 i를 내쫓기
+            return introduced.Where(i => !introduced.Any(other => other != i && i.IsAssignableFrom(other)));
+        }
+
+        private Type GetBaseType()
+            => string.IsNullOrEmpty(_targetData.baseTypeName) ? null : Type.GetType(_targetData.baseTypeName);
+
+        private void FillBaseTypeField()
+        {
+            Type baseType = GetBaseType();
+
+            string errorMsg = null;
+            if (string.IsNullOrEmpty(_targetData.baseTypeName))
+                errorMsg = "베이스 타입을 지정하세요";
+            else if (baseType == null)
+                errorMsg = $"타입을 찾을 수 없습니다: {_targetData.baseTypeName}";
+            else if (!IsBaseTypeSelectable(baseType))
+                errorMsg = $"IRegistryItem 또는 IInitRegistryItem을 직접 구현한 타입이어야 합니다: {baseType.FullName}";
+
+            //Undo 후 이 메서드가 호출될 때 값이 다시 기록되지 않도록 WithoutNotify
+            _baseTypeField.SetValueWithoutNotify(baseType == null ? _targetData.baseTypeName : baseType.Name);
+            _baseTypeField.tooltip = baseType?.FullName ?? "";
+            SetErrorMsg(_settingError, errorMsg);
+        }
+
+        private string GetGuid(Object newObj)
+        {
+            string assetPath = AssetDatabase.GetAssetPath(newObj);
+            return AssetDatabase.AssetPathToGUID(assetPath);
         }
 
         private void FillObjectField(ObjectField field, string guid, Label errorMsgLbl = null)
@@ -475,35 +543,18 @@ namespace _Shared.Systems.RegistrySystem.Editor
             if (_entryList == null)
                 return;
             
-            //모든 요소를 돌면서 키가 중복되어 있으면 아래쪽에 있는 요소한테 경고 붙이기.
-            //프리팹을 검색할 수 없다면 해당 요소를 지우고 Ctrl Z를 못하게 기록 지우기.
-            HashSet<int> enumValues = new HashSet<int>();
-            HashSet<MonoBehaviour> components = new HashSet<MonoBehaviour>();
-
-            bool Predicator(ComponentListItem c) =>
-                !enumValues.Add(c.enumValue)
-                || !c.component
-                || !components.Add(c.component);
-
-            int removedCount = _targetData.components.RemoveAll(Predicator);
             _entryList.makeItem = () => rowAsset.CloneTree();
             _entryList.itemsSource = _targetData.components;
             _entryList.RefreshItems();
-
-            if (removedCount > 0)
-            {
-                EditorUtility.SetDirty(_targetData);
-                Undo.ClearUndo(_targetData);
-            }
         }
 
-        private string GetKeyError(string key, bool newKey)
+        private string GetKeyError(string key, bool isInList)
         {
             string errorMsg = GetIdentifierError(key, "Key");
             if (!string.IsNullOrEmpty(errorMsg))
                 return errorMsg;
             
-            if (newKey == false)
+            if (isInList)
                 return null;
 
             HashSet<string> enumNames = _targetData.components
@@ -538,7 +589,7 @@ namespace _Shared.Systems.RegistrySystem.Editor
             
             foreach (ComponentListItem compoItem in _targetData.components)
             {
-                var errorMsg = GetKeyError(compoItem.enumKeyName, false);
+                var errorMsg = GetKeyError(compoItem.enumKeyName, true);
                 if (!enumNames.Add(compoItem.enumKeyName))
                     errorMsg = "키가 중복되었습니다";
                 

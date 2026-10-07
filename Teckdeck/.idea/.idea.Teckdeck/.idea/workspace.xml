@@ -11,16 +11,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44da0101-9d20-4f5a-9088-489447dcff59" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Editor/CodeFormat.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Editor/CodeFormat.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Editor/ComponentRegistrySOEditor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Editor/ComponentRegistrySOEditor.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Runtime/ComponentRegistrySO.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Runtime/ComponentRegistrySO.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Runtime/IInitRegistryItem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Runtime/IInitRegistryItem.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Runtime/IRegistryItem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Runtime/IRegistryItem.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Teckdeck/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Teckdeck/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scenes/Test-Skill_Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scenes/Test-Skill_Scene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Shared/Systems/ObjectDictSystem.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Shared/Systems/ObjectPool/Editor/ObjectPoolEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Shared/Systems/ObjectPool/Editor/ObjectPoolEditor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/GameModules/RegistryTest/Prefabs/RegistryTestFireball.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/GameModules/RegistryTest/Prefabs/RegistryTestFireball.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/RegistryTest/RegistryTestFireball.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/RegistryTest/RegistryTestFireball.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/_AgentLog/PROGRESS.md" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/_AgentLog/PROGRESS.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Editor/ComponentRegistryEditor UI Style.uss" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Editor/ComponentRegistryEditor UI Style.uss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Editor/ComponentRegistryEditor UI.uxml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Editor/ComponentRegistryEditor UI.uxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Editor/ComponentRegistrySOEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Editor/ComponentRegistrySOEditor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Editor/ComponentTypeDropdown.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Editor/ComponentTypeDropdown.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Runtime/ComponentRegistrySO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Runtime/ComponentRegistrySO.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +39,10 @@
     <setting file="file://$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Editor/CodeFormat.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Editor/ComponentRegistrySOEditor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Runtime/ComponentRegistrySO.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Runtime/IInitRegistryItem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Runtime/IRegistryItem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.annulusgames.alchemy@4d291ce19319/Runtime/Inspector/InspectorAttributes.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@57d0e36f6123/InputSystem/NativeInputRuntime.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="McpProjectServerCommands">
     <commands />
@@ -112,28 +118,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.readMode.enableVisualFormatting": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "SearchEverywhere.PersistedScope.SymbolSearchEverywhereContributor": "모든 위치",
-    "cidr.known.project.marker": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "JTH",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;SearchEverywhere.PersistedScope.SymbolSearchEverywhereContributor&quot;: &quot;모든 위치&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;JTH&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Unity 에디터에 연결.Unity 에디터에 연결">
     <configuration name="유닛 테스트(배치 모드)" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.3.10f1\Editor\Unity.exe" />
@@ -184,6 +190,10 @@
       <workItem from="1790939622033" duration="4096000" />
       <workItem from="1791000450192" duration="6016000" />
       <workItem from="1791083265381" duration="52483000" />
+      <workItem from="1791207007083" duration="3835000" />
+      <workItem from="1791243355305" duration="9368000" />
+      <workItem from="1791268171754" duration="17643000" />
+      <workItem from="1791329921021" duration="4137000" />
     </task>
     <servers />
   </component>

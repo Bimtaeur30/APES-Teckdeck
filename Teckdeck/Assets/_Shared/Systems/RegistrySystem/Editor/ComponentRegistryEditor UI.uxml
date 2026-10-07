@@ -2,7 +2,10 @@
     <Style src="project://database/Assets/_Shared/Systems/RegistrySystem/Editor/ComponentRegistryEditor%20UI%20Style.uss?fileID=7433441132597879392&amp;guid=75c814dcf305444ba19120b5250c2655&amp;type=3#ComponentRegistryEditor UI Style"/>
     <ui:VisualElement name="root">
         <ui:VisualElement name="settings" class="registry__section">
-            <uie:ObjectField name="base-script-field" label="베이스 스크립트" type="UnityEditor.MonoScript, UnityEditor.CoreModule" allow-scene-objects="false"/>
+            <ui:VisualElement name="base-type-row" class="registry__base-type-row">
+                <ui:TextField name="base-type-field" label="베이스 타입" readonly="true" focusable="false" class="registry__base-type-field"/>
+                <ui:Button name="base-type-btn" text="선택" tooltip="IRegistryItem을 구현한 타입 중에서 고르기" class="registry__base-type-btn"/>
+            </ui:VisualElement>
             <ui:Label name="settings-error" class="registry__error"/>
         </ui:VisualElement>
         <ui:ListView name="entry-list" show-border="true" class="registry__list"/>

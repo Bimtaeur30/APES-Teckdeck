@@ -9,15 +9,14 @@ namespace _Shared.Systems.RegistrySystem.Runtime
     {
         public int enumValue;
         public string enumKeyName;
-        public MonoBehaviour component;
+        [SerializeReference] public IRegistryItem registryItem;
     }
     
     [CreateAssetMenu(fileName = "ComponentRegistrySO", menuName = "Lib/Registry/ComponentRegistrySO", order = 0)]
     public class ComponentRegistrySO : ScriptableObject
     {
-        public string baseScriptGuid;
+        public string baseTypeName;
         public List<ComponentListItem> components = new List<ComponentListItem>();
-        public string prefabFolderGuid;
         public string enumName;
         public string enumFolderGuid;
         public int lastEnumValue = -1;

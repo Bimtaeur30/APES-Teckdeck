@@ -22,16 +22,22 @@ namespace _Shared.Systems.RegistrySystem.Editor
 
         private readonly Type _baseType;
         private readonly Action<Type> _onSelected;
+        private readonly string _title;
+        private readonly Func<Type, bool> _isAddable;
 
         //기본적인 드롭다운을 구성하는 state 외에 baseType과 선택된 타입을 전달하기 위해 외부에서 콜백 함수를 onSelected에 담는다.
         
         //state는 전에 열렸던 상태를 기억하고 다시 열었을 때 스크롤 위치를 미리 변경함. 여기선 매번 가장 위에서 열려도 상관 없기 때문에 
         //매번 new()를 통해 만들어도 상관 없다.
-        public ComponentTypeDropdown(AdvancedDropdownState state, Type baseType, Action<Type> onSelected)
+        //title과 isAddable을 넘기지 않으면 항목 추가용(기본 제목, IsAddable)으로 동작한다.
+        public ComponentTypeDropdown(AdvancedDropdownState state, Type baseType, Action<Type> onSelected
+            , string title = "컴포넌트 타입", Func<Type, bool> isAddable = null)
             : base(state)
         {
             _baseType = baseType;
             _onSelected = onSelected;
+            _title = title;
+            _isAddable = isAddable ?? IsAddable;
 
             minimumSize = new Vector2(250f, 300f);
         }
@@ -39,13 +45,13 @@ namespace _Shared.Systems.RegistrySystem.Editor
         //Show() 호출될 때 호출되는 함수.
         protected override AdvancedDropdownItem BuildRoot()
         {
-            var root = new AdvancedDropdownItem("컴포넌트 타입");
+            var root = new AdvancedDropdownItem(_title);
 
-            //baseScript가 null인 상태로 생성된 경우 return
+            //baseType이 null인 상태로 생성된 경우 return
             if (_baseType == null)
             {
                 //누를 수 없는 Item을 하나 생성하여 경고
-                root.AddChild(new AdvancedDropdownItem("베이스 스크립트를 먼저 지정하세요") { enabled = false });
+                root.AddChild(new AdvancedDropdownItem("베이스 타입을 먼저 지정하세요") { enabled = false });
                 return root;
             }
 
@@ -54,7 +60,7 @@ namespace _Shared.Systems.RegistrySystem.Editor
 
             //IsAddable에서 _baseType이 abstract인 경우 걸러짐. 다른 타입도 검사하여 거른 후 이름 순서로 정렬
             List<Type> types = candidates
-                .Where(IsAddable)
+                .Where(_isAddable)
                 .OrderBy(t => t.Name)
                 .ToList();
 
@@ -83,7 +89,7 @@ namespace _Shared.Systems.RegistrySystem.Editor
             return root;
         }
 
-        //추상 클래스인 경우, 제네릭이 포함된 경우, MonoBehaviour가 아닌 경우 false
+        //추상 클래스 또는 인터페이스인 경우, 제네릭이 포함된 경우, UnityEngine.Object인 경우, [Serializable]이 없는 경우 false
         private bool IsAddable(Type type)
         {
             if (type.IsAbstract)
@@ -92,7 +98,11 @@ namespace _Shared.Systems.RegistrySystem.Editor
             if (type.ContainsGenericParameters)
                 return false;
 
-            if (!typeof(MonoBehaviour).IsAssignableFrom(type))
+            if (typeof(UnityEngine.Object).IsAssignableFrom(type))
+                return false;
+
+            //SerializeReference는 [Serializable]이 붙은 타입만 저장한다.
+            if (!type.IsSerializable)
                 return false;
 
             return true;
