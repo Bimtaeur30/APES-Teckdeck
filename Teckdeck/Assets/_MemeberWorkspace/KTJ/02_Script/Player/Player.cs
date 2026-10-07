@@ -20,7 +20,11 @@ public class Player : ModuleOwner
     [field:SerializeField] public IPlayerMovementModule MovementModule { get; private set; }
     [field:SerializeField] public Vector3 WallNormal { get; private set; }
     [SerializeField] private StateListSO stateListSO;
-
+    
+    // 점프차징
+    [SerializeField] private float maxJumpMultiplyValue = 3f;
+    [field:SerializeField] public ChargingUI ChargingUI;
+    
     protected override void InitializeModules()
     {
         base.InitializeModules();
@@ -32,16 +36,20 @@ public class Player : ModuleOwner
     {
         base.Awake();
         PlayerInputSO.OnJumpKeyPressed += HandleOnJumpKeyPressed;
+        PlayerInputSO.OnJumpKeyReleased += HandleOnJumpKeyReleased;
         PlayerInputSO.OnMovementChange += HandleOnMovementChanged;
 
         Fsm = new StateMachine(this, stateListSO.states);
         Fsm.ChangeState(0);
     }
 
+
     private void Update()
     {
         Fsm.UpdateMachine();
+        CalculateJumpCharging();
     }
+
     private void OnCollisionStay(Collision other)
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Wall"))
@@ -61,15 +69,43 @@ public class Player : ModuleOwner
         }
     }
 
+    private bool isJumpCharging = false;
+    private float currentJumpCharge = 1f;
+    private void CalculateJumpCharging()
+    {
+        if (isJumpCharging)
+        {
+            currentJumpCharge = Mathf.Min(maxJumpMultiplyValue,  currentJumpCharge + Time.deltaTime);
+            ChargingUI.Charge(currentJumpCharge, maxJumpMultiplyValue);
+            Debug.Log(currentJumpCharge);
+        }
+        else
+        {
+            currentJumpCharge = 1f;
+        }
+    }
+
     private void HandleOnJumpKeyPressed()
     {
         if (Fsm.CurrentState is IdleState)
         {
-            IdleState idleState = (IdleState)Fsm.CurrentState;
-            idleState.StartJump();
+            isJumpCharging = true;
+            
+            ChargingUI.Set();
         }
     }
-    
+
+    private void HandleOnJumpKeyReleased()
+    {
+        if (Fsm.CurrentState is IdleState)
+        {
+            isJumpCharging = false;
+            IdleState idleState = (IdleState)Fsm.CurrentState;
+            idleState.StartJump(currentJumpCharge);
+            
+            ChargingUI.UnSet();
+        }
+    }
 
     private void HandleOnMovementChanged(Vector2 obj)
     {

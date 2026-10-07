@@ -3,7 +3,7 @@ using _Shared.Systems.FsmSystem.Runtime;
 using ModuleSystem;
 using UnityEngine;
 
-public class JumpState : AbstractState, IStateEnter<MovementVector>
+public class JumpState : AbstractState, IStateEnter<MovementContainer>
 {
     private Player player;
 
@@ -12,7 +12,7 @@ public class JumpState : AbstractState, IStateEnter<MovementVector>
         player = owner as Player;
     }
 
-    public void EnterWith(MovementVector data, float duration)
+    public void EnterWith(MovementContainer data, float duration)
     {
         if (!player.MovementModule.JumpStart(data, HandleOnJumpLand))
             Transition.ChangeState((int)StateEnum.Idle);

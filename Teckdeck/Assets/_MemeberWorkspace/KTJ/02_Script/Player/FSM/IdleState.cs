@@ -50,6 +50,9 @@ public class IdleState : AbstractState
         {
             player.LineRenderer.positionCount = 0;
         }
+        
+        // 차징UI회전시키기
+        player.ChargingUI.RotateTo(vector.Direction);
     }
     
     private bool TryGetMouseMovement(out MovementVector movement)
@@ -73,14 +76,13 @@ public class IdleState : AbstractState
     }
     
 
-    public void StartJump()
+    public void StartJump(float forceMultiplier)
     {
         MovementVector vector;
         bool getMouseMovement = TryGetMouseMovement(out vector);
         if (getMouseMovement && vector.Direction.sqrMagnitude > 0f && IsEnableJumpAngle(vector.Direction))
         {
-            //_playerMovementModule.JumpStart(vector);
-            Transition.ChangeState<MovementVector>((int)StateEnum.Jump, vector);
+            Transition.ChangeState((int)StateEnum.Jump, new MovementContainer(vector, forceMultiplier));
         }
     }
 }

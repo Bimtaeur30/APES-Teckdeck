@@ -10,6 +10,7 @@ namespace _MemeberWorkspace.KTJ._02_Script.Player.InputSystem
     {
         public event Action<Vector2> OnMovementChange;
         public event Action OnJumpKeyPressed;
+        public event Action OnJumpKeyReleased;
         public Vector2 CurrentMove { get; private set; }
 
         private Controls _controls;
@@ -40,6 +41,8 @@ namespace _MemeberWorkspace.KTJ._02_Script.Player.InputSystem
         {
             if (context.performed)
                 OnJumpKeyPressed?.Invoke();
+            else if (context.canceled)
+                OnJumpKeyReleased?.Invoke();
         }
         
         public Vector2 GetMouseScreenPosition()
