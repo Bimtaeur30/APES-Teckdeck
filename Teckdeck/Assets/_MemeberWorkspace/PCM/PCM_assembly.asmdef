@@ -6,7 +6,8 @@
         "Combat_assembly",
         "ModuleSystem",
         "Unity.Behavior",
-        "Unity.Behavior.SerializableGUID"
+        "Unity.Behavior.SerializableGUID",
+        "AnimatorSystem_assembly"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

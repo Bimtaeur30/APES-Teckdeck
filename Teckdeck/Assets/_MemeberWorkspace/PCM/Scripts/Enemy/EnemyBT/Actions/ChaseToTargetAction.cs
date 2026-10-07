@@ -38,7 +38,10 @@ namespace Enemy.BT.Actions
                 _destination = newDestination;
                 _navMovement.SetDestination(_destination);
             }
-            return _navMovement.IsArrived ? Status.Success : Status.Running;
+            float distanceToTarget = Vector3.Distance(
+                Enemy.Value.transform.position,
+                Target.Value.transform.position);
+            return distanceToTarget <= Enemy.Value.EnemyData.StopDistance  ? Status.Success : Status.Running;
         }
     }
 }

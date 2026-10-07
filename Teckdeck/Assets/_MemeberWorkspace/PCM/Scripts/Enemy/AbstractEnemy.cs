@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Enemy
 {
-    public class AbstractEnemy : Agent
+    public abstract class AbstractEnemy : Agent
     {
         [field: SerializeField] public EnemyDataSO EnemyData { get; private set; }
 
