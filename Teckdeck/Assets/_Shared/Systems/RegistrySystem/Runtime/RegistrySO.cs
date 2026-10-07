@@ -10,6 +10,7 @@ namespace _Shared.Systems.RegistrySystem.Runtime
     {
         public int enumValue;
         public string enumKeyName;
+        public string typeName;
         [SerializeReference] public IRegistryItem registryItem;
     }
     

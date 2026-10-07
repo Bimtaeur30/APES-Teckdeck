@@ -6,7 +6,6 @@ namespace _MemeberWorkspace.JTH.Scripts.RegistryTest
     public class RegistryTestFireball : RegistryTestSkill
     {
         [SerializeReference] private float explosionRadius = 3f;
-        [SerializeReference] private float explosisonRadius = 3f;
         [SerializeReference] private GameObject effectPrefab;
 
         public float ExplosionRadius => explosionRadius;

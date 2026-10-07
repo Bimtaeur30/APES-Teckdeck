@@ -14,7 +14,6 @@ namespace JTH.RegistryTest
     [Serializable]
     public class RegistryTestDefaultCtorItem : RegistryTestItemBase
     {
-        [SerializeField, Range(0f, 10f)] private float radius = 3f;
         [SerializeField] private GameObject effectPrefab;
     }
 
