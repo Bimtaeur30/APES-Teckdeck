@@ -9,7 +9,7 @@
 ## 현재 요청
 
 - 요청 요약: enum 키로 항목을 관리하는 레지스트리 시스템(`_Shared/Systems/RegistrySystem`). 2026-10-05 저장 방식을 프리팹 → `[SerializeReference] IRegistryItem`으로 바꿨다(사용자 작성). 2026-10-06부터 에디터 C#은 Claude가 맡는다(판정 `완벽히 앎`, 검수만). 런타임 생성/`Init`은 사용자 담당.
-- 승인된 범위: PHASE-001(에디터 구현, 이후 코드 삭제), PHASE-002(UI만 남기기), PHASE-003(Row UI 정리), PHASE-004(추가 입력 줄 배치), PHASE-005(is-delayed, 인스펙터 표시 클래스), PHASE-006(타입 선택 팝업, `어려움 + 모름`이라 Claude가 코드만 작성, 주석은 사용자가 단다), PHASE-007(오류 표시 통일), PHASE-008(네임스페이스 제외 목록 칸), PHASE-009(베이스 타입 드롭다운), PHASE-010(항목 생성·표시 정리) — 009/010은 2026-10-06 "승인, 009부터 진행", PHASE-011(베이스는 IRegistryItem/IInitRegistryItem 직속 구현만, 두 인터페이스 자신은 제외) — 2026-10-06 "승인", PHASE-012(열린 줄 파란 표시 갱신, 2026-10-06 "파란 표시 RefreshItems 문제도 고쳐줘"), PHASE-013(베이스 변경 시 항목 비우기 + 확인 창 + UI 정리, 2026-10-06 "네가 넣어줘. Display랑 다른 처리까지 해줘."), PHASE-014(Component~ 이름 정리, 2026-10-07, 소급 기록), PHASE-015(항목 경고 + typeName 저장 + 타입 변환 통일, 2026-10-07 "응 그렇게 맞추고 진행해")
+- 승인된 범위: PHASE-001(에디터 구현, 이후 코드 삭제), PHASE-002(UI만 남기기), PHASE-003(Row UI 정리), PHASE-004(추가 입력 줄 배치), PHASE-005(is-delayed, 인스펙터 표시 클래스), PHASE-006(타입 선택 팝업, `어려움 + 모름`이라 Claude가 코드만 작성, 주석은 사용자가 단다), PHASE-007(오류 표시 통일), PHASE-008(네임스페이스 제외 목록 칸), PHASE-009(베이스 타입 드롭다운), PHASE-010(항목 생성·표시 정리) — 009/010은 2026-10-06 "승인, 009부터 진행", PHASE-011(베이스는 IRegistryItem/IInitRegistryItem 직속 구현만, 두 인터페이스 자신은 제외) — 2026-10-06 "승인", PHASE-012(열린 줄 파란 표시 갱신, 2026-10-06 "파란 표시 RefreshItems 문제도 고쳐줘"), PHASE-013(베이스 변경 시 항목 비우기 + 확인 창 + UI 정리, 2026-10-06 "네가 넣어줘. Display랑 다른 처리까지 해줘."), PHASE-014(Component~ 이름 정리, 2026-10-07, 소급 기록), PHASE-015(항목 경고 + typeName 저장 + 타입 변환 통일, 2026-10-07 "응 그렇게 맞추고 진행해"), PHASE-016(JsonUtility 깊은 복사 검증, 임시 클래스 생성 후 삭제, 2026-10-07 "응 진행해")
 - 범위 밖 항목: 런타임 생성(`MemberwiseClone` 복제)과 `Init` 호출(사용자 담당), `RegistryRuntime` 커스텀 에디터, 테스트 스크립트·프리팹 정리, Skill/State 이전
 
 ## Phase 현황
@@ -30,12 +30,13 @@
 | 012 | 완료 | 인스펙터 열기/닫기/추가 시 줄 파란 표시 즉시 갱신 | `phases/PHASE-012.md` |
 | 013 | 완료 | 베이스 변경 시 같은 타입 무시, 확인 창, 항목 비우기, 입력 줄·인스펙터·키 오류·enum 버튼 정리 | `phases/PHASE-013.md` |
 | 014 | 완료(소급 기록) | Component~ 이름 정리(RegistrySO, RegistryEntry, entries, RegistryTypeDropdown, UXML/USS 파일명) | `phases/PHASE-014.md` |
-| 015 | 진행 중 | [Serializable] 없음·매개변수 생성자를 막지 않고 경고, typeName 저장, 타입 변환·경고 static 캐시 검사기 | `phases/PHASE-015.md` |
+| 015 | 완료 | [Serializable] 없음·매개변수 생성자를 막지 않고 경고, typeName 저장, 타입 변환·경고 static 캐시 검사기 | `phases/PHASE-015.md` |
+| 016 | 완료 | JsonUtility 깊은 복사 검증(통과, FromJson(json, type) 권장) | `phases/PHASE-016.md` |
 
 ## 현재 재개 지점
 
 - 마지막 완료 작업: enum 영역에 `skipNamespaces` PropertyField 추가(PHASE-008). 이후 사용자가 SerializeReference 방식으로 에디터를 고쳤다.
-- 마지막 완료 작업(갱신): PHASE-014 이름 정리. 현재 PHASE-015 진행 중.
+- 마지막 완료 작업(갱신): PHASE-016 JsonUtility 깊은 복사 검증. 런타임 사본은 SO 객체를 JsonUtility로 복제하는 방향.
 - 다음에 할 작업: 사용자가 인스펙터에서 확인하고 런타임 생성/`Init`을 작성한다. 검증용 `JTH/Scripts/RegistryTest/RegistryTestItems.cs`는 확인 후 지워도 된다.
 - 사용자 승인이 필요한 사항: 없음
 - 관련 파일: `Assets/_Shared/Systems/RegistrySystem/Editor/`(`RegistrySOEditor.cs`, `RegistryTypeDropdown.cs`, `RegistryItemValidator.cs`, `RegistryEditorUI.uxml`, `RegistryRowUI.uxml`, `RegistryEditorUIStyle.uss`), `Runtime/`(`RegistrySO.cs`, `RegistryRuntime.cs`, `IRegistryItem.cs`, `IInitRegistryItem.cs`).

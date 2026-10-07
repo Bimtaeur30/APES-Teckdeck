@@ -20,6 +20,7 @@ namespace _Shared.Systems.RegistrySystem.Editor
         enum ObjectFieldError { GuidIsNull, NoMeta, NoObject }
 
         private const string MissingTypeMsg = "타입을 찾을 수 없습니다. 클래스 이름을 바꿨다면 [MovedFrom]으로 이전 이름을 알려주세요";
+        private const string NoInstanceMsg = "인스턴스가 없습니다. 인스펙터를 다시 열면 생성을 다시 시도합니다";
 
         [SerializeField] private VisualTreeAsset viewAsset = default;
         [SerializeField] private VisualTreeAsset rowAsset = default;
@@ -59,6 +60,12 @@ namespace _Shared.Systems.RegistrySystem.Editor
             lbl.EnableInClassList("registry__error--visible", hasError);
             lbl.text = hasError ? msg : "";
             return hasError;
+        }
+        private void SetWarningMsg(Label lbl, string msg = null)
+        {
+            bool hasWarning = !string.IsNullOrEmpty(msg);
+            lbl.EnableInClassList("registry__warning--visible", hasWarning);
+            lbl.text = hasWarning ? msg : "";
         }
         
         public override VisualElement CreateInspectorGUI()
@@ -111,6 +118,8 @@ namespace _Shared.Systems.RegistrySystem.Editor
             
             _generateBtn.clicked += HandleGenerateBtn;
 
+            SyncEntryTypes();
+
             //값을 채우기
             FillValues();
             
@@ -143,17 +152,21 @@ namespace _Shared.Systems.RegistrySystem.Editor
         private void HandleBindItem(VisualElement element, int index)
         {
             RegistryEntry item = _targetData.entries[index];
-            
+            Type itemType = GetEntryType(item);
+
             Label typeLabel = element.Q<Label>("type-label");
             typeLabel.userData = item;
-            typeLabel.text = item.registryItem == null ? "Missing" : item.registryItem.GetType().Name;
+            typeLabel.text = GetEntryTypeDisplayName(item, itemType);
             typeLabel.RegisterCallback<ClickEvent>(HandleItemTypeLblClick);
 
             Label itemError = element.Q<Label>("error");
             _errorMsgDict.TryGetValue(_targetData.entries[index], out string errorMsg);
-            if (item.registryItem == null && string.IsNullOrEmpty(errorMsg))
+            if (itemType == null && string.IsNullOrEmpty(errorMsg))
                 errorMsg = MissingTypeMsg;
             SetErrorMsg(itemError, errorMsg);
+
+            Label itemWarning = element.Q<Label>("warning");
+            SetWarningMsg(itemWarning, itemType == null ? null : RegistryItemValidator.GetWarningMsg(itemType));
             
             TextField keyField = element.Q<TextField>("key-field");
             keyField.userData = item;
@@ -208,8 +221,12 @@ namespace _Shared.Systems.RegistrySystem.Editor
             
             if (_openedItem.registryItem == null)
             {
-                _inspectorTitle.text = "Missing";
-                _inspectorBody.Add(new Label(MissingTypeMsg));
+                Type itemType = GetEntryType(_openedItem);
+                _inspectorTitle.text = GetEntryTypeDisplayName(_openedItem, itemType);
+                string msg = itemType == null
+                    ? MissingTypeMsg
+                    : RegistryItemValidator.GetWarningMsg(itemType) ?? NoInstanceMsg;
+                _inspectorBody.Add(new Label(msg));
                 return;
             }
 
@@ -291,21 +308,25 @@ namespace _Shared.Systems.RegistrySystem.Editor
         private bool TryAddEntry()
         {
             string enumName = _pendingKeyField.text;
-            IRegistryItem registryItem;
-            try
-            {
-                registryItem = CreateRegistryItem(_pendingItemType);
-            }
-            catch (Exception e)
-            {
-                SetErrorMsg(_pendingError, $"인스턴스를 생성할 수 없습니다: {(e.InnerException ?? e).Message}");
-                return false;
-            }
-
-            if (registryItem == null)
+            if (!typeof(IRegistryItem).IsAssignableFrom(_pendingItemType))
             {
                 SetErrorMsg(_pendingError, "IRegistryItem을 구현한 타입이 아닙니다");
                 return false;
+            }
+
+            //[Serializable]이 없으면 SerializeReference가 저장하지 못하므로 null로 두고 typeName만 남긴다.
+            IRegistryItem registryItem = null;
+            if (_pendingItemType.IsSerializable)
+            {
+                try
+                {
+                    registryItem = CreateRegistryItem(_pendingItemType);
+                }
+                catch (Exception e)
+                {
+                    SetErrorMsg(_pendingError, $"인스턴스를 생성할 수 없습니다: {(e.InnerException ?? e).Message}");
+                    return false;
+                }
             }
 
             Undo.RecordObject(_targetData, "Add Registry Entry");
@@ -314,6 +335,7 @@ namespace _Shared.Systems.RegistrySystem.Editor
             {
                 enumValue = ++_targetData.lastEnumValue,
                 enumKeyName = enumName,
+                typeName = RegistryItemValidator.GetTypeName(_pendingItemType),
                 registryItem = registryItem
             };
             
@@ -333,6 +355,61 @@ namespace _Shared.Systems.RegistrySystem.Editor
                 ? defaultCtor.Invoke(null)
                 : RuntimeHelpers.GetUninitializedObject(type);
             return instance as IRegistryItem;
+        }
+
+        //인스펙터를 열 때 한 번. 비어 있거나 낡은 typeName(예: [MovedFrom]으로 이름 변경)을 실제 객체 기준으로 맞추고,
+        //null로 저장된 항목 중 [Serializable]을 붙여 고친 타입은 인스턴스를 다시 만든다.
+        private void SyncEntryTypes()
+        {
+            bool isChanged = false;
+
+            foreach (RegistryEntry entry in _targetData.entries)
+            {
+                if (entry.registryItem != null)
+                {
+                    string typeName = RegistryItemValidator.GetTypeName(entry.registryItem.GetType());
+                    if (entry.typeName != typeName)
+                    {
+                        entry.typeName = typeName;
+                        isChanged = true;
+                    }
+                    continue;
+                }
+
+                Type type = RegistryItemValidator.ResolveType(entry.typeName);
+                if (type == null || !type.IsSerializable)
+                    continue;
+
+                try
+                {
+                    entry.registryItem = CreateRegistryItem(type);
+                    isChanged = true;
+                }
+                catch (Exception e)
+                {
+                    Debug.LogWarning($"[Registry] {entry.enumKeyName}: 인스턴스를 다시 만들 수 없습니다: {(e.InnerException ?? e).Message}", _targetData);
+                }
+            }
+
+            if (isChanged)
+                EditorUtility.SetDirty(_targetData);
+        }
+
+        private static Type GetEntryType(RegistryEntry entry)
+            => entry.registryItem != null
+                ? entry.registryItem.GetType()
+                : RegistryItemValidator.ResolveType(entry.typeName);
+
+        //타입을 못 찾아도 저장된 이름이 있으면 그 이름(네임스페이스·어셈블리 제외)을 보여준다.
+        private static string GetEntryTypeDisplayName(RegistryEntry entry, Type type)
+        {
+            if (type != null)
+                return type.Name;
+            if (string.IsNullOrEmpty(entry.typeName))
+                return "Missing";
+
+            string fullName = entry.typeName.Split(',')[0];
+            return fullName.Substring(fullName.LastIndexOfAny(new[] { '.', '+' }) + 1);
         }
 
         private void HandleRemoveBtn()
@@ -439,7 +516,7 @@ namespace _Shared.Systems.RegistrySystem.Editor
             if (selectedType == null)
                 return;
 
-            string typeName = $"{selectedType.FullName}, {selectedType.Assembly.GetName().Name}";
+            string typeName = RegistryItemValidator.GetTypeName(selectedType);
             if (typeName == _targetData.baseTypeName)
                 return;
 
@@ -481,8 +558,7 @@ namespace _Shared.Systems.RegistrySystem.Editor
             return introduced.Where(i => !introduced.Any(other => other != i && i.IsAssignableFrom(other)));
         }
 
-        private Type GetBaseType()
-            => string.IsNullOrEmpty(_targetData.baseTypeName) ? null : Type.GetType(_targetData.baseTypeName);
+        private Type GetBaseType() => RegistryItemValidator.ResolveType(_targetData.baseTypeName);
 
         private void FillBaseTypeField()
         {

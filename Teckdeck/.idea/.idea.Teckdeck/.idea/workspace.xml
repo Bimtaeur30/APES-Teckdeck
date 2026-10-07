@@ -12,12 +12,12 @@
   <component name="ChangeListManager">
     <list default="true" id="44da0101-9d20-4f5a-9088-489447dcff59" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Teckdeck/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Teckdeck/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/RegistryTest/RegistryTestFireball.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/RegistryTest/RegistryTestFireball.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/RegistryTest/RegistryTestItems.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/RegistryTest/RegistryTestItems.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Runtime/IRegistryItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Runtime/IRegistryItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Runtime/RegistryRuntime.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Runtime/RegistryRuntime.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Runtime/RegistrySO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Runtime/RegistrySO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Runtime/RegistrySystem_runtime_assembly.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Runtime/RegistrySystem_runtime_assembly.asmdef" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/_AgentLog/PROGRESS.md" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/_AgentLog/PROGRESS.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Editor/RegistryEditorUIStyle.uss" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Editor/RegistryEditorUIStyle.uss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Editor/RegistryRowUI.uxml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Editor/RegistryRowUI.uxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Editor/RegistrySOEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Editor/RegistrySOEditor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Editor/RegistryTypeDropdown.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Editor/RegistryTypeDropdown.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

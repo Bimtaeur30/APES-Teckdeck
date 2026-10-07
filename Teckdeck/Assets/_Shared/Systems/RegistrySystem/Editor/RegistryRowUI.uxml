@@ -6,5 +6,6 @@
             <ui:Label name="type-label" tooltip="눌러서 인스펙터 열기/닫기" class="registry-row__type"/>
         </ui:VisualElement>
         <ui:Label name="error" class="registry__error registry__error--compact"/>
+        <ui:Label name="warning" class="registry__warning"/>
     </ui:VisualElement>
 </ui:UXML>

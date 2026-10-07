@@ -32,6 +32,18 @@
     display: flex;
 }
 
+.registry__warning {
+    display: none;
+    color: rgb(230, 180, 60);
+    white-space: normal;
+    margin: 3px 0 0 0;
+    font-size: 11px;
+}
+
+.registry__warning--visible {
+    display: flex;
+}
+
 .registry__list {
     max-height: 360px;
     margin-top: 2px;
