@@ -1,0 +1,20 @@
+{
+    "name": "PCM_assembly",
+    "rootNamespace": "",
+    "references": [
+        "AgentSystem_assembly",
+        "Combat_assembly",
+        "ModuleSystem",
+        "Unity.Behavior",
+        "Unity.Behavior.SerializableGUID"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

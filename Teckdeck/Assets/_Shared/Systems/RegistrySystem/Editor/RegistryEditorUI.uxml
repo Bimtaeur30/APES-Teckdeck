@@ -1,0 +1,43 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="project://database/Assets/_Shared/Systems/RegistrySystem/Editor/RegistryEditorUIStyle.uss?fileID=7433441132597879392&amp;guid=75c814dcf305444ba19120b5250c2655&amp;type=3#RegistryEditorUIStyle"/>
+    <ui:VisualElement name="root">
+        <ui:VisualElement name="settings" class="registry__section">
+            <ui:VisualElement name="base-type-row" class="registry__base-type-row">
+                <ui:TextField name="base-type-field" label="베이스 타입" readonly="true" focusable="false" class="registry__base-type-field"/>
+                <ui:Button name="base-type-btn" text="선택" tooltip="IRegistryItem을 구현한 타입 중에서 고르기" class="registry__base-type-btn"/>
+            </ui:VisualElement>
+            <ui:Label name="settings-error" class="registry__error"/>
+        </ui:VisualElement>
+        <ui:ListView name="entry-list" show-border="true" class="registry__list"/>
+        <ui:VisualElement name="pending-row-container" class="registry__pending">
+            <ui:VisualElement name="pending-row" class="registry-row registry-row--editing">
+                <ui:Label name="pending-hint" text="클래스 선택 후 key(enum) 작성 후 [Enter], [Esc]로 취소" class="registry-row__hint"/>
+                <ui:VisualElement name="pending-body" class="registry-row__body">
+                    <ui:TextField name="pending-key-field" is-delayed="true" class="registry-row__key-field"/>
+                    <ui:Label name="pending-type-label" class="registry-row__type"/>
+                </ui:VisualElement>
+                <ui:Label name="pending-error" class="registry__error registry__error--compact"/>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="list-buttons" class="registry__list-buttons">
+            <ui:Button name="add-btn" text="+" class="registry__list-button"/>
+            <ui:Button name="remove-btn" text="-" tooltip="선택한 항목 삭제" class="registry__list-button"/>
+        </ui:VisualElement>
+        <ui:VisualElement name="inspector-panel" class="registry__inspector">
+            <ui:VisualElement name="inspector-header" class="registry__inspector-header">
+                <ui:Label name="inspector-title" class="registry__inspector-title"/>
+                <ui:Button name="inspector-close-btn" text="×" tooltip="인스펙터 닫기" class="registry__inspector-close"/>
+            </ui:VisualElement>
+            <ui:VisualElement name="inspector-body" class="registry__inspector-body"/>
+        </ui:VisualElement>
+        <ui:VisualElement name="enum-section" class="registry__section registry__enum">
+            <uie:ObjectField name="enum-folder-field" label="enum 폴더" type="UnityEditor.DefaultAsset, UnityEditor.CoreModule" allow-scene-objects="false"/>
+            <uie:PropertyField name="namespace-skip-field" binding-path="skipNamespaces" label="네임스페이스 제외"/>
+            <ui:VisualElement name="enum-row" class="registry__enum-row">
+                <ui:TextField name="enum-name-field" label="enum 이름" binding-path="enumName" is-delayed="true" class="registry__enum-name"/>
+                <ui:Button name="generate-btn" text="enum 생성" class="registry__generate"/>
+            </ui:VisualElement>
+            <ui:Label name="enum-error" class="registry__error"/>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

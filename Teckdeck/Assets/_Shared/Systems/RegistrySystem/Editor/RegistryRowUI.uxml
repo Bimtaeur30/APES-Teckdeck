@@ -1,0 +1,10 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="project://database/Assets/_Shared/Systems/RegistrySystem/Editor/RegistryEditorUIStyle.uss?fileID=7433441132597879392&amp;guid=75c814dcf305444ba19120b5250c2655&amp;type=3#RegistryEditorUIStyle"/>
+    <ui:VisualElement name="row" class="registry-row">
+        <ui:VisualElement name="body" class="registry-row__body">
+            <ui:TextField name="key-field" is-delayed="true" class="registry-row__key-field"/>
+            <ui:Label name="type-label" tooltip="눌러서 인스펙터 열기/닫기" class="registry-row__type"/>
+        </ui:VisualElement>
+        <ui:Label name="error" class="registry__error registry__error--compact"/>
+    </ui:VisualElement>
+</ui:UXML>
