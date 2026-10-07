@@ -14,8 +14,8 @@ using Object = UnityEngine.Object;
 
 namespace _Shared.Systems.RegistrySystem.Editor
 {
-    [CustomEditor(typeof(ComponentRegistrySO))]
-    public class ComponentRegistrySOEditor : UnityEditor.Editor
+    [CustomEditor(typeof(RegistrySO))]
+    public class RegistrySOEditor : UnityEditor.Editor
     {
         enum ObjectFieldError { GuidIsNull, NoMeta, NoObject }
 
@@ -25,7 +25,7 @@ namespace _Shared.Systems.RegistrySystem.Editor
         [SerializeField] private VisualTreeAsset rowAsset = default;
 
         private VisualElement _root;
-        private ComponentRegistrySO _targetData;
+        private RegistrySO _targetData;
 
         private TextField _baseTypeField;
         private Button _baseTypeBtn;
@@ -48,9 +48,9 @@ namespace _Shared.Systems.RegistrySystem.Editor
         private Button _generateBtn;
         private Label _enumError;
 
-        private readonly Dictionary<ComponentListItem, string> _errorMsgDict = new();
-        private ComponentListItem _openedItem;
-        private Type _pendingComponentType;
+        private readonly Dictionary<RegistryEntry, string> _errorMsgDict = new();
+        private RegistryEntry _openedItem;
+        private Type _pendingItemType;
         
         private T Q<T>(string elemName) where T : VisualElement => _root.Q<T>(elemName);
         private bool SetErrorMsg(Label lbl, string msg = null)
@@ -65,7 +65,7 @@ namespace _Shared.Systems.RegistrySystem.Editor
         {
             _root = new VisualElement();
             viewAsset.CloneTree(_root);
-            _targetData = (ComponentRegistrySO)target;
+            _targetData = (RegistrySO)target;
             
             //필요한 element 대입하기
             _baseTypeField = Q<TextField>("base-type-field");
@@ -136,13 +136,13 @@ namespace _Shared.Systems.RegistrySystem.Editor
         {
             FillValues();
             
-            if (_openedItem != null && _targetData.components.All(c => c != _openedItem))
+            if (_openedItem != null && _targetData.entries.All(c => c != _openedItem))
                 HandleInspectorCloseBtn();
         }
 
         private void HandleBindItem(VisualElement element, int index)
         {
-            ComponentListItem item = _targetData.components[index];
+            RegistryEntry item = _targetData.entries[index];
             
             Label typeLabel = element.Q<Label>("type-label");
             typeLabel.userData = item;
@@ -150,7 +150,7 @@ namespace _Shared.Systems.RegistrySystem.Editor
             typeLabel.RegisterCallback<ClickEvent>(HandleItemTypeLblClick);
 
             Label itemError = element.Q<Label>("error");
-            _errorMsgDict.TryGetValue(_targetData.components[index], out string errorMsg);
+            _errorMsgDict.TryGetValue(_targetData.entries[index], out string errorMsg);
             if (item.registryItem == null && string.IsNullOrEmpty(errorMsg))
                 errorMsg = MissingTypeMsg;
             SetErrorMsg(itemError, errorMsg);
@@ -179,7 +179,7 @@ namespace _Shared.Systems.RegistrySystem.Editor
             Undo.RecordObject(_targetData, "Change Key Field");
             
             TextField field = (TextField)evt.currentTarget;
-            ComponentListItem item = (ComponentListItem)field.userData;
+            RegistryEntry item = (RegistryEntry)field.userData;
             item.enumKeyName = evt.newValue;
 
             CheckKeysValid();
@@ -189,11 +189,11 @@ namespace _Shared.Systems.RegistrySystem.Editor
 
         private void HandleItemTypeLblClick(ClickEvent evt)
         {
-            ComponentListItem item = (ComponentListItem)((Label)evt.currentTarget).userData;
-            OnComponentItemFocus(item);
+            RegistryEntry item = (RegistryEntry)((Label)evt.currentTarget).userData;
+            OnEntryFocus(item);
         }
 
-        private void OnComponentItemFocus(ComponentListItem item)
+        private void OnEntryFocus(RegistryEntry item)
         {
             bool shouldOpen = item != _openedItem;
             _openedItem = shouldOpen ? item : null;
@@ -214,10 +214,10 @@ namespace _Shared.Systems.RegistrySystem.Editor
             }
 
             _inspectorTitle.text = _openedItem.registryItem.GetType().Name;
-            int idx = _targetData.components.IndexOf(item);
+            int idx = _targetData.entries.IndexOf(item);
             serializedObject.Update();
             SerializedProperty itemProp = serializedObject
-                .FindProperty("components")
+                .FindProperty("entries")
                 .GetArrayElementAtIndex(idx)
                 .FindPropertyRelative("registryItem");
             
@@ -237,7 +237,7 @@ namespace _Shared.Systems.RegistrySystem.Editor
             if (baseType == null || !IsBaseTypeSelectable(baseType))
                 return;
 
-            new ComponentTypeDropdown(new AdvancedDropdownState(), baseType, HandleTypeSelected)
+            new RegistryTypeDropdown(new AdvancedDropdownState(), baseType, HandleTypeSelected)
                 .Show(_addBtn.worldBound);
         }
 
@@ -246,7 +246,7 @@ namespace _Shared.Systems.RegistrySystem.Editor
             if (selectedType == null)
                 return;
             
-            _pendingComponentType = selectedType;
+            _pendingItemType = selectedType;
             _pendingTypeLabel.text = selectedType.Name;
             _pendingRowContainer.AddToClassList("registry__pending--active");
             _pendingKeyField.value = selectedType.Name;
@@ -256,7 +256,7 @@ namespace _Shared.Systems.RegistrySystem.Editor
         private void ClosePending()
         {
             _pendingRowContainer.RemoveFromClassList("registry__pending--active");
-            _pendingComponentType = null;
+            _pendingItemType = null;
             SetErrorMsg(_pendingError);
         }
 
@@ -280,7 +280,7 @@ namespace _Shared.Systems.RegistrySystem.Editor
             if (evt.keyCode is KeyCode.Return or KeyCode.KeypadEnter && CheckPendingKeyValid())
             {
                 evt.StopPropagation();
-                if (TryAddToComponentList())
+                if (TryAddEntry())
                     ClosePending();
             }
         }
@@ -288,13 +288,13 @@ namespace _Shared.Systems.RegistrySystem.Editor
         private void HandlePendingKeyFieldValueChange(ChangeEvent<string> evt)
             => CheckPendingKeyValid();
 
-        private bool TryAddToComponentList()
+        private bool TryAddEntry()
         {
             string enumName = _pendingKeyField.text;
             IRegistryItem registryItem;
             try
             {
-                registryItem = CreateRegistryItem(_pendingComponentType);
+                registryItem = CreateRegistryItem(_pendingItemType);
             }
             catch (Exception e)
             {
@@ -308,17 +308,17 @@ namespace _Shared.Systems.RegistrySystem.Editor
                 return false;
             }
 
-            Undo.RecordObject(_targetData, "Add Component Item");
+            Undo.RecordObject(_targetData, "Add Registry Entry");
 
-            ComponentListItem item = new ComponentListItem
+            RegistryEntry item = new RegistryEntry
             {
                 enumValue = ++_targetData.lastEnumValue,
                 enumKeyName = enumName,
                 registryItem = registryItem
             };
             
-            _targetData.components.Add(item);
-            OnComponentItemFocus(item);
+            _targetData.entries.Add(item);
+            OnEntryFocus(item);
             GenerateBtnDirtyCheck();
 
             return true;
@@ -341,9 +341,9 @@ namespace _Shared.Systems.RegistrySystem.Editor
             if (!selectedItems.Any())
                 return;
             
-            Undo.RecordObject(_targetData, "Remove Component");
+            Undo.RecordObject(_targetData, "Remove Registry Entry");
             
-            _targetData.components.RemoveAll(c => selectedItems.Contains(c));
+            _targetData.entries.RemoveAll(c => selectedItems.Contains(c));
             CheckKeysValid();
             GenerateBtnDirtyCheck();
             HandleInspectorCloseBtn();
@@ -364,7 +364,7 @@ namespace _Shared.Systems.RegistrySystem.Editor
                 SetErrorMsg(_enumError, "Enum의 이름 또는 저장할 폴더가 존재하지 않습니다.");
                 return;
             }
-            if (_targetData.components.Count == 0)
+            if (_targetData.entries.Count == 0)
             {
                 SetErrorMsg(_enumError, "컴포넌트의 수가 충분하지 않습니다(1개 이상)");
                 return;
@@ -386,7 +386,7 @@ namespace _Shared.Systems.RegistrySystem.Editor
                 return;
             }
 
-            string enumString = string.Join(",", _targetData.components.Select(c 
+            string enumString = string.Join(",", _targetData.entries.Select(c 
                 => $"{c.enumKeyName} = {c.enumValue}"));
 
             string nameSpace = forderPath;
@@ -405,7 +405,7 @@ namespace _Shared.Systems.RegistrySystem.Editor
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh(); //이걸 해줘야 컴파일이 새로 들어간다.
             
-            _targetData.lastEnums = GetComponentEnum().ToList();
+            _targetData.lastEnums = GetEntryEnum().ToList();
             GenerateBtnDirtyCheck();
             EditorUtility.SetDirty(_targetData);
         }
@@ -429,7 +429,7 @@ namespace _Shared.Systems.RegistrySystem.Editor
 
         private void HandleBaseTypeBtn()
         {
-            new ComponentTypeDropdown(new AdvancedDropdownState(), typeof(IRegistryItem), HandleBaseTypeSelected
+            new RegistryTypeDropdown(new AdvancedDropdownState(), typeof(IRegistryItem), HandleBaseTypeSelected
                     , "베이스 타입", IsBaseTypeSelectable)
                 .Show(_baseTypeField.worldBound);
         }
@@ -443,7 +443,7 @@ namespace _Shared.Systems.RegistrySystem.Editor
             if (typeName == _targetData.baseTypeName)
                 return;
 
-            int itemCount = _targetData.components.Count;
+            int itemCount = _targetData.entries.Count;
             if (itemCount > 0 && !EditorUtility.DisplayDialog("베이스 타입 변경",
                     $"베이스 타입을 {selectedType.Name}(으)로 바꾸면 항목 {itemCount}개가 모두 삭제됩니다.\n" +
                     "Ctrl+Z로 되돌릴 수 있습니다. 계속할까요?", "변경", "취소"))
@@ -451,7 +451,7 @@ namespace _Shared.Systems.RegistrySystem.Editor
 
             Undo.RecordObject(_targetData, "Change Base Type");
             _targetData.baseTypeName = typeName;
-            _targetData.components.Clear();
+            _targetData.entries.Clear();
 
             //이전 베이스 기준으로 열려 있던 입력 줄, 인스펙터, 키 오류, enum 버튼 상태를 정리
             ClosePending();
@@ -544,7 +544,7 @@ namespace _Shared.Systems.RegistrySystem.Editor
                 return;
             
             _entryList.makeItem = () => rowAsset.CloneTree();
-            _entryList.itemsSource = _targetData.components;
+            _entryList.itemsSource = _targetData.entries;
             _entryList.RefreshItems();
         }
 
@@ -557,7 +557,7 @@ namespace _Shared.Systems.RegistrySystem.Editor
             if (isInList)
                 return null;
 
-            HashSet<string> enumNames = _targetData.components
+            HashSet<string> enumNames = _targetData.entries
                 .Select(c => c.enumKeyName)
                 .ToHashSet();
             if (!enumNames.Add(key))
@@ -587,16 +587,16 @@ namespace _Shared.Systems.RegistrySystem.Editor
             bool successed = true;
             HashSet<string> enumNames = new HashSet<string>();
             
-            foreach (ComponentListItem compoItem in _targetData.components)
+            foreach (RegistryEntry entry in _targetData.entries)
             {
-                var errorMsg = GetKeyError(compoItem.enumKeyName, true);
-                if (!enumNames.Add(compoItem.enumKeyName))
+                var errorMsg = GetKeyError(entry.enumKeyName, true);
+                if (!enumNames.Add(entry.enumKeyName))
                     errorMsg = "키가 중복되었습니다";
                 
                 if (!string.IsNullOrEmpty(errorMsg))
                 {
                     successed = false;
-                    _errorMsgDict[compoItem] = errorMsg;
+                    _errorMsgDict[entry] = errorMsg;
                 }
             }
 
@@ -606,15 +606,15 @@ namespace _Shared.Systems.RegistrySystem.Editor
         //원래 저장된 enumName들과 컴포넌트들의 enumName이 일치하지 않는다면 Generate를 통해 enum을 만들어야 하기 때문에 버튼을 강조
         private void GenerateBtnDirtyCheck()
         {
-            HashSet<string> componentsEnum = GetComponentEnum();
+            HashSet<string> entriesEnum = GetEntryEnum();
             HashSet<string> realEnum = _targetData.lastEnums.ToHashSet();
             
-            bool isDirty = !componentsEnum.SetEquals(realEnum);
+            bool isDirty = !entriesEnum.SetEquals(realEnum);
             _generateBtn.EnableInClassList("registry__generate--dirty", isDirty);
         }
 
-        private HashSet<string> GetComponentEnum()
-            => _targetData.components
+        private HashSet<string> GetEntryEnum()
+            => _targetData.entries
                 .Select(c => $"{c.enumValue} = {c.enumKeyName}")
                 .ToHashSet();
     }

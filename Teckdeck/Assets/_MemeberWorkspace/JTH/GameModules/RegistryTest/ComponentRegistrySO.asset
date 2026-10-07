@@ -11,9 +11,9 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 55eee9fca617441294486e25bc466dec, type: 3}
   m_Name: ComponentRegistrySO
-  m_EditorClassIdentifier: RegistrySystem_runtime_assembly::_Shared.Systems.RegistrySystem.Runtime.ComponentRegistrySO
+  m_EditorClassIdentifier: RegistrySystem_runtime_assembly::_Shared.Systems.RegistrySystem.Runtime.RegistrySO
   baseTypeName: JTH.RegistryTest.RegistryTestInitBase, Assembly-CSharp
-  components: []
+  entries: []
   enumName: 
   enumFolderGuid: 
   lastEnumValue: 0

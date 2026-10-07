@@ -7,9 +7,9 @@ using UnityEngine;
 
 namespace _Shared.Systems.RegistrySystem.Editor
 {
-    public class ComponentTypeDropdown : AdvancedDropdown
+    public class RegistryTypeDropdown : AdvancedDropdown
     {
-        //AdvancedDropdownItem을 상속받아 ComponentTypeDropdown에 추가할 수 있도록 한다.
+        //AdvancedDropdownItem을 상속받아 RegistryTypeDropdown에 추가할 수 있도록 한다.
         private class TypeItem : AdvancedDropdownItem
         {
             public readonly Type Type;
@@ -30,7 +30,7 @@ namespace _Shared.Systems.RegistrySystem.Editor
         //state는 전에 열렸던 상태를 기억하고 다시 열었을 때 스크롤 위치를 미리 변경함. 여기선 매번 가장 위에서 열려도 상관 없기 때문에 
         //매번 new()를 통해 만들어도 상관 없다.
         //title과 isAddable을 넘기지 않으면 항목 추가용(기본 제목, IsAddable)으로 동작한다.
-        public ComponentTypeDropdown(AdvancedDropdownState state, Type baseType, Action<Type> onSelected
+        public RegistryTypeDropdown(AdvancedDropdownState state, Type baseType, Action<Type> onSelected
             , string title = "컴포넌트 타입", Func<Type, bool> isAddable = null)
             : base(state)
         {

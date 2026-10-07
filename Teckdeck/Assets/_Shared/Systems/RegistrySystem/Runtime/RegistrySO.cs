@@ -1,22 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace _Shared.Systems.RegistrySystem.Runtime
 {
     [Serializable]
-    public class ComponentListItem
+    public class RegistryEntry
     {
         public int enumValue;
         public string enumKeyName;
         [SerializeReference] public IRegistryItem registryItem;
     }
     
-    [CreateAssetMenu(fileName = "ComponentRegistrySO", menuName = "Lib/Registry/ComponentRegistrySO", order = 0)]
-    public class ComponentRegistrySO : ScriptableObject
+    [CreateAssetMenu(fileName = "RegistrySO", menuName = "Lib/Registry/RegistrySO", order = 0)]
+    public class RegistrySO : ScriptableObject
     {
         public string baseTypeName;
-        public List<ComponentListItem> components = new List<ComponentListItem>();
+        [FormerlySerializedAs("components")] public List<RegistryEntry> entries = new List<RegistryEntry>();
         public string enumName;
         public string enumFolderGuid;
         public int lastEnumValue = -1;
