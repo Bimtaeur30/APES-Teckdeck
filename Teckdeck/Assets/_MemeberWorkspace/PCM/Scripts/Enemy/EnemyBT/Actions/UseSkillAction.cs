@@ -14,7 +14,7 @@ namespace Enemy.BT.Actions
     {
         [SerializeReference] public BlackboardVariable<AbstractEnemy> Enemy;
         [SerializeReference] public BlackboardVariable<int> SkillNumber;
-        [SerializeReference] public BlackboardVariable<GameObject> Target;
+        [SerializeReference] public BlackboardVariable<GameObject> TargetGameObject;
 
         private ISkillModule _skillModule;
         private bool _isSkillEnd;
@@ -22,15 +22,14 @@ namespace Enemy.BT.Actions
         protected override Status OnStart()
         {
             if (Enemy.Value == null || SkillNumber.Value < 0)
+            {
+                Debug.LogError("UseSkill action :  Enemy 또는 Number가 할당되지 않아 행동이 실패");
                 return Status.Failure;
+            }
 
-            ISkillModule skillModule = Enemy.Value.SkillModule;
-            if (skillModule == null || !skillModule.CanUseSkill(SkillNumber.Value, Target.Value))
-                return Status.Failure;
-
-            _skillModule = skillModule;
+            _skillModule = Enemy.Value.SkillModule;
             _isSkillEnd = false;
-            _skillModule.UseSkill(SkillNumber.Value, Target.Value);
+            _skillModule.UseSkill(SkillNumber.Value, TargetGameObject.Value);
             _skillModule.OnCurrentSkillEnd += HandleSkillEnd;
             return Status.Running;
         }
@@ -42,12 +41,11 @@ namespace Enemy.BT.Actions
 
         protected override void OnEnd()
         {
-            if (_skillModule == null)
-                return;
-
-            _skillModule.OnCurrentSkillEnd -= HandleSkillEnd;
-            _skillModule.StopSkillIfNotFinished();
-            _skillModule = null;
+            if (_skillModule != null)
+            {
+                _skillModule.OnCurrentSkillEnd -= HandleSkillEnd;
+                _skillModule.StopSkillIfNotFinished();
+            }
         }
 
         private void HandleSkillEnd() => _isSkillEnd = true;

@@ -4,7 +4,7 @@
 
 - 이름/이니셜: `PCM`
 - 작업폴더: `Assets/_MemeberWorkspace/PCM/`
-- 마지막 갱신: `2026-10-07 23:40 (UTC+9)`
+- 마지막 갱신: `2026-10-08 09:35 (UTC+9)`
 
 ## 현재 요청
 
@@ -31,8 +31,8 @@
 
 ## 현재 재개 지점
 
-- 마지막 완료 작업: Editor 컴파일 오류 수정 후 EnemyBT melee loop 자동 적용 완료
-- 다음에 할 작업: EnemyBT 창을 다시 열어 ATTACK에 Use Skill이 보이는지, 플레이에서 CHASE↔ATTACK이 도는지 확인
+- 마지막 완료 작업: TestEnemySkill이 IRenderer 없이 자식 Animator로 공격 클립을 재생하도록 수정
+- 다음에 할 작업: 플레이에서 CHASE/ATTACK 상태가 해당 Animator 스테이트로 바뀌는지 확인
 - 관련 파일: `Editor/EnemyBTMeleeLoopBuilder.cs`, `GameModule/Enemy/BT/EnemyBT.asset`, `UseSkillAction.cs`
 
 ## 검증 요약

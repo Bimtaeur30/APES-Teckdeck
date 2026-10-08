@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: TestEnemy data
   m_EditorClassIdentifier: PCM_assembly::Enemy.EnemyDataSO
   <DetectRadius>k__BackingField: 15
-  <ViewAngle>k__BackingField: 160
-  <StopDistance>k__BackingField: 1.2
+  <ViewAngle>k__BackingField: 360
+  <StopDistance>k__BackingField: 1.5
