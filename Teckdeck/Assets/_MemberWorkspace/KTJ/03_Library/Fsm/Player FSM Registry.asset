@@ -12,44 +12,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55eee9fca617441294486e25bc466dec, type: 3}
   m_Name: Player FSM Registry
   m_EditorClassIdentifier: RegistrySystem_runtime_assembly::_Shared.Systems.RegistrySystem.Runtime.RegistrySO
-  baseTypeName: _Shared.Systems.FsmSystem.Runtime.AbstractState, FsmSystem_runtime_assembly
+  baseTypeName: FsmSystem.AbstractState, FsmSystem_assembly
   entries:
-  - enumValue: 0
+  - enumValue: 4
     enumKeyName: Idle
     typeName: KTJ._02_Script.Player.FSM.IdleState, KTJ
     registryItem:
-      rid: 1971265137090232670
-  - enumValue: 2
+      rid: 1971265137090232748
+  - enumValue: 5
     enumKeyName: Jump
     typeName: KTJ._02_Script.Player.FSM.JumpState, KTJ
     registryItem:
-      rid: 1971265137090232672
-  - enumValue: 3
+      rid: 1971265137090232749
+  - enumValue: 6
     enumKeyName: Walk
     typeName: KTJ._02_Script.Player.FSM.WalkState, KTJ
     registryItem:
-      rid: 1971265137090232720
+      rid: 1971265137090232750
   enumName: PlayerState
   enumFolderGuid: faa298bb3e1915c44bf8732ff8f329b8
-  lastEnumValue: 3
+  lastEnumValue: 6
   lastEnums:
-  - 0 = Idle
-  - 2 = Jump
-  - 3 = Walk
+  - 4 = Idle
+  - 5 = Jump
+  - 6 = Walk
   skipNamespaces:
   - _MemberWorkspace
   references:
     version: 2
     RefIds:
-    - rid: 1971265137090232670
+    - rid: 1971265137090232748
       type: {class: IdleState, ns: KTJ._02_Script.Player.FSM, asm: KTJ}
       data:
-        StateAnimParam: {fileID: 11400000, guid: 55998f035ef102547b871d24484173a3, type: 2}
-    - rid: 1971265137090232672
+        StateAnimParam: {fileID: 0}
+    - rid: 1971265137090232749
       type: {class: JumpState, ns: KTJ._02_Script.Player.FSM, asm: KTJ}
       data:
-        StateAnimParam: {fileID: 11400000, guid: 19f1b092f98e97d4e84d8a442dfb56f8, type: 2}
-    - rid: 1971265137090232720
+        StateAnimParam: {fileID: 0}
+    - rid: 1971265137090232750
       type: {class: WalkState, ns: KTJ._02_Script.Player.FSM, asm: KTJ}
       data:
-        StateAnimParam: {fileID: 11400000, guid: 19f1b092f98e97d4e84d8a442dfb56f8, type: 2}
+        StateAnimParam: {fileID: 0}

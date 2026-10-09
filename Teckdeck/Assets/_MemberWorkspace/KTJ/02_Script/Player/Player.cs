@@ -41,7 +41,7 @@ public class Player : ModuleOwner
         PlayerInputSO.OnMovementChange += HandleOnMovementChanged;
 
         Fsm = new StateMachine(this, registryRuntime);
-        Fsm.ChangeState(0);
+        Fsm.ChangeState((int)PlayerState.Idle);
     }
 
 
