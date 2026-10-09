@@ -35,7 +35,11 @@
                 <ui:TextField name="enum-folder-field" label="enum 폴더" readonly="true" focusable="false" tooltip="프로젝트 창에서 폴더를 끌어다 놓아도 됩니다" class="registry__folder-field"/>
                 <ui:Button name="enum-folder-btn" text="선택" tooltip="enum 파일을 만들 폴더 고르기" class="registry__folder-btn"/>
             </ui:VisualElement>
-            <uie:PropertyField name="namespace-skip-field" binding-path="skipNamespaces" label="네임스페이스 제외"/>
+            <ui:VisualElement name="namespace-skip-row" class="registry__folder-row">
+                <ui:TextField name="namespace-skip-field" label="네임스페이스 제외" readonly="true" focusable="false" class="registry__folder-field"/>
+                <ui:Button name="namespace-skip-btn" text="선택" tooltip="enum 폴더 경로 중 네임스페이스에서 뺄 폴더 고르기" class="registry__folder-btn"/>
+            </ui:VisualElement>
+            <ui:Label name="namespace-preview" class="registry__namespace-preview"/>
             <ui:VisualElement name="enum-row" class="registry__enum-row">
                 <ui:TextField name="enum-name-field" label="enum 이름" binding-path="enumName" is-delayed="true" class="registry__enum-name"/>
                 <ui:Button name="generate-btn" text="enum 생성" class="registry__generate"/>

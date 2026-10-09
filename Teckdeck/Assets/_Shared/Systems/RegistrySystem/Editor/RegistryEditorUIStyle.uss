@@ -34,6 +34,13 @@
     min-width: 48px;
 }
 
+.registry__namespace-preview {
+    margin: 0 3px 4px 3px;
+    font-size: 11px;
+    color: rgb(150, 150, 150);
+    white-space: normal;
+}
+
 .registry__error {
     display: none;
     color: rgb(235, 95, 95);

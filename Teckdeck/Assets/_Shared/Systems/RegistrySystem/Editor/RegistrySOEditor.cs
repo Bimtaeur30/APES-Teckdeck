@@ -49,6 +49,9 @@ namespace _Shared.Systems.RegistrySystem.Editor
 
         private TextField _enumFolderField;
         private Button _enumFolderBtn;
+        private TextField _namespaceSkipField;
+        private Button _namespaceSkipBtn;
+        private Label _namespacePreview;
         private Button _generateBtn;
         private Label _enumError;
 
@@ -101,6 +104,9 @@ namespace _Shared.Systems.RegistrySystem.Editor
             
             _enumFolderField = Q<TextField>("enum-folder-field");
             _enumFolderBtn = Q<Button>("enum-folder-btn");
+            _namespaceSkipField = Q<TextField>("namespace-skip-field");
+            _namespaceSkipBtn = Q<Button>("namespace-skip-btn");
+            _namespacePreview = Q<Label>("namespace-preview");
             _generateBtn = Q<Button>("generate-btn");
             _enumError = Q<Label>("enum-error");
 
@@ -127,7 +133,9 @@ namespace _Shared.Systems.RegistrySystem.Editor
             _enumFolderField.RegisterCallback<DragPerformEvent>(HandleEnumFolderDragPerform);
             _enumFolderField.RegisterCallback<DragLeaveEvent>(_ => _enumFolderField.RemoveFromClassList(FolderDropClass));
             _enumFolderField.RegisterCallback<DragExitedEvent>(_ => _enumFolderField.RemoveFromClassList(FolderDropClass));
-            
+            _namespaceSkipBtn.clicked += HandleNamespaceSkipBtn;
+            _namespaceSkipField.RegisterCallback<ClickEvent>(_ => HandleNamespaceSkipBtn());
+
             _entryList.bindItem += HandleBindItem;
             _entryList.unbindItem += HandleUnbindItem;
             _addBtn.clicked += HandleAddBtn;
@@ -158,6 +166,7 @@ namespace _Shared.Systems.RegistrySystem.Editor
             FillEntryList();
             
             FillEnumFolderField();
+            FillNamespaceSkipField();
 
             GenerateBtnDirtyCheck();
         }
@@ -513,16 +522,7 @@ namespace _Shared.Systems.RegistrySystem.Editor
             string enumString = string.Join(",", _targetData.entries.Select(c 
                 => $"{c.enumKeyName} = {c.enumValue}"));
 
-            string nameSpace = forderPath;
-            if (nameSpace.StartsWith("Assets/"))
-                nameSpace = nameSpace.Substring("Assets/".Length);
-            
-            nameSpace = string.Join('.', nameSpace.Split('/')
-                .ToList()
-                .Where(str => !_targetData.skipNamespaces.Contains(str))
-                .Select(str => char.IsDigit(str[0]) ? '_' + str : str));
-            if (string.IsNullOrEmpty(nameSpace))
-                nameSpace = "None";
+            string nameSpace = BuildNamespace(forderPath);
 
             string code = string.Format(CodeFormat.EnumFormat, nameSpace, _targetData.enumName, enumString);
             File.WriteAllText($"{forderPath}/{_targetData.enumName}.cs", code);
@@ -622,6 +622,7 @@ namespace _Shared.Systems.RegistrySystem.Editor
 
             SetErrorMsg(_enumError);
             FillEnumFolderField();
+            FillNamespaceSkipField();
         }
 
         //GUID로 저장하므로 폴더를 옮기거나 이름을 바꿔도 지금 경로를 보여준다.
@@ -637,6 +638,83 @@ namespace _Shared.Systems.RegistrySystem.Editor
             _enumFolderField.tooltip = isMissing ? $"GUID: {guid}" : folderPath;
             if (isMissing)
                 SetErrorMsg(_enumError, MissingFolderMsg);
+        }
+
+        //저장된 enum 폴더가 실제로 있을 때만 경로를 돌려준다.
+        private string GetEnumFolderPath()
+        {
+            string folderPath = AssetDatabase.GUIDToAssetPath(_targetData.enumFolderGuid);
+            return !string.IsNullOrEmpty(folderPath) && AssetDatabase.IsValidFolder(folderPath) ? folderPath : null;
+        }
+
+        //네임스페이스가 될 폴더 이름들. Assets 바로 아래부터 센다.
+        private static string[] GetNamespaceSegments(string folderPath)
+        {
+            string nameSpace = folderPath;
+            if (nameSpace.StartsWith("Assets/"))
+                nameSpace = nameSpace.Substring("Assets/".Length);
+            return nameSpace.Split('/');
+        }
+
+        //제외 목록의 폴더는 빼고, 숫자로 시작하는 조각은 앞에 _를 붙인다. 미리보기와 생성이 같이 쓴다.
+        private string BuildNamespace(string folderPath)
+        {
+            string nameSpace = string.Join('.', GetNamespaceSegments(folderPath)
+                .Where(str => !_targetData.skipNamespaces.Contains(str))
+                .Select(str => char.IsDigit(str[0]) ? '_' + str : str));
+            return string.IsNullOrEmpty(nameSpace) ? "None" : nameSpace;
+        }
+
+        private void HandleNamespaceSkipBtn()
+            => BuildNamespaceSkipMenu().DropDown(_namespaceSkipField.worldBound);
+
+        //현재 enum 폴더 경로의 폴더 이름을 체크로 고른다. 경로에 없는데 목록에 남은 이름은 아래에 따로 보여 지울 수 있게 한다.
+        private GenericMenu BuildNamespaceSkipMenu()
+        {
+            var menu = new GenericMenu();
+            string folderPath = GetEnumFolderPath();
+            string[] segments = folderPath == null 
+                ? Array.Empty<string>() 
+                : GetNamespaceSegments(folderPath).Distinct().ToArray();
+
+            if (folderPath == null)
+                menu.AddDisabledItem(new GUIContent("enum 폴더를 먼저 고르세요"));
+
+            foreach (string segment in segments)
+                menu.AddItem(new GUIContent(segment), _targetData.skipNamespaces.Contains(segment), () => ToggleNamespaceSkip(segment));
+
+            List<string> others = _targetData.skipNamespaces.Where(n => !segments.Contains(n)).Distinct().ToList();
+            if (others.Count > 0)
+            {
+                menu.AddSeparator("");
+                menu.AddDisabledItem(new GUIContent("다른 경로"));
+                foreach (string name in others)
+                    menu.AddItem(new GUIContent(name), true, () => ToggleNamespaceSkip(name));
+            }
+
+            return menu;
+        }
+
+        private void ToggleNamespaceSkip(string name)
+        {
+            Undo.RecordObject(_targetData, "Change Namespace Skip");
+            if (!_targetData.skipNamespaces.Remove(name))
+                _targetData.skipNamespaces.Add(name);
+            EditorUtility.SetDirty(_targetData);
+
+            FillNamespaceSkipField();
+        }
+
+        private void FillNamespaceSkipField()
+        {
+            string skipText = string.Join(", ", _targetData.skipNamespaces);
+            _namespaceSkipField.SetValueWithoutNotify(skipText);
+            _namespaceSkipField.tooltip = skipText;
+
+            string folderPath = GetEnumFolderPath();
+            _namespacePreview.text = folderPath == null
+                ? "네임스페이스: (enum 폴더 없음)"
+                : $"네임스페이스: {BuildNamespace(folderPath)}";
         }
 
         private void HandleBaseTypeBtn()
