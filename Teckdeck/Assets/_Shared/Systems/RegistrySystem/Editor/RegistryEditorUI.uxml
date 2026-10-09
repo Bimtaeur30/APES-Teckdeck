@@ -31,7 +31,10 @@
             <ui:VisualElement name="inspector-body" class="registry__inspector-body"/>
         </ui:VisualElement>
         <ui:VisualElement name="enum-section" class="registry__section registry__enum">
-            <uie:ObjectField name="enum-folder-field" label="enum 폴더" type="UnityEditor.DefaultAsset, UnityEditor.CoreModule" allow-scene-objects="false"/>
+            <ui:VisualElement name="enum-folder-row" class="registry__folder-row">
+                <ui:TextField name="enum-folder-field" label="enum 폴더" readonly="true" focusable="false" tooltip="프로젝트 창에서 폴더를 끌어다 놓아도 됩니다" class="registry__folder-field"/>
+                <ui:Button name="enum-folder-btn" text="선택" tooltip="enum 파일을 만들 폴더 고르기" class="registry__folder-btn"/>
+            </ui:VisualElement>
             <uie:PropertyField name="namespace-skip-field" binding-path="skipNamespaces" label="네임스페이스 제외"/>
             <ui:VisualElement name="enum-row" class="registry__enum-row">
                 <ui:TextField name="enum-name-field" label="enum 이름" binding-path="enumName" is-delayed="true" class="registry__enum-name"/>

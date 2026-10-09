@@ -16,6 +16,24 @@
     min-width: 48px;
 }
 
+.registry__folder-row {
+    flex-direction: row;
+    align-items: center;
+}
+
+.registry__folder-field {
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+.registry__folder-field--drop {
+    background-color: rgba(80, 140, 230, 0.25);
+}
+
+.registry__folder-btn {
+    min-width: 48px;
+}
+
 .registry__error {
     display: none;
     color: rgb(235, 95, 95);

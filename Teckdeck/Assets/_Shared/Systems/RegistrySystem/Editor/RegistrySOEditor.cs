@@ -20,9 +20,9 @@ namespace _Shared.Systems.RegistrySystem.Editor
         private const string MissingTypeMsg = "타입을 찾을 수 없습니다. 클래스 이름을 바꿨다면 [MovedFrom]으로 이전 이름을 알려주세요";
         private const string NoInstanceMsg = "인스턴스가 없습니다. 인스펙터를 다시 열면 생성을 다시 시도합니다";
         private const string NoFieldMsg = "표시할 필드가 없습니다";
-        private const string GuidIsNull = "GUID가 존재하지 않습니다";
-        private const string NoMeta = "GUID에 해당하는 .meta가 존재하지 않습니다";
-        private const string NoObject = "Object가 존재하지 않습니다";
+        private const string MissingFolderMsg = "저장된 enum 폴더를 찾을 수 없습니다. 다시 고르세요";
+        private const string OutsideAssetsMsg = "Assets 안의 폴더만 고를 수 있습니다";
+        private const string FolderDropClass = "registry__folder-field--drop";
 
         [SerializeField] private VisualTreeAsset viewAsset = default;
         [SerializeField] private VisualTreeAsset rowAsset = default;
@@ -47,7 +47,8 @@ namespace _Shared.Systems.RegistrySystem.Editor
         private Button _inspectorCloseBtn;
         private VisualElement _inspectorBody;
 
-        private ObjectField _enumFolderField;
+        private TextField _enumFolderField;
+        private Button _enumFolderBtn;
         private Button _generateBtn;
         private Label _enumError;
 
@@ -98,7 +99,8 @@ namespace _Shared.Systems.RegistrySystem.Editor
             _inspectorCloseBtn = Q<Button>("inspector-close-btn");
             _inspectorBody = Q<VisualElement>("inspector-body");
             
-            _enumFolderField = Q<ObjectField>("enum-folder-field");
+            _enumFolderField = Q<TextField>("enum-folder-field");
+            _enumFolderBtn = Q<Button>("enum-folder-btn");
             _generateBtn = Q<Button>("generate-btn");
             _enumError = Q<Label>("enum-error");
 
@@ -119,7 +121,12 @@ namespace _Shared.Systems.RegistrySystem.Editor
             
             _baseTypeBtn.clicked += HandleBaseTypeBtn;
             _baseTypeField.RegisterCallback<ClickEvent>(_ => HandleBaseTypeBtn());
-            _enumFolderField.RegisterValueChangedCallback(HandleEnumFolderObjectFieldChange);
+            _enumFolderBtn.clicked += HandleEnumFolderBtn;
+            _enumFolderField.RegisterCallback<ClickEvent>(_ => HandleEnumFolderBtn());
+            _enumFolderField.RegisterCallback<DragUpdatedEvent>(HandleEnumFolderDragUpdated);
+            _enumFolderField.RegisterCallback<DragPerformEvent>(HandleEnumFolderDragPerform);
+            _enumFolderField.RegisterCallback<DragLeaveEvent>(_ => _enumFolderField.RemoveFromClassList(FolderDropClass));
+            _enumFolderField.RegisterCallback<DragExitedEvent>(_ => _enumFolderField.RemoveFromClassList(FolderDropClass));
             
             _entryList.bindItem += HandleBindItem;
             _entryList.unbindItem += HandleUnbindItem;
@@ -150,7 +157,7 @@ namespace _Shared.Systems.RegistrySystem.Editor
             CheckKeysValid();
             FillEntryList();
             
-            FillObjectField(_enumFolderField, _targetData.enumFolderGuid);
+            FillEnumFolderField();
 
             GenerateBtnDirtyCheck();
         }
@@ -527,21 +534,108 @@ namespace _Shared.Systems.RegistrySystem.Editor
             EditorUtility.SetDirty(_targetData);
         }
         
-        private void HandleEnumFolderObjectFieldChange(ChangeEvent<Object> evt)
+        private void HandleEnumFolderBtn()
         {
-            Undo.RecordObject(_targetData, "Change Enum Folder");
+            string selectedPath = EditorUtility.OpenFolderPanel("enum 폴더 선택", GetFolderPanelStartPath(), "");
+            //취소하면 빈 문자열
+            if (string.IsNullOrEmpty(selectedPath))
+                return;
 
-            string errorMsg = null;
-            
-            if (evt.newValue == null)
-                errorMsg = NoObject;
-            
-            string guid = GetGuid(evt.newValue);
-            if (string.IsNullOrEmpty(guid))
-                errorMsg = string.IsNullOrEmpty(errorMsg) ? NoMeta : errorMsg;
-  
-            _targetData.enumFolderGuid = guid;
-            SetErrorMsg(_enumError, errorMsg);
+            SetEnumFolder(ToProjectPath(selectedPath));
+        }
+
+        private void HandleEnumFolderDragUpdated(DragUpdatedEvent evt)
+        {
+            bool isFolder = GetDraggedFolderPath() != null;
+            DragAndDrop.visualMode = isFolder ? DragAndDropVisualMode.Link : DragAndDropVisualMode.Rejected;
+            _enumFolderField.EnableInClassList(FolderDropClass, isFolder);
+        }
+
+        private void HandleEnumFolderDragPerform(DragPerformEvent evt)
+        {
+            _enumFolderField.RemoveFromClassList(FolderDropClass);
+            string folderPath = GetDraggedFolderPath();
+            if (folderPath == null)
+                return;
+
+            DragAndDrop.AcceptDrag();
+            SetEnumFolder(folderPath);
+        }
+
+        //프로젝트 창에서 폴더 하나를 끌 때만 경로를 돌려준다.
+        private static string GetDraggedFolderPath()
+        {
+            string[] paths = DragAndDrop.paths;
+            if (paths == null || paths.Length != 1 || !AssetDatabase.IsValidFolder(paths[0]))
+                return null;
+            return paths[0];
+        }
+
+        //지금 폴더가 있으면 그 폴더, 없으면 이 SO가 있는 폴더에서 창을 연다.
+        private string GetFolderPanelStartPath()
+        {
+            string folderPath = AssetDatabase.GUIDToAssetPath(_targetData.enumFolderGuid);
+            if (string.IsNullOrEmpty(folderPath) || !AssetDatabase.IsValidFolder(folderPath))
+            {
+                string assetPath = AssetDatabase.GetAssetPath(_targetData);
+                folderPath = string.IsNullOrEmpty(assetPath) ? null : Path.GetDirectoryName(assetPath);
+            }
+            if (string.IsNullOrEmpty(folderPath))
+                return Application.dataPath;
+            return Path.GetFullPath(folderPath);
+        }
+
+        //OS 폴더 창은 절대 경로를 돌려주므로 Assets 기준 경로로 바꾼다. Assets 밖이면 null
+        private static string ToProjectPath(string absolutePath)
+        {
+            string path = absolutePath.Replace('\\', '/').TrimEnd('/');
+            string dataPath = Application.dataPath.Replace('\\', '/');
+
+            if (path.Equals(dataPath, StringComparison.OrdinalIgnoreCase))
+                return "Assets";
+            if (path.StartsWith(dataPath + "/", StringComparison.OrdinalIgnoreCase))
+                return "Assets" + path.Substring(dataPath.Length);
+            return null;
+        }
+
+        private void SetEnumFolder(string folderPath)
+        {
+            if (folderPath == null)
+            {
+                SetErrorMsg(_enumError, OutsideAssetsMsg);
+                return;
+            }
+
+            //폴더 창에서 새로 만든 폴더는 아직 임포트 전이라 .meta(GUID)가 없으므로 그 폴더만 임포트한다.
+            if (!AssetDatabase.IsValidFolder(folderPath))
+                AssetDatabase.ImportAsset(folderPath);
+            if (!AssetDatabase.IsValidFolder(folderPath))
+            {
+                SetErrorMsg(_enumError, $"폴더를 임포트하지 못했습니다: {folderPath}");
+                return;
+            }
+
+            Undo.RecordObject(_targetData, "Change Enum Folder");
+            _targetData.enumFolderGuid = AssetDatabase.AssetPathToGUID(folderPath);
+            EditorUtility.SetDirty(_targetData);
+
+            SetErrorMsg(_enumError);
+            FillEnumFolderField();
+        }
+
+        //GUID로 저장하므로 폴더를 옮기거나 이름을 바꿔도 지금 경로를 보여준다.
+        //폴더를 못 찾을 때만 오류를 띄운다. 비워 두는 것은 생성 버튼에서 막는다.
+        private void FillEnumFolderField()
+        {
+            string guid = _targetData.enumFolderGuid;
+            string folderPath = string.IsNullOrEmpty(guid) ? "" : AssetDatabase.GUIDToAssetPath(guid);
+            bool isMissing = !string.IsNullOrEmpty(guid)
+                             && (string.IsNullOrEmpty(folderPath) || !AssetDatabase.IsValidFolder(folderPath));
+
+            _enumFolderField.SetValueWithoutNotify(isMissing ? "Missing" : folderPath);
+            _enumFolderField.tooltip = isMissing ? $"GUID: {guid}" : folderPath;
+            if (isMissing)
+                SetErrorMsg(_enumError, MissingFolderMsg);
         }
 
         private void HandleBaseTypeBtn()
@@ -617,34 +711,6 @@ namespace _Shared.Systems.RegistrySystem.Editor
             SetErrorMsg(_settingError, errorMsg);
         }
 
-        private string GetGuid(Object newObj)
-        {
-            string assetPath = AssetDatabase.GetAssetPath(newObj);
-            return AssetDatabase.AssetPathToGUID(assetPath);
-        }
-
-        private void FillObjectField(ObjectField field, string guid, Label errorMsgLbl = null)
-        {
-            string errorMsg = null;
-            
-            if (string.IsNullOrEmpty(guid))
-                errorMsg = GuidIsNull;
-            
-            string assetPath = AssetDatabase.GUIDToAssetPath(guid);
-            if (string.IsNullOrEmpty(assetPath))
-                errorMsg = string.IsNullOrEmpty(errorMsg) ? NoMeta : errorMsg;
-            
-            Object asset = AssetDatabase.LoadAssetAtPath<Object>(assetPath);
-            if (asset == null)
-                errorMsg = string.IsNullOrEmpty(errorMsg) ? NoObject : errorMsg;
-            
-            //Undo를 한 후에 이 메서드가 호출되어 value가 바뀌면 다시 So에 값이 할당되는데, 그럼 Redo가 지워지기 때문에 WithoutNotify
-            field.SetValueWithoutNotify(asset);
-
-            if (errorMsgLbl != null)
-                SetErrorMsg(errorMsgLbl, errorMsg);
-        }
-        
         private void FillEntryList()
         {
             if (_entryList == null)
