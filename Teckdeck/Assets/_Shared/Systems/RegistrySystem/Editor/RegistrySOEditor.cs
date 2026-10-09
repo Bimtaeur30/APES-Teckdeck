@@ -519,7 +519,8 @@ namespace _Shared.Systems.RegistrySystem.Editor
             
             nameSpace = string.Join('.', nameSpace.Split('/')
                 .ToList()
-                .Where(str => !_targetData.skipNamespaces.Contains(str)));
+                .Where(str => !_targetData.skipNamespaces.Contains(str))
+                .Select(str => char.IsDigit(str[0]) ? '_' + str : str));
             if (string.IsNullOrEmpty(nameSpace))
                 nameSpace = "None";
 

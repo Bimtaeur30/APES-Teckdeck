@@ -90,6 +90,8 @@
     padding: 3px 4px;
     border-left-width: 3px;
     border-left-color: rgba(0, 0, 0, 0);
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 .registry-row__body {
@@ -98,7 +100,6 @@
 }
 
 .registry-row__key-field {
-    flex-grow: 1;
     margin: 0;
     -unity-font-style: bold;
 }
@@ -108,6 +109,10 @@
     padding: 0 4px;
     color: rgb(150, 150, 150);
     -unity-text-align: middle-right;
+    font-size: 20px;
+    text-overflow: ellipsis;
+    flex-grow: 1;
+    height: 100%;
 }
 
 .registry-row__type:hover {

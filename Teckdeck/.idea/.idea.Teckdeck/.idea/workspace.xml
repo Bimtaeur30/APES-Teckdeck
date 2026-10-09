@@ -11,15 +11,745 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44da0101-9d20-4f5a-9088-489447dcff59" name="변경" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Teckdeck/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Teckdeck/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Teckdeck/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Teckdeck/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/01_Scene/PlayerTestScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/01_Scene/PlayerTestScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/FSM/IdleState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/FSM/IdleState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/FSM/JumpState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/FSM/JumpState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/InputSystem/PlayerInputSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/InputSystem/PlayerInputSO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/Movement/IPlayerMovementModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/Movement/IPlayerMovementModule.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/Movement/PlayerMovementModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/Movement/PlayerMovementModule.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/_AgentLog/PROGRESS.md" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/_AgentLog/PROGRESS.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj.DotSettings" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj.DotSettings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/GameModules.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/GameModules/RegistryTest.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Graphics.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scenes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scenes/Test-Skill_Scene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scenes/Test-Skill_Scene.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/RegistryTest.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/RegistryTest/RegistryRuntimeTester.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/RegistryTest/RegistryRuntimeTester.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/RegistryTest/RegistryTestFireball.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/RegistryTest/RegistryTestFireball.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/RegistryTest/RegistryTestItems.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/RegistryTest/RegistryTestItems.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/RegistryTest/RegistryTestSkill.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/RegistryTest/RegistryTestSkill.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/RegistryTest/RegistryTestSlash.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/Scripts/RegistryTest/RegistryTestSlash.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/_AgentLog.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/_AgentLog/PROGRESS.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/_AgentLog/PROGRESS.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/_AgentLog/phases.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/_AgentLog/phases/PHASE-001.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/_AgentLog/phases/PHASE-001.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/_AgentLog/phases/PHASE-002.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/_AgentLog/phases/PHASE-002.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/_AgentLog/phases/PHASE-003.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/_AgentLog/phases/PHASE-003.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/_AgentLog/phases/PHASE-004.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/_AgentLog/phases/PHASE-004.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/_AgentLog/phases/PHASE-005.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/_AgentLog/phases/PHASE-005.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/_AgentLog/phases/PHASE-006.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/_AgentLog/phases/PHASE-006.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/_AgentLog/phases/PHASE-007.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/_AgentLog/phases/PHASE-007.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/_AgentLog/phases/PHASE-008.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/_AgentLog/phases/PHASE-008.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/_AgentLog/phases/PHASE-009.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/_AgentLog/phases/PHASE-009.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/_AgentLog/phases/PHASE-010.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/_AgentLog/phases/PHASE-010.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/_AgentLog/phases/PHASE-011.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/_AgentLog/phases/PHASE-011.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/_AgentLog/phases/PHASE-012.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/_AgentLog/phases/PHASE-012.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/_AgentLog/phases/PHASE-013.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/_AgentLog/phases/PHASE-013.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/_AgentLog/phases/PHASE-014.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/_AgentLog/phases/PHASE-014.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/_AgentLog/phases/PHASE-015.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/_AgentLog/phases/PHASE-015.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/_AgentLog/phases/PHASE-016.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/_AgentLog/phases/PHASE-016.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/_AgentLog/phases/PHASE-017.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/_AgentLog/phases/PHASE-017.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/_AgentLog/phases/PHASE-018.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/_AgentLog/phases/PHASE-018.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/_AgentLog/phases/PHASE-019.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/_AgentLog/phases/PHASE-019.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/_AgentLog/phases/PHASE-020.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/_AgentLog/phases/PHASE-020.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/_AgentLog/phases/PHASE-021.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/_AgentLog/phases/PHASE-021.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/_AgentLog/phases/PHASE-022.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/JTH/_AgentLog/phases/PHASE-022.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KMJ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KMJ/Assets.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KMJ/Assets/New Material.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KMJ/Assets/New Material.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KMJ/Assets/RealSkateBoard.exported.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KMJ/Assets/RealSkateBoard.exported.obj.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KMJ/Assets/SKATEBOARD.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KMJ/Assets/SKATEBOARD.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KMJ/Assets/SkateBoard.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KMJ/Assets/SkateBoard.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KMJ/Assets/Texture.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KMJ/Assets/Texture/RealSkateBoard_DefaultMaterial_AlbedoTransparency.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KMJ/Assets/Texture/RealSkateBoard_DefaultMaterial_AlbedoTransparency.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KMJ/Assets/Texture/RealSkateBoard_DefaultMaterial_Height.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KMJ/Assets/Texture/RealSkateBoard_DefaultMaterial_Height.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KMJ/Assets/Texture/RealSkateBoard_DefaultMaterial_MetallicSmoothness.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KMJ/Assets/Texture/RealSkateBoard_DefaultMaterial_MetallicSmoothness.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KMJ/Assets/Texture/RealSkateBoard_DefaultMaterial_Normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KMJ/Assets/Texture/RealSkateBoard_DefaultMaterial_Normal.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KMJ/Assets/Texture/SkateBoard_Material.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KMJ/Assets/Texture/SkateBoard_Material.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KMJ/Scene.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KMJ/Scene/Art.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KMJ/Scene/Art.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/01_Scene.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/01_Scene/PlayerTestScene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/01_Scene/PlayerTestScene.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/01_Scene/_Archive.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/01_Scene/_Archive/RepairShop_KTJ.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/01_Scene/_Archive/RepairShop_KTJ.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/01_Scene/_Archive/Trick_KTJ.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/01_Scene/_Archive/Trick_KTJ.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/FSM.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/FSM/IdleState.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/FSM/IdleState.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/FSM/JumpState.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/FSM/JumpState.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/FSM/StateEnum.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/FSM/StateEnum.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/FSM/WalkState.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/FSM/WalkState.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/HealthModule.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/HealthModule.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/InputSystem.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/InputSystem/Input.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/InputSystem/Input/Controls.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/InputSystem/Input/Controls.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/InputSystem/Input/Controls.inputactions" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/InputSystem/Input/Controls.inputactions.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/InputSystem/PlayerInputSO.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/InputSystem/PlayerInputSO.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/InputSystem/PlayerInputSO.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/InputSystem/PlayerInputSO.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/Movement.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/Movement/IPlayerMovementModule.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/Movement/IPlayerMovementModule.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/Movement/JumpCharging.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/Movement/JumpCharging/ChargingUI.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/Movement/JumpCharging/ChargingUI.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/Movement/MovementContainer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/Movement/MovementContainer.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/Movement/MovementVector.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/Movement/MovementVector.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/Movement/PlayerMovementModule.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/Movement/PlayerMovementModule.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/Player.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/Player.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/_Archive.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/_Archive/Events.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/_Archive/Events/RepairshopEvents.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/_Archive/Events/RepairshopEvents.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/_Archive/System.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/_Archive/System/RepairShop.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/_Archive/System/RepairShop/Computer.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/_Archive/System/RepairShop/Computer/VirtualMonitor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/_Archive/System/RepairShop/Computer/VirtualMonitor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/_Archive/System/RepairShop/Computer/WorldCanvasPixelDisplay.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/_Archive/System/RepairShop/Computer/WorldCanvasPixelDisplay.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/_Archive/System/RepairShop/Customizer.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/_Archive/System/RepairShop/Customizer/Customizer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/_Archive/System/RepairShop/Customizer/Customizer.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/_Archive/System/RepairShop/RepairShop.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/_Archive/System/RepairShop/RepairShop.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/_Archive/System/RepairShop/View.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/_Archive/System/RepairShop/View/IViewInteraction.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/_Archive/System/RepairShop/View/IViewInteraction.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/_Archive/System/RepairShop/View/ViewDefinition.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/_Archive/System/RepairShop/View/ViewDefinition.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/_Archive/System/RepairShop/View/ViewSwitchRequester.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/_Archive/System/RepairShop/View/ViewSwitchRequester.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/_Archive/System/RepairShop/View/ViewSwitcher.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/_Archive/System/RepairShop/View/ViewSwitcher.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/_Archive/UI.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/_Archive/UI/Toggle.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/_Archive/UI/Toggle/UIAlphaToggle.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/_Archive/UI/Toggle/UIAlphaToggle.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/_Archive/UI/Toggle/UIColorToggle.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/_Archive/UI/Toggle/UIColorToggle.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/_Archive/UI/Toggle/UIPointerEventRelay.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/_Archive/UI/Toggle/UIPointerEventRelay.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/_Archive/UI/Toggle/UISizeToggle.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/_Archive/UI/Toggle/UISizeToggle.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/_Archive/UI/Toggle/UIToggleComponent.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/_Archive/UI/Toggle/UIToggleComponent.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/_Archive/UI/Toggle/UITogglePlaybackCondition.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/_Archive/UI/Toggle/UITogglePlaybackCondition.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/03_Library.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/03_Library/EventChannel.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/03_Library/EventChannel/RepairshopChannel.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/03_Library/EventChannel/RepairshopChannel.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/03_Library/Fsm.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/03_Library/Fsm/Idle state.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/03_Library/Fsm/Idle state.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/03_Library/Fsm/Jump state.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/03_Library/Fsm/Jump state.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/03_Library/Fsm/Walk state.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/03_Library/Fsm/Walk state.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/03_Library/Fsm/_State list data.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/03_Library/Fsm/_State list data.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/ComputerScreenPixel.renderTexture" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/ComputerScreenPixel.renderTexture.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/Font.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/Font/SB 어그로 B SDF.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/Font/SB 어그로 B SDF.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/Font/SB 어그로 B.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/Font/SB 어그로 B.ttf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/Font/SB 어그로 L SDF.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/Font/SB 어그로 L SDF.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/Font/SB 어그로 L.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/Font/SB 어그로 L.ttf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/Font/SB 어그로 M SDF.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/Font/SB 어그로 M SDF.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/Font/SB 어그로 M.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/Font/SB 어그로 M.ttf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/Icon.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/Icon/ChatGPT_Image_2026_6_4_02_20_51.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/Icon/ChatGPT_Image_2026_6_4_02_20_51.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/Icon/Circle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/Icon/Circle.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/Icon/CursorIcon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/Icon/CursorIcon.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/Icon/RoundSquare.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/Icon/RoundSquare.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/Icon/Square.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/Icon/Square.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/Icon/Triangle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/Icon/Triangle.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/Icon/image.png_202606041432-removebg-preview.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/Icon/image.png_202606041432-removebg-preview.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/Material.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/Material/Monkey.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/Material/Monkey.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/Material/_Archive.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/Material/_Archive/BoardMat.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/Material/_Archive/BoardMat.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/Material/_Archive/ComputerMat.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/Material/_Archive/ComputerMat.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/Material/_Archive/HandMat.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/Material/_Archive/HandMat.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/Material/_Archive/ScreenMat.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/Material/_Archive/ScreenMat.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/Material/_Archive/SkateboardMat.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/Material/_Archive/SkateboardMat.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/Material/_Archive/TableMat.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/Material/_Archive/TableMat.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/Material/_Archive/Wall.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/Material/_Archive/Wall.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/Material/_Archive/Window.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/04_Assets/Material/_Archive/Window.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/05_Prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/05_Prefab/UI.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/05_Prefab/UI/RepairShop.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/05_Prefab/UI/RepairShop/Card.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/05_Prefab/UI/RepairShop/Card.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/KTJ.asmdef" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/KTJ.asmdef.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/_AgentLog.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/_AgentLog/PROGRESS.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/_AgentLog/PROGRESS.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/_AgentLog/phases.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/_AgentLog/phases/PHASE-001.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/_AgentLog/phases/PHASE-001.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/_AgentLog/phases/PHASE-002.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/_AgentLog/phases/PHASE-002.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/_AgentLog/phases/PHASE-003.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/_AgentLog/phases/PHASE-003.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/_AgentLog/phases/PHASE-004.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/_AgentLog/phases/PHASE-004.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/_AgentLog/phases/PHASE-005.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/_AgentLog/phases/PHASE-005.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/_AgentLog/phases/PHASE-006.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/_AgentLog/phases/PHASE-006.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/_AgentLog/phases/PHASE-007.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/_AgentLog/phases/PHASE-007.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/_AgentLog/phases/PHASE-008.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/_AgentLog/phases/PHASE-008.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/_AgentLog/phases/PHASE-009.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/_AgentLog/phases/PHASE-009.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/_AgentLog/phases/PHASE-010.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/_AgentLog/phases/PHASE-010.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/_AgentLog/phases/PHASE-011.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/_AgentLog/phases/PHASE-011.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/_AgentLog/phases/PHASE-012.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/_AgentLog/phases/PHASE-012.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/_AgentLog/phases/PHASE-013.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/_AgentLog/phases/PHASE-013.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/_AgentLog/phases/PHASE-014.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/_AgentLog/phases/PHASE-014.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/_AgentLog/phases/PHASE-015.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/_AgentLog/phases/PHASE-015.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/_AgentLog/phases/PHASE-016.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/_AgentLog/phases/PHASE-016.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/_AgentLog/phases/PHASE-017.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/_AgentLog/phases/PHASE-017.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/_AgentLog/phases/PHASE-018.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/_AgentLog/phases/PHASE-018.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/_AgentLog/phases/PHASE-019.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/_AgentLog/phases/PHASE-019.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/_AgentLog/phases/PHASE-020.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/_AgentLog/phases/PHASE-020.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/! Info.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/! Info/AnimList_legacy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/! Info/AnimList_legacy.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/! Info/Standard Assets For Unity.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/! Info/Standard Assets For Unity.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/! Info/UVs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/! Info/UVs/Body_UV.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/! Info/UVs/Body_UV.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/! Info/UVs/Stickers_UV.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/! Info/UVs/Stickers_UV.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/! Info/how-to-set-up-mixamo-animations.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/! Info/how-to-set-up-mixamo-animations.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Anims.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Anims/Astronaut_AC.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Anims/Astronaut_AC.controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Anims/Catwalk Walking.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Anims/Catwalk Walking.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Anims/Death Left.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Anims/Death Left.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Anims/Falling Flat Impact.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Anims/Falling Flat Impact.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Anims/Falling.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Anims/Falling.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Anims/Floating.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Anims/Floating.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Anims/Goofy Running.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Anims/Goofy Running.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Anims/Happy Idle.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Anims/Happy Idle.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Anims/Happy.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Anims/Happy.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Anims/Idle.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Anims/Idle.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Anims/Jog Forward.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Anims/Jog Forward.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Anims/Knocked Out.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Anims/Knocked Out.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Anims/Medium Run.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Anims/Medium Run.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Anims/Reaction.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Anims/Reaction.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Anims/Run Forward.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Anims/Run Forward.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Anims/Stabbing1.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Anims/Stabbing1.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Anims/Stabbing2.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Anims/Stabbing2.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Anims/Stabbing3.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Anims/Stabbing3.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Anims/Treading.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Anims/Treading.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Anims/Upward Thrust.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Anims/Upward Thrust.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Anims/Walking.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Anims/Walking.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Anims/Walking2.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Anims/Walking2.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Anims/Warrior Idle.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Anims/Warrior Idle.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Anims/Z Attack.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Anims/Z Attack.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Anims/Z Reaction Hit.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Anims/Z Reaction Hit.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Cute Astronauts Demo.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Cute Astronauts Demo.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Demo.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Demo/FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Demo/FBX/MoonBG.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Demo/FBX/MoonBG.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Demo/FBX/MoonSky.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Demo/FBX/MoonSky.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Demo/FBX/shooting_star.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Demo/FBX/shooting_star.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Demo/MoonBG.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Demo/MoonBG.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Demo/MoonBG.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Demo/MoonBG.controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Demo/MoonBG_centre.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Demo/MoonBG_centre.controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Demo/MoonBG_centre_anim.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Demo/MoonBG_centre_anim.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Demo/Textures.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Demo/Textures/ChangeIcon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Demo/Textures/ChangeIcon.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Demo/Textures/MoonSky.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Demo/Textures/MoonSky.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Demo/Textures/MoonSky_emission.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Demo/Textures/MoonSky_emission.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Demo/Textures/neonbutton.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Demo/Textures/neonbutton.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Demo/Textures/shooting_star.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Demo/Textures/shooting_star.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Demo/Textures/wasd.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Demo/Textures/wasd.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/FBX/Generic - Humanoid.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/FBX/Generic - Humanoid/Astronaut.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/FBX/Generic - Humanoid/Astronaut.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/FBX/Legacy.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/FBX/Legacy/Astronaut_ALL.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/FBX/Legacy/Astronaut_ALL.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/GumColor.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/GumColor.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/Stickers_colour.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/Stickers_colour/Sticker1.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/Stickers_colour/Sticker1.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/Stickers_colour/Sticker2.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/Stickers_colour/Sticker2.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/Stickers_colour/Sticker3.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/Stickers_colour/Sticker3.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/Stickers_colour/Sticker4.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/Stickers_colour/Sticker4.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/Stickers_colour/Sticker5.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/Stickers_colour/Sticker5.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/Stickers_colour/Sticker6.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/Stickers_colour/Sticker6.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/Stickers_colour/Sticker7.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/Stickers_colour/Sticker7.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/Stickers_colour/Sticker8.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/Stickers_colour/Sticker8.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V1.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V1/BackpackColor1.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V1/BackpackColor1.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V1/BackpackColor2.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V1/BackpackColor2.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V1/BackpackColor3.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V1/BackpackColor3.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V1/BodyColor.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V1/BodyColor.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V1/FaceColor.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V1/FaceColor.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V1/Sticker1.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V1/Sticker1.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V1/Sticker2.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V1/Sticker2.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V2.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V2/BackpackColor1_V2.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V2/BackpackColor1_V2.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V2/BackpackColor2_V2.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V2/BackpackColor2_V2.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V2/BackpackColor3_V2.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V2/BackpackColor3_V2.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V2/BodyColor_V2.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V2/BodyColor_V2.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V2/FaceColor_V2.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V2/FaceColor_V2.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V2/Sticker_A_V2.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V2/Sticker_A_V2.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V2/Sticker_heart_V2.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V2/Sticker_heart_V2.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V3.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V3/BackpackColor1_V3.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V3/BackpackColor1_V3.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V3/BackpackColor2_V3.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V3/BackpackColor2_V3.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V3/BackpackColor3_V3.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V3/BackpackColor3_V3.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V3/BodyColor_V3.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V3/BodyColor_V3.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V3/FaceColor_V3.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V3/FaceColor_V3.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V3/Sticker_A_V3.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V3/Sticker_A_V3.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V3/Sticker_star_V3.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V3/Sticker_star_V3.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V4.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V4/BackpackColor1_V4.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V4/BackpackColor1_V4.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V4/BackpackColor2_V4.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V4/BackpackColor2_V4.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V4/BackpackColor3_V4.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V4/BackpackColor3_V4.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V4/BodyColor_V4.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V4/BodyColor_V4.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V4/FaceColor_V4.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V4/FaceColor_V4.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V4/Sticker_A_V4.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V4/Sticker_A_V4.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V4/Sticker_heart_V4.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V4/Sticker_heart_V4.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V5.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V5/BackpackColor1_V5.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V5/BackpackColor1_V5.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V5/BackpackColor2_V5.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V5/BackpackColor2_V5.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V5/BackpackColor3_V5.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V5/BackpackColor3_V5.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V5/BodyColor_V5.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V5/BodyColor_V5.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V5/FaceColor_V5.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V5/FaceColor_V5.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V5/Sticker_A_V5.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V5/Sticker_A_V5.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V5/Sticker_heart_V5.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V5/Sticker_heart_V5.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V6.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V6/BackpackColor1_V6.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V6/BackpackColor1_V6.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V6/BackpackColor2_V6.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V6/BackpackColor2_V6.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V6/BackpackColor3_V6.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V6/BackpackColor3_V6.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V6/BodyColor_V6.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V6/BodyColor_V6.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V6/FaceColor_V6.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V6/FaceColor_V6.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V6/Sticker_A_V6.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V6/Sticker_A_V6.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V6/Sticker_moon_V6.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Materials/V6/Sticker_moon_V6.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Prefabs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Prefabs/Astronaut_V1.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Prefabs/Astronaut_V1.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Prefabs/Astronaut_V2.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Prefabs/Astronaut_V2.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Prefabs/Astronaut_V3.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Prefabs/Astronaut_V3.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Prefabs/Astronaut_V4.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Prefabs/Astronaut_V4.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Prefabs/Astronaut_V5.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Prefabs/Astronaut_V5.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Prefabs/Astronaut_V6.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Prefabs/Astronaut_V6.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Textures.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Textures/Body.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Textures/Body/Body_V1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Textures/Body/Body_V1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Textures/Body/Body_V2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Textures/Body/Body_V2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Textures/Body/Body_V3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Textures/Body/Body_V3.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Textures/Body/Body_V4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Textures/Body/Body_V4.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Textures/Body/Body_V5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Textures/Body/Body_V5.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Textures/Body/Body_V6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Textures/Body/Body_V6.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Textures/Stickers.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Textures/Stickers/A.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Textures/Stickers/A.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Textures/Stickers/heart.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Textures/Stickers/heart.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Textures/Stickers/moon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Textures/Stickers/moon.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Textures/Stickers/saturn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Textures/Stickers/saturn.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Textures/Stickers/star.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/Textures/Stickers/star.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/ToonShading.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/ToonShading/Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/ToonShading/Materials/ToonBasic.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/ToonShading/Materials/ToonBasic.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/ToonShading/Materials/ToonBasicOutline.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/ToonShading/Materials/ToonBasicOutline.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/ToonShading/Materials/ToonLit.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/ToonShading/Materials/ToonLit.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/ToonShading/Materials/ToonLitOutline.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/ToonShading/Materials/ToonLitOutline.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/ToonShading/Shaders.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/ToonShading/Shaders/ToonBasic.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/ToonShading/Shaders/ToonBasic.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/ToonShading/Shaders/ToonBasicOutline.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/ToonShading/Shaders/ToonBasicOutline.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/ToonShading/Shaders/ToonLit.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/ToonShading/Shaders/ToonLit.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/ToonShading/Shaders/ToonLitOutline.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/ToonShading/Shaders/ToonLitOutline.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/ToonShading/Textures.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/ToonShading/Textures/ToonGradient.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/ToonShading/Textures/ToonGradient.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/ToonShading/Textures/ToonLit.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Cute Astronauts/ToonShading/Textures/ToonLit.psd.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/GameModule.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/GameModule/BT.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/GameModule/BT/Action.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/GameModule/Enemy.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/GameModule/Enemy/BT.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/GameModule/Enemy/BT/AnimationChannel.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/GameModule/Enemy/BT/AnimationChannel.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/GameModule/Enemy/BT/CommandChange.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/GameModule/Enemy/BT/CommandChange.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/GameModule/Enemy/BT/EnemyBT.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/GameModule/Enemy/BT/EnemyBT.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Material.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Material/Enemy.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Material/Enemy.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/PCM_assembly.asmdef" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/PCM_assembly.asmdef.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Prefab/Enemy.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Prefab/Enemy.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/SO.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/SO/AnimParam.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/SO/AnimParam/ATTACK PARAM.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/SO/AnimParam/ATTACK PARAM.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/SO/AnimParam/CHASE PARAM.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/SO/AnimParam/CHASE PARAM.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/SO/AnimParam/DIE PARAM.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/SO/AnimParam/DIE PARAM.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/SO/AnimParam/HIT PARAM.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/SO/AnimParam/HIT PARAM.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/SO/AnimParam/IDLE PARAM.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/SO/AnimParam/IDLE PARAM.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/SO/EnemyTestSkill data.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/SO/EnemyTestSkill data.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/SO/TestEnemy data.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/SO/TestEnemy data.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Scene.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Scene/StageChoose Scene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Scene/StageChoose Scene.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Scene/TestStage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Scene/TestStage.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Scene/TestStage.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Scene/TestStage/NavMesh-Ground.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Scene/TestStage/NavMesh-Ground.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Scene/TestStage/NavMesh-Map.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Scene/TestStage/NavMesh-Map.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Scripts/Enemy.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Scripts/Enemy/AbstractEnemy.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Scripts/Enemy/AbstractEnemy.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Scripts/Enemy/AbstractEnemySkill.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Scripts/Enemy/AbstractEnemySkill.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Scripts/Enemy/EnemyBT.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Scripts/Enemy/EnemyBT/Actions.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Scripts/Enemy/EnemyBT/Actions/ChaseToTargetAction.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Scripts/Enemy/EnemyBT/Actions/ChaseToTargetAction.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Scripts/Enemy/EnemyBT/Actions/EnemyFindTargetAction.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Scripts/Enemy/EnemyBT/Actions/EnemyFindTargetAction.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Scripts/Enemy/EnemyBT/Actions/RotateToTargetAction.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Scripts/Enemy/EnemyBT/Actions/RotateToTargetAction.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Scripts/Enemy/EnemyBT/Actions/StopEnemyAction.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Scripts/Enemy/EnemyBT/Actions/StopEnemyAction.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Scripts/Enemy/EnemyBT/Actions/UseSkillAction.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Scripts/Enemy/EnemyBT/Actions/UseSkillAction.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Scripts/Enemy/EnemyBT/BtVar.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Scripts/Enemy/EnemyBT/BtVar.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Scripts/Enemy/EnemyBT/EnemyCommand.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Scripts/Enemy/EnemyBT/EnemyCommand.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Scripts/Enemy/EnemyBT/Events.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Scripts/Enemy/EnemyBT/Events/AnimationChannel.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Scripts/Enemy/EnemyBT/Events/AnimationChannel.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Scripts/Enemy/EnemyBT/Events/CommandChange.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Scripts/Enemy/EnemyBT/Events/CommandChange.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Scripts/Enemy/EnemyDataSO.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Scripts/Enemy/EnemyDataSO.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Scripts/Enemy/EnemySkillModule.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Scripts/Enemy/EnemySkillModule.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Scripts/Enemy/EnemyType.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Scripts/Enemy/EnemyType/Skill.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Scripts/Enemy/EnemyType/Skill/TestEnemySkill.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Scripts/Enemy/EnemyType/Skill/TestEnemySkill.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Scripts/Enemy/EnemyType/TestEnemy.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Scripts/Enemy/EnemyType/TestEnemy.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Scripts/Nav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Scripts/Nav/NavMovement.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Scripts/Nav/NavMovement.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/Shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/_AgentLog.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/_AgentLog/PROGRESS.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/_AgentLog/PROGRESS.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/_AgentLog/phases.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/_AgentLog/phases/PHASE-002.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/_AgentLog/phases/PHASE-002.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/_AgentLog/phases/PHASE-003.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/_AgentLog/phases/PHASE-003.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/_AgentLog/phases/PHASE-004.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/_AgentLog/phases/PHASE-004.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/_AgentLog/phases/PHASE-005.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/_AgentLog/phases/PHASE-005.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/_AgentLog/phases/PHASE-006.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/_AgentLog/phases/PHASE-006.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/_AgentLog/phases/PHASE-007.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/_AgentLog/phases/PHASE-007.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/_AgentLog/phases/PHASE-008.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/_AgentLog/phases/PHASE-008.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/_AgentLog/phases/PHASE-009.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/_AgentLog/phases/PHASE-009.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/_AgentLog/phases/PHASE-010.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/_AgentLog/phases/PHASE-010.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/_AgentLog/phases/PHASE-011.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/_AgentLog/phases/PHASE-011.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/_AgentLog/phases/PHASE-012.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/_AgentLog/phases/PHASE-012.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/_AgentLog/phases/PHASE-013.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/_AgentLog/phases/PHASE-013.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/_AgentLog/phases/PHASE-014.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/_AgentLog/phases/PHASE-014.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/_AgentLog/phases/PHASE-015.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/_AgentLog/phases/PHASE-015.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/_AgentLog/phases/PHASE-016.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/_AgentLog/phases/PHASE-016.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/_AgentLog/phases/PHASE-017.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/_AgentLog/phases/PHASE-017.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/_AgentLog/phases/PHASE-018.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/_AgentLog/phases/PHASE-018.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/_AgentLog/phases/PHASE-019.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/_AgentLog/phases/PHASE-019.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/_AgentLog/phases/PHASE-020.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/_AgentLog/phases/PHASE-020.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/_AgentLog/phases/PHASE-021.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/_AgentLog/phases/PHASE-021.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/_AgentLog/phases/PHASE-022.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/PCM/_AgentLog/phases/PHASE-022.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/_Templates.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/_Templates/PHASE_TEMPLATE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/_Templates/PHASE_TEMPLATE.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/_Templates/PROGRESS_TEMPLATE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/_Templates/PROGRESS_TEMPLATE.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Shared/Systems/FsmSystem/Editor.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Shared/Systems/FsmSystem/Editor/CodeFormat.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Shared/Systems/FsmSystem/Editor/CodeFormat.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Shared/Systems/FsmSystem/Editor/FsmSystem_editor_assembly.asmdef" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Shared/Systems/FsmSystem/Editor/FsmSystem_editor_assembly.asmdef.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Shared/Systems/FsmSystem/Editor/StateListSO View.uxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Shared/Systems/FsmSystem/Editor/StateListSO View.uxml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Shared/Systems/FsmSystem/Editor/StateListSOEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Shared/Systems/FsmSystem/Editor/StateListSOEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Shared/Systems/FsmSystem/Editor/StateSO View.uxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Shared/Systems/FsmSystem/Editor/StateSO View.uxml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Shared/Systems/FsmSystem/Editor/StateSOEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Shared/Systems/FsmSystem/Editor/StateSOEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Shared/Systems/FsmSystem/Runtime.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Shared/Systems/FsmSystem/Runtime/AbstractState.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Shared/Systems/FsmSystem/Runtime/AbstractState.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Shared/Systems/FsmSystem/Runtime/FsmSystem_runtime_assembly.asmdef" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Shared/Systems/FsmSystem/Runtime/FsmSystem_runtime_assembly.asmdef.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Shared/Systems/FsmSystem/Runtime/IStateTransition.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Shared/Systems/FsmSystem/Runtime/IStateTransition.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Shared/Systems/FsmSystem/Runtime/StateListSO.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Shared/Systems/FsmSystem/Runtime/StateListSO.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Shared/Systems/FsmSystem/Runtime/StateMachine.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Shared/Systems/FsmSystem/Runtime/StateMachine.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Shared/Systems/FsmSystem/Runtime/StateSO.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Shared/Systems/FsmSystem/Runtime/StateSO.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Editor/CodeFormat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Editor/CodeFormat.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Editor/RegistryEditorUIStyle.uss" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Editor/RegistryEditorUIStyle.uss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Editor/RegistryRowUI.uxml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Editor/RegistryRowUI.uxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Editor/RegistrySOEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Editor/RegistrySOEditor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Runtime/RegistryRuntime.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Runtime/RegistryRuntime.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,8 +760,14 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/dc764b59c049482b93bebc78a7e33a04212600/e1/246a2425/Gizmos.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/Player/Movement/MovementContainer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/49fcb209645d4ccfb3e373da32345d37a6aa00/2e/b257c714/MonoScript.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/49fcb209645d4ccfb3e373da32345d37a6aa00/81/962c4f99/AdvancedDropdownState.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6603030657fe4a5c821a78aa7ef7a4b537a00/48/49b2f783/StateMachine.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_MemberWorkspace/KTJ/02_Script/Player/FSM/PlayerState.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Editor/CodeFormat.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Runtime/IRegistryItem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.annulusgames.alchemy@4d291ce19319/Runtime/Inspector/InspectorAttributes.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@57d0e36f6123/InputSystem/NativeInputRuntime.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@191c0d7e3b69/Runtime/VisualScripting.State/IStateTransition.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="McpProjectServerCommands">
@@ -111,27 +847,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;SearchEverywhere.PersistedScope.SymbolSearchEverywhereContributor&quot;: &quot;모든 위치&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;KTJ&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SearchEverywhere.PersistedScope.SymbolSearchEverywhereContributor": "모든 위치",
+    "cidr.known.project.marker": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "JTH",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Unity 에디터에 연결.Unity 에디터에 연결">
     <configuration name="유닛 테스트(배치 모드)" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.3.10f1\Editor\Unity.exe" />

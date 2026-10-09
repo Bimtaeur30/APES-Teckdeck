@@ -1,34 +1,36 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace _Shared.Systems.RegistrySystem.Runtime
 {
+    [DefaultExecutionOrder(-int.MaxValue)]
     public class RegistryRuntime : MonoBehaviour
     {
         [SerializeField] private RegistrySO registrySO;
-        //플레이 중 인스펙터에서 사본을 보고 조정하기 위한 목록. registryDict와 같은 사본을 가리킨다.
+        //플레이 중 인스펙터에서 사본을 보고 조정하기 위한 목록. _registryDict와 같은 사본을 가리킨다.
         [SerializeField] private List<RegistryEntry> runtimeEntries = new List<RegistryEntry>();
 
-        private Dictionary<int, IRegistryItem> registryDict;
+        private Dictionary<int, IRegistryItem> _registryDict;
 
         public RegistrySO RegistrySO => registrySO;
+        public int Count => _registryDict.Count;
 
         private void Awake()
-        {
-            if (registryDict == null)
-                GenerateEntryInstances();
+        {           
+            GenerateEntryInstances();
         }
 
         public void GenerateEntryInstances()
         {
-            registryDict = new Dictionary<int, IRegistryItem>();
+            _registryDict = new Dictionary<int, IRegistryItem>();
             runtimeEntries.Clear();
 
-            if (registrySO == null)
+            if (RegistrySO == null)
                 return;
 
-            foreach (RegistryEntry entry in registrySO.entries)
+            foreach (RegistryEntry entry in RegistrySO.entries)
             {
                 Type type = entry.registryItem != null
                     ? entry.registryItem.GetType()
@@ -45,7 +47,7 @@ namespace _Shared.Systems.RegistrySystem.Runtime
                 if (item is IRegistryCreatedReceiver receiver)
                     receiver.OnRuntimeCreated();
 
-                registryDict.Add(entry.enumValue, item);
+                _registryDict.Add(entry.enumValue, item);
                 runtimeEntries.Add(new RegistryEntry
                 {
                     enumValue = entry.enumValue,
@@ -55,14 +57,16 @@ namespace _Shared.Systems.RegistrySystem.Runtime
                 });
             }
         }
+        
+        public List<T> GetItemList<T>() where T : class, IRegistryItem
+        {
+            return runtimeEntries.Select(e => e.registryItem).OfType<T>().ToList();
+        }
 
         //다른 스크립트의 Awake가 이 컴포넌트의 Awake보다 먼저 조회해도 되도록, 아직 만들지 않았으면 여기서 만든다.
         public bool TryGetItem(int key, out IRegistryItem item)
         {
-            if (registryDict == null)
-                GenerateEntryInstances();
-
-            return registryDict!.TryGetValue(key, out item);
+            return _registryDict!.TryGetValue(key, out item);
         }
 
         public bool TryGetItem<T>(int key, out T item) where T : class, IRegistryItem
@@ -88,11 +92,11 @@ namespace _Shared.Systems.RegistrySystem.Runtime
             if (msg == null)
                 return;
 
-            string warnKey = type != null ? RegistryItemValidator.GetTypeName(type) : $"{registrySO.name}/{entry.enumKeyName}";
+            string warnKey = type != null ? RegistryItemValidator.GetTypeName(type) : $"{RegistrySO.name}/{entry.enumKeyName}";
             if (!WarnedTypeNames.Add(warnKey))
                 return;
 
-            Debug.LogWarning($"[Registry] {registrySO.name}/{entry.enumKeyName}: {msg.Replace("\n", " / ")}", registrySO);
+            Debug.LogWarning($"[Registry] {RegistrySO.name}/{entry.enumKeyName}: {msg.Replace("\n", " / ")}", RegistrySO);
         }
 #endif
     }
