@@ -42,8 +42,8 @@ namespace _Shared.Systems.RegistrySystem.Runtime
                 string json = JsonUtility.ToJson(entry.registryItem);
                 IRegistryItem item = (IRegistryItem)JsonUtility.FromJson(json, type);
 
-                if (item is IInitRegistryItem initItem)
-                    initItem.Init();
+                if (item is IRegistryCreatedReceiver receiver)
+                    receiver.OnRuntimeCreated();
 
                 registryDict.Add(entry.enumValue, item);
                 runtimeEntries.Add(new RegistryEntry
@@ -62,7 +62,7 @@ namespace _Shared.Systems.RegistrySystem.Runtime
             if (registryDict == null)
                 GenerateEntryInstances();
 
-            return registryDict.TryGetValue(key, out item);
+            return registryDict!.TryGetValue(key, out item);
         }
 
         public bool TryGetItem<T>(int key, out T item) where T : class, IRegistryItem

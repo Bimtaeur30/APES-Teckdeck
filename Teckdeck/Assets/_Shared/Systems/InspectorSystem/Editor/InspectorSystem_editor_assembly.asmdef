@@ -1,8 +1,7 @@
 {
-    "name": "RegistrySystem_editor_assembly",
+    "name": "InspectorSystem_editor_assembly",
     "rootNamespace": "",
     "references": [
-        "GUID:7af0d33371ddd7546b03f0dc43675ffa",
         "GUID:0c9dc5b4ec960444d890ccccc0239846"
     ],
     "includePlatforms": [

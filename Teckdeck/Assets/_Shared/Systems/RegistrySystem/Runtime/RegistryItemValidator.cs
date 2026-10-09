@@ -56,7 +56,7 @@ namespace _Shared.Systems.RegistrySystem.Runtime
                 .GetConstructors(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic)
                 .Any(c => c.GetParameters().Length > 0);
             if (hasArgsCtor)
-                warnings.Add("매개변수가 있는 생성자는 호출되지 않습니다. 초기화는 Init에서 하세요");
+                warnings.Add("매개변수가 있는 생성자는 호출되지 않습니다. 초기화는 OnRuntimeCreated에서 하세요");
 
             warningMsg = warnings.Count == 0 ? null : string.Join("\n", warnings);
             WarningCache[type] = warningMsg;

@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using _Shared.Systems.InspectorSystem.Runtime;
 using _Shared.Systems.RegistrySystem.Runtime;
 using UnityEngine;
 
@@ -15,6 +17,11 @@ namespace JTH.RegistryTest
     public class RegistryTestDefaultCtorItem : RegistryTestItemBase
     {
         [SerializeField] private GameObject effectPrefab;
+
+        //PHASE-021 ReadOnlyField 검증용
+        [SerializeField, ReadOnlyField] private int hitCount = 7;
+        [SerializeField, ReadOnlyField(editableInEditMode: true)] private float remainTime = 2f;
+        [SerializeField, ReadOnlyField] private List<int> history = new List<int> { 1, 2 };
     }
 
     [Serializable]
@@ -38,12 +45,36 @@ namespace JTH.RegistryTest
         [SerializeField] private int a;
     }
 
+    //PHASE-020 OnRuntimeCreated 호출 검증용. 부모가 구현하는 경우
     [Serializable]
-    public abstract class RegistryTestInitBase : IInitRegistryItem
+    public abstract class RegistryTestInitBase : IRegistryItem, IRegistryCreatedReceiver
     {
-        public void Init() { }
+        [NonSerialized] public int createdCount;
+
+        public virtual void OnRuntimeCreated() => createdCount++;
     }
 
     [Serializable]
     public class RegistryTestInitItem : RegistryTestInitBase { }
+
+    [Serializable]
+    public class RegistryTestInitOverrideItem : RegistryTestInitBase
+    {
+        [NonSerialized] public bool overrideCalled;
+
+        public override void OnRuntimeCreated()
+        {
+            base.OnRuntimeCreated();
+            overrideCalled = true;
+        }
+    }
+
+    //자식만 구현하는 경우
+    [Serializable]
+    public class RegistryTestChildReceiverItem : RegistryTestItemBase, IRegistryCreatedReceiver
+    {
+        [NonSerialized] public int createdCount;
+
+        public void OnRuntimeCreated() => createdCount++;
+    }
 }

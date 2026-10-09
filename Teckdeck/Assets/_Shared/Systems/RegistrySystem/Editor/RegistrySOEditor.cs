@@ -19,6 +19,7 @@ namespace _Shared.Systems.RegistrySystem.Editor
     {
         private const string MissingTypeMsg = "타입을 찾을 수 없습니다. 클래스 이름을 바꿨다면 [MovedFrom]으로 이전 이름을 알려주세요";
         private const string NoInstanceMsg = "인스턴스가 없습니다. 인스펙터를 다시 열면 생성을 다시 시도합니다";
+        private const string NoFieldMsg = "표시할 필드가 없습니다";
         private const string GuidIsNull = "GUID가 존재하지 않습니다";
         private const string NoMeta = "GUID에 해당하는 .meta가 존재하지 않습니다";
         private const string NoObject = "Object가 존재하지 않습니다";
@@ -239,9 +240,22 @@ namespace _Shared.Systems.RegistrySystem.Editor
                 .GetArrayElementAtIndex(idx)
                 .FindPropertyRelative("registryItem");
             
-            var field = new PropertyField(itemProp);
-            field.Bind(serializedObject);
-            _inspectorBody.Add(field);
+            //registryItem을 통째로 그리면 Foldout 줄이 생기고 화살표가 패널 왼쪽 밖으로 나가므로, 안의 필드만 하나씩 그린다.
+            SerializedProperty end = itemProp.GetEndProperty();
+            SerializedProperty child = itemProp.Copy();
+            bool hasField = false;
+            for (bool enterChildren = true;
+                 child.NextVisible(enterChildren) && !SerializedProperty.EqualContents(child, end);
+                 enterChildren = false)
+            {
+                var field = new PropertyField(child.Copy());
+                field.Bind(serializedObject);
+                _inspectorBody.Add(field);
+                hasField = true;
+            }
+
+            if (!hasField)
+                _inspectorBody.Add(new Label(NoFieldMsg));
         }
 
         private void HandleAddBtn()
@@ -309,11 +323,6 @@ namespace _Shared.Systems.RegistrySystem.Editor
         private bool TryAddEntry()
         {
             string enumName = _pendingKeyField.text;
-            if (!typeof(IRegistryItem).IsAssignableFrom(_pendingItemType))
-            {
-                SetErrorMsg(_pendingError, "IRegistryItem을 구현한 타입이 아닙니다");
-                return false;
-            }
 
             //[Serializable]이 없으면 SerializeReference가 저장하지 못하므로 null로 두고 typeName만 남긴다.
             IRegistryItem registryItem = null;
@@ -538,15 +547,15 @@ namespace _Shared.Systems.RegistrySystem.Editor
             FillBaseTypeField();
         }
 
-        //베이스 타입은 IRegistryItem 또는 IInitRegistryItem을 직접 구현한 타입만 고를 수 있다. 추상 클래스와 인터페이스도 된다.
+        //베이스 타입은 IRegistryItem을 직접 구현한 타입만 고를 수 있다. 추상 클래스와 인터페이스도 된다.
         private static bool IsBaseTypeSelectable(Type type)
         {
-            if (type == typeof(IRegistryItem) || type == typeof(IInitRegistryItem))
+            if (type == typeof(IRegistryItem))
                 return false;
             if (type.ContainsGenericParameters || typeof(Object).IsAssignableFrom(type))
                 return false;
 
-            return GetDirectInterfaces(type).Any(i => i == typeof(IRegistryItem) || i == typeof(IInitRegistryItem));
+            return GetDirectInterfaces(type).Contains(typeof(IRegistryItem));
         }
 
         //부모 클래스나 다른 인터페이스를 거쳐 들어온 인터페이스를 빼고, 이 타입이 직접 선언한 인터페이스만 남긴다.
@@ -571,7 +580,7 @@ namespace _Shared.Systems.RegistrySystem.Editor
             else if (baseType == null)
                 errorMsg = $"타입을 찾을 수 없습니다: {_targetData.baseTypeName}";
             else if (!IsBaseTypeSelectable(baseType))
-                errorMsg = $"IRegistryItem 또는 IInitRegistryItem을 직접 구현한 타입이어야 합니다: {baseType.FullName}";
+                errorMsg = $"IRegistryItem을 직접 구현한 타입이어야 합니다: {baseType.FullName}";
 
             //Undo 후 이 메서드가 호출될 때 값이 다시 기록되지 않도록 WithoutNotify
             _baseTypeField.SetValueWithoutNotify(baseType == null ? _targetData.baseTypeName : baseType.Name);

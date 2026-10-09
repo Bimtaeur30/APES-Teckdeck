@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace _Shared.Systems.RegistrySystem.Runtime
 {
@@ -18,7 +17,7 @@ namespace _Shared.Systems.RegistrySystem.Runtime
     public class RegistrySO : ScriptableObject
     {
         public string baseTypeName;
-        [FormerlySerializedAs("components")] public List<RegistryEntry> entries = new List<RegistryEntry>();
+        public List<RegistryEntry> entries = new List<RegistryEntry>();
         public string enumName;
         public string enumFolderGuid;
         public int lastEnumValue = -1;

@@ -9,7 +9,7 @@
 ## 현재 요청
 
 - 요청 요약: enum 키로 항목을 관리하는 레지스트리 시스템(`_Shared/Systems/RegistrySystem`). 2026-10-05 저장 방식을 프리팹 → `[SerializeReference] IRegistryItem`으로 바꿨다(사용자 작성). 2026-10-06부터 에디터 C#은 Claude가 맡는다(판정 `완벽히 앎`, 검수만). 런타임 생성/`Init`은 사용자 담당.
-- 승인된 범위: PHASE-001(에디터 구현, 이후 코드 삭제), PHASE-002(UI만 남기기), PHASE-003(Row UI 정리), PHASE-004(추가 입력 줄 배치), PHASE-005(is-delayed, 인스펙터 표시 클래스), PHASE-006(타입 선택 팝업, `어려움 + 모름`이라 Claude가 코드만 작성, 주석은 사용자가 단다), PHASE-007(오류 표시 통일), PHASE-008(네임스페이스 제외 목록 칸), PHASE-009(베이스 타입 드롭다운), PHASE-010(항목 생성·표시 정리) — 009/010은 2026-10-06 "승인, 009부터 진행", PHASE-011(베이스는 IRegistryItem/IInitRegistryItem 직속 구현만, 두 인터페이스 자신은 제외) — 2026-10-06 "승인", PHASE-012(열린 줄 파란 표시 갱신, 2026-10-06 "파란 표시 RefreshItems 문제도 고쳐줘"), PHASE-013(베이스 변경 시 항목 비우기 + 확인 창 + UI 정리, 2026-10-06 "네가 넣어줘. Display랑 다른 처리까지 해줘."), PHASE-014(Component~ 이름 정리, 2026-10-07, 소급 기록), PHASE-015(항목 경고 + typeName 저장 + 타입 변환 통일, 2026-10-07 "응 그렇게 맞추고 진행해"), PHASE-016(JsonUtility 깊은 복사 검증, 임시 클래스 생성 후 삭제, 2026-10-07 "응 진행해"), PHASE-017(ItemWarning 되돌리기, 2026-10-08 "되돌려줘"), PHASE-018(RegistryRuntime 사본 생성·보관·조회 + 테스트 컴포넌트, 2026-10-08 "JSON 관련 빼고는 다 앎이야 해줘" — JSON 복제 부분은 `어려움 + 모름`이라 해설 주석 없이 코드만, 나머지는 `완벽히 앎`)
+- 승인된 범위: PHASE-001(에디터 구현, 이후 코드 삭제), PHASE-002(UI만 남기기), PHASE-003(Row UI 정리), PHASE-004(추가 입력 줄 배치), PHASE-005(is-delayed, 인스펙터 표시 클래스), PHASE-006(타입 선택 팝업, `어려움 + 모름`이라 Claude가 코드만 작성, 주석은 사용자가 단다), PHASE-007(오류 표시 통일), PHASE-008(네임스페이스 제외 목록 칸), PHASE-009(베이스 타입 드롭다운), PHASE-010(항목 생성·표시 정리) — 009/010은 2026-10-06 "승인, 009부터 진행", PHASE-011(베이스는 IRegistryItem/IInitRegistryItem 직속 구현만, 두 인터페이스 자신은 제외) — 2026-10-06 "승인", PHASE-012(열린 줄 파란 표시 갱신, 2026-10-06 "파란 표시 RefreshItems 문제도 고쳐줘"), PHASE-013(베이스 변경 시 항목 비우기 + 확인 창 + UI 정리, 2026-10-06 "네가 넣어줘. Display랑 다른 처리까지 해줘."), PHASE-014(Component~ 이름 정리, 2026-10-07, 소급 기록), PHASE-015(항목 경고 + typeName 저장 + 타입 변환 통일, 2026-10-07 "응 그렇게 맞추고 진행해"), PHASE-016(JsonUtility 깊은 복사 검증, 임시 클래스 생성 후 삭제, 2026-10-07 "응 진행해"), PHASE-017(ItemWarning 되돌리기, 2026-10-08 "되돌려줘"), PHASE-018(RegistryRuntime 사본 생성·보관·조회 + 테스트 컴포넌트, 2026-10-08 "JSON 관련 빼고는 다 앎이야 해줘" — JSON 복제 부분은 `어려움 + 모름`이라 해설 주석 없이 코드만, 나머지는 `완벽히 앎`), PHASE-019(인스펙터 패널에서 registryItem Foldout 대신 자식 필드만 그리기, 2026-10-08 "A로 하자"), PHASE-020(IInitRegistryItem → IRegistryCreatedReceiver 분리, OnRuntimeCreated, 2026-10-09 "바로 진행해"), PHASE-021(ReadOnlyField 어트리뷰트, `_Shared/Systems/InspectorSystem`, `어려움 + 모름`이라 Claude가 코드만 작성·주석은 사용자) + PHASE-022(RegistryRuntime 커스텀 에디터: 항목별/전체 적용, ReadOnly 필드 제외) — 2026-10-10 "응 그대로 진행해"
 - 범위 밖 항목: 런타임 생성(`MemberwiseClone` 복제)과 `Init` 호출(사용자 담당), `RegistryRuntime` 커스텀 에디터, 테스트 스크립트·프리팹 정리, Skill/State 이전
 
 ## Phase 현황
@@ -34,14 +34,18 @@
 | 016 | 완료 | JsonUtility 깊은 복사 검증(통과, FromJson(json, type) 권장) | `phases/PHASE-016.md` |
 | 017 | 완료 | ItemWarning enum·저장 필드 되돌리기(검사기는 사용자가 Runtime으로 이동) | `phases/PHASE-017.md` |
 | 018 | 완료 | RegistryRuntime 사본 생성(JsonUtility)·보관(딕셔너리+인스펙터 목록)·조회, 에디터 전용 경고 로그, 테스트 컴포넌트. SO 적용 버튼은 범위 밖 | `phases/PHASE-018.md` |
+| 019 | 완료 | 인스펙터 패널: registryItem Foldout(화살표가 패널 밖으로 나감) 대신 자식 필드만, 필드 없으면 안내 문구 | `phases/PHASE-019.md` |
+| 020 | 완료 | 초기화 인터페이스 분리: `IRegistryCreatedReceiver.OnRuntimeCreated`(IRegistryItem 상속 제거), 베이스는 IRegistryItem 직속만 | `phases/PHASE-020.md` |
+| 021 | 완료 | `ReadOnlyField` 어트리뷰트(`_Shared/Systems/InspectorSystem`, 편집 모드 허용 옵션, 리스트 통째). 코드만 Claude, 주석은 사용자 | `phases/PHASE-021.md` |
+| 022 | 완료 | `RegistryRuntimeEditor`: 사본 목록(+/- 없음), 항목별·전체 적용, `[ReadOnlyField]` 필드는 적용 제외, Undo | `phases/PHASE-022.md` |
 
 ## 현재 재개 지점
 
 - 마지막 완료 작업: enum 영역에 `skipNamespaces` PropertyField 추가(PHASE-008). 이후 사용자가 SerializeReference 방식으로 에디터를 고쳤다.
-- 마지막 완료 작업(갱신): PHASE-018 RegistryRuntime 사본 생성·보관·조회 + 에디터 전용 경고 로그 + 테스트 컴포넌트. 다음 후보: 사본 값을 SO에 적용하는 버튼(사용자 결정 대기), 테스트 스크립트 정리.
-- 다음에 할 작업: 사용자가 인스펙터에서 확인하고 런타임 생성/`Init`을 작성한다. 검증용 `JTH/Scripts/RegistryTest/RegistryTestItems.cs`는 확인 후 지워도 된다.
+- 마지막 완료 작업(갱신): PHASE-022 RegistryRuntime 커스텀 에디터(적용 버튼), PHASE-021 ReadOnlyField. 이전: PHASE-020 초기화 인터페이스 분리. 그 전: PHASE-019 인스펙터 패널 자식 필드만 그리기. 이전: PHASE-018 RegistryRuntime 사본 생성·보관·조회 + 에디터 전용 경고 로그 + 테스트 컴포넌트. 다음 후보: 플레이 모드 화면 확인(PHASE-021/022), `ReadOnlyFieldAttribute`/`Drawer` 주석(사용자), `IsAssignableFrom` 삭제·항목 검사 통합(보류), 테스트 스크립트 정리.
+- 다음에 할 작업: 사용자가 인스펙터에서 확인하고 런타임 생성/`OnRuntimeCreated`를 작성한다. 검증용 `JTH/Scripts/RegistryTest/RegistryTestItems.cs`는 확인 후 지워도 된다.
 - 사용자 승인이 필요한 사항: 없음
-- 관련 파일: `Assets/_Shared/Systems/RegistrySystem/Editor/`(`RegistrySOEditor.cs`, `RegistryTypeDropdown.cs`, `RegistryEditorUI.uxml`, `RegistryRowUI.uxml`, `RegistryEditorUIStyle.uss`), `Runtime/`(`RegistrySO.cs`, `RegistryRuntime.cs`, `RegistryItemValidator.cs`, `IRegistryItem.cs`, `IInitRegistryItem.cs`).
+- 관련 파일: `Assets/_Shared/Systems/RegistrySystem/Editor/`(`RegistrySOEditor.cs`, `RegistryRuntimeEditor.cs`, `RegistryTypeDropdown.cs`, `RegistryEditorUI.uxml`, `RegistryRowUI.uxml`, `RegistryEditorUIStyle.uss`), `Runtime/`(`RegistrySO.cs`, `RegistryRuntime.cs`, `RegistryItemValidator.cs`, `IRegistryItem.cs`, `IRegistryCreatedReceiver.cs`), `Assets/_Shared/Systems/InspectorSystem/`(`Runtime/ReadOnlyFieldAttribute.cs`, `Editor/ReadOnlyFieldDrawer.cs`).
 - 알려진 문제 또는 위험: 기존 레지스트리 에셋은 베이스를 다시 골라야 함(`baseScriptGuid` → `baseTypeName`).
 
 ## 검증 요약
