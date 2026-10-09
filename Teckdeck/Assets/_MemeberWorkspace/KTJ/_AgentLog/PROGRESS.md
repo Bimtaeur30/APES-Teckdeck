@@ -4,13 +4,13 @@
 
 - 이름/이니셜: `KTJ`
 - 작업폴더: `Assets/_MemeberWorkspace/KTJ/`
-- 마지막 갱신: `2026-10-05 (Asia/Seoul)`
+- 마지막 갱신: `2026-10-07 (Asia/Seoul)`
 
 ## 현재 요청
 
-- 요청 요약: 빠른 점프키 입력 후 JumpState에 갇히는 문제 수정
-- 승인된 범위: 점프 시작 성공 여부 반영과 벽 도착 판정 보완
-- 범위 밖 항목: 씬·프리팹, 공용 FSM, 패키지 변경
+- 요청 요약: 점프 배율은 유지하면서 차징 UI만 너비 0부터 채우기
+- 승인된 범위: KTJ 폴더의 ChargingUI 및 작업 기록
+- 범위 밖 항목: 점프 배율·이동 로직, 씬·프리팹, 공용 파일, 패키지 변경
 
 ## Phase 현황
 
@@ -34,14 +34,16 @@
 | 016 | 완료 | Player와 이동 모듈의 구체 클래스 의존 제거 | `phases/PHASE-016.md` |
 | 017 | 완료 | FSM 어셈블리 순환 참조 해결 | `phases/PHASE-017.md` |
 | 018 | 완료 | 점프 시작 실패 및 도착 판정 누락으로 인한 JumpState 고착 수정 | `phases/PHASE-018.md` |
+| 019 | 완료 | 점프 차징 배율을 이동속도에 적용 | `phases/PHASE-019.md` |
+| 020 | 완료 | 차징 UI를 너비 0부터 표시 | `phases/PHASE-020.md` |
 
 ## 현재 재개 지점
 
-- 마지막 완료 작업: Phase 018 JumpState 고착 수정
+- 마지막 완료 작업: Phase 020 차징 UI 시작 너비 및 표시 비율 수정
 - 현재 작업: 없음
-- 다음에 할 작업: Unity Play Mode에서 빠른 연속 입력과 벽 도착 확인
+- 다음에 할 작업: Unity Play Mode에서 차징 UI 시작 너비와 기본·차징 점프 확인
 - 사용자 승인이 필요한 사항: 없음 (Phase 017 공용 파일 변경 승인됨)
-- 관련 파일: `Assets/_MemeberWorkspace/KTJ/02_Script/Player/FSM/`, `Assets/_MemeberWorkspace/KTJ/02_Script/Player/Movement/`
+- 관련 파일: `Assets/_MemeberWorkspace/KTJ/02_Script/Player/Movement/JumpCharging/ChargingUI.cs`
 - 알려진 문제 또는 위험: 플레이어 중심이 이미 벽 Collider 내부에 있으면 Raycast와 SphereCast가 해당 벽을 놓칠 수 있음. Phase 015의 초기 정지 간격 때문에 재점프가 막힌 문제는 같은 Phase에서 수정함
 
 ## 검증 요약
@@ -56,5 +58,7 @@
 - 수행한 검증: Phase 016 `KTJ.csproj` 빌드 성공(오류 0개, 기존 참조 충돌 경고 8개), 변경 파일 공백 검사 및 초기화 순서 정적 확인
 - 수행한 검증: Phase 017 FSM 런타임 및 KTJ 빌드 성공(오류 0개), 참조 방향 검사, Unity Editor 최신 컴파일 구간의 어셈블리 재로드 확인
 - 수행한 검증: Phase 018 KTJ 빌드 성공(오류 0개, 기존 경고 12개), 변경 파일 공백 검사 통과
-- 통과 여부: Phase 018 C# 빌드 통과
-- 아직 검증하지 못한 항목: Phase 014 UI 포인터 동작 및 Phase 015~018 상태 전환·점프 흐름의 Unity Play Mode 확인
+- 수행한 검증: Phase 019 KTJ 빌드 성공(오류 0개, 경고 12개)
+- 수행한 검증: Phase 020 계산 및 초기화 순서 정적 확인. `dotnet build KTJ.csproj --no-restore`는 MSBuild 프로젝트 참조 단계에서 오류 메시지 없이 종료 코드 1을 반환해 빌드 성공 여부를 확인하지 못함
+- 통과 여부: Phase 020 코드 정적 확인 완료, 빌드 및 Play Mode 미검증
+- 아직 검증하지 못한 항목: Phase 014 UI 포인터 동작, Phase 015~020 상태 전환·점프·차징 UI의 Unity Play Mode 확인

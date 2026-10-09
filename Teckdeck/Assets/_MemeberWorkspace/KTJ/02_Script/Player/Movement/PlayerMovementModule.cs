@@ -12,6 +12,7 @@ public class PlayerMovementModule : MonoBehaviour, IModule, IPlayerMovementModul
     private Transform _body;
     private SphereCollider _bodyCollider;
     private MovementVector _currentMovementVector;
+    private float _currentJumpCharge = 1f;
     
     private bool isWall = false;
     private bool isJumping;
@@ -43,7 +44,7 @@ public class PlayerMovementModule : MonoBehaviour, IModule, IPlayerMovementModul
     {
         if (!isJumping) return;
 
-        Vector3 movement = _currentMovementVector.Direction * (jumpForce * Time.deltaTime);
+        Vector3 movement = _currentMovementVector.Direction * (jumpForce * _currentJumpCharge * Time.deltaTime);
         float distance = movement.magnitude;
         if (distance <= 0f) return;
 
@@ -88,15 +89,16 @@ public class PlayerMovementModule : MonoBehaviour, IModule, IPlayerMovementModul
         OnWallEnter();
     }
 
-    public bool JumpStart(MovementVector vector, Action onJumpLand)
+    public bool JumpStart(MovementContainer movement, Action onJumpLand)
     {
         CheckIsWall();
-        if (!isWall || isJumping || vector.Direction.sqrMagnitude <= 0f) return false;
+        if (!isWall || isJumping || movement.Vector.Direction.sqrMagnitude <= 0f) return false;
 
-        _currentMovementVector = vector;
+        _currentMovementVector = movement.Vector;
+        _currentJumpCharge = movement.JumpCharge;
         isJumping = true;
         this.onJumpLand = onJumpLand;
-        RotateTo(vector.Direction); // 진행방향 바라보기
+        RotateTo(movement.Vector.Direction); // 진행방향 바라보기
         return true;
     }
 

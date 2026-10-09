@@ -6,8 +6,8 @@ namespace Systems.AgentSystem
 {
     public class AgentTrigger : MonoBehaviour, IModule
     {
-        private event Action OnAnimationEnd;
-        private event Action OnDamageCast;
+        public event Action OnAnimationEnd;
+        public event Action OnDamageCast;
 
         public void Initialize(ModuleOwner owner)
         {

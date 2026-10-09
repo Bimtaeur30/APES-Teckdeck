@@ -1,3 +1,4 @@
+using AnimatorSystem;
 using CombatSystem;
 using Enemy.BT;
 using Enemy.Interface;
@@ -7,7 +8,7 @@ using UnityEngine;
 
 namespace Enemy
 {
-    public class AbstractEnemy : Agent
+    public abstract class AbstractEnemy : Agent
     {
         [field: SerializeField] public EnemyDataSO EnemyData { get; private set; }
 
@@ -20,6 +21,7 @@ namespace Enemy
         public AgentTrigger Trigger { get; private set; }
 
         public CommandChange StateChannel { get; private set; }
+        private AnimationChannel _animationChannel;
 
         [SerializeField] private bool isDebugMode;
 
@@ -42,13 +44,17 @@ namespace Enemy
 
         protected override void OnDestroy()
         {
+            if (_animationChannel != null)
+                _animationChannel.Event -= HandleAnimation;
+
             base.OnDestroy();
             OnHit.RemoveListener(HandleHitEvent);
         }
 
         private void HandleHitEvent()
         {
-            if (IsDead) return; //�Ʊ� ������ �����ؼ� ���� �۵��Ѵ�.
+            if (IsDead || StateChannel == null)
+                return;
 
             StateChannel.SendEventMessage(StateCommands.HIT);
         }
@@ -61,16 +67,38 @@ namespace Enemy
             foreach (var c in bodyColliders)
                 c.enabled = false;
 
-            StateChannel.SendEventMessage(StateCommands.DIE); //������� ��ȯ.
+            StateChannel?.SendEventMessage(StateCommands.DIE);
         }
 
         protected virtual void Start()
         {
             if (GetVariable(BtVar.StateChannel, out BlackboardVariable<CommandChange> channel))
-            {
                 StateChannel = channel.Value;
+
+            if (GetVariable(BtVar.AnimationChannel, out BlackboardVariable<AnimationChannel> animationChannel)
+                && animationChannel.Value != null)
+            {
+                _animationChannel = animationChannel.Value;
+                _animationChannel.Event += HandleAnimation;
             }
+
             SetVariableValue(BtVar.Enemy, this);
+        }
+
+        private void HandleAnimation(HashDataSO hash)
+        {
+            if (hash == null)
+                return;
+
+            const float crossFadeDuration = 0.1f;
+            if (Renderer != null)
+            {
+                Renderer.PlayClip(hash.HashValue, 0f, crossFadeDuration);
+                return;
+            }
+
+            Animator animator = GetComponentInChildren<Animator>();
+            animator?.CrossFadeInFixedTime(hash.HashValue, crossFadeDuration, 0, 0f);
         }
 
         public void SetVariableValue<T>(string variableName, T value)

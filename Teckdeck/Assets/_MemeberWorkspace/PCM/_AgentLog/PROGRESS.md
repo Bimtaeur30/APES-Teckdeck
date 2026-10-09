@@ -4,13 +4,13 @@
 
 - 이름/이니셜: `PCM`
 - 작업폴더: `Assets/_MemeberWorkspace/PCM/`
-- 마지막 갱신: `2026-10-06 22:21 (UTC+9)`
+- 마지막 갱신: `2026-10-08 09:35 (UTC+9)`
 
 ## 현재 요청
 
-- 요청 요약: BehaviorGraphAgent 인스펙터 NullReferenceException 수정
-- 승인된 범위: PCM 폴더의 EnemyBT.asset 블랙보드 null 변수
-- 범위 밖 항목: Unity Behavior 패키지 코드
+- 요청 요약: 현재 EnemyBT를 하데스식 추적-공격 루프로 전환
+- 승인된 범위: PCM의 EnemyBT와 UseSkillAction
+- 범위 밖 항목: Rotate 수정, 다운로드 BT 통째 복사, MOVE, 래그돌, AnimationChannel
 
 ## Phase 현황
 
@@ -26,15 +26,17 @@
 | 018 | 완료 | AgentSystem이 Combat을 참조 | `phases/PHASE-018.md` |
 | 019 | 완료 | PCM_assembly가 필요한 어셈블리를 참조 | `phases/PHASE-019.md` |
 | 020 | 완료 | EnemyBT 블랙보드 null 변수 복구 | `phases/PHASE-020.md` |
+| 021 | 완료 | 근접 적 BT를 추적-공격 루프로 전환 | `phases/PHASE-021.md` |
+| 022 | 완료 | EnemyBT를 Editor API로 적용 | `phases/PHASE-022.md` |
 
 ## 현재 재개 지점
 
-- 마지막 완료 작업: EnemyBT 블랙보드의 null 변수를 PCM_assembly 타입으로 복구
-- 다음에 할 작업: Enemy 오브젝트 인스펙터에서 NullReferenceException이 멈추는지 확인
-- 관련 파일: `GameModule/EnemyBT.asset`
+- 마지막 완료 작업: TestEnemySkill이 IRenderer 없이 자식 Animator로 공격 클립을 재생하도록 수정
+- 다음에 할 작업: 플레이에서 CHASE/ATTACK 상태가 해당 Animator 스테이트로 바뀌는지 확인
+- 관련 파일: `Editor/EnemyBTMeleeLoopBuilder.cs`, `GameModule/Enemy/BT/EnemyBT.asset`, `UseSkillAction.cs`
 
 ## 검증 요약
 
-- 수행한 검증: PCM_assembly references에 Agent, Combat, Module, Behavior가 있는지 확인
-- 통과 여부: 부분 (Unity 컴파일은 확인하지 못함)
-- 아직 검증하지 못한 항목: Console에서 PCM_assembly 오류가 사라졌는지
+- 수행한 검증: 그래프 YAML에서 On Start Repeat, ATTACK 순서, 스킬 노드 타입을 확인
+- 통과 여부: 부분 (Unity 플레이는 확인하지 못함)
+- 아직 검증하지 못한 항목: 컴파일 후 그래프에 Use Skill이 빈 노드로 보이지 않는지, 스킬 종료 후 CHASE가 다시 도는지
