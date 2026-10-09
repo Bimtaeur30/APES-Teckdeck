@@ -54,7 +54,11 @@ namespace _Shared.Systems.RegistrySystem.Editor
         private readonly Dictionary<RegistryEntry, string> _errorMsgDict = new();
         private RegistryEntry _openedItem;
         private Type _pendingItemType;
-        
+
+        private IMGUIContainer _dropdownHost;
+        private AdvancedDropdown _pendingDropdown;
+        private VisualElement _pendingDropdownAnchor;
+
         private T Q<T>(string elemName) where T : VisualElement => _root.Q<T>(elemName);
         private bool SetErrorMsg(Label lbl, string msg = null)
         {
@@ -99,7 +103,16 @@ namespace _Shared.Systems.RegistrySystem.Editor
             _enumError = Q<Label>("enum-error");
 
             _entryList.virtualizationMethod = CollectionVirtualizationMethod.DynamicHeight;
-            
+
+            //AdvancedDropdown은 처음 열릴 때 그 순간의 GUI 스킨에서 스타일을 찾아 static으로 저장한다.
+            //UI Toolkit 버튼 콜백은 IMGUI 밖이라 게임 스킨이 잡혀 스타일을 못 찾고(빨간 글씨) 재컴파일 전까지 그대로 남으므로,
+            //드롭다운은 IMGUIContainer의 OnGUI 안에서 연다.
+            _dropdownHost = new IMGUIContainer(ShowPendingDropdown) { pickingMode = PickingMode.Ignore };
+            _dropdownHost.style.position = Position.Absolute;
+            _dropdownHost.style.width = 1;
+            _dropdownHost.style.height = 1;
+            _root.Add(_dropdownHost);
+
             //구독하기
             Undo.undoRedoPerformed -= UndoRedoPerformedHandle;
             Undo.undoRedoPerformed += UndoRedoPerformedHandle;
@@ -269,8 +282,25 @@ namespace _Shared.Systems.RegistrySystem.Editor
             if (baseType == null || !IsBaseTypeSelectable(baseType))
                 return;
 
-            new RegistryTypeDropdown(new AdvancedDropdownState(), baseType, HandleTypeSelected)
-                .Show(_addBtn.worldBound);
+            RequestDropdown(new RegistryTypeDropdown(new AdvancedDropdownState(), baseType, HandleTypeSelected), _addBtn);
+        }
+
+        private void RequestDropdown(AdvancedDropdown dropdown, VisualElement anchor)
+        {
+            _pendingDropdown = dropdown;
+            _pendingDropdownAnchor = anchor;
+            _dropdownHost.MarkDirtyRepaint();
+        }
+
+        //OnGUI 안에서는 좌표 기준이 IMGUIContainer이므로 버튼 위치를 컨테이너 기준으로 바꿔 넘긴다.
+        private void ShowPendingDropdown()
+        {
+            if (_pendingDropdown == null)
+                return;
+
+            AdvancedDropdown dropdown = _pendingDropdown;
+            _pendingDropdown = null;
+            dropdown.Show(_dropdownHost.WorldToLocal(_pendingDropdownAnchor.worldBound));
         }
 
         private void HandleTypeSelected(Type selectedType)
@@ -516,9 +546,8 @@ namespace _Shared.Systems.RegistrySystem.Editor
 
         private void HandleBaseTypeBtn()
         {
-            new RegistryTypeDropdown(new AdvancedDropdownState(), typeof(IRegistryItem), HandleBaseTypeSelected
-                    , "베이스 타입", IsBaseTypeSelectable)
-                .Show(_baseTypeField.worldBound);
+            RequestDropdown(new RegistryTypeDropdown(new AdvancedDropdownState(), typeof(IRegistryItem), HandleBaseTypeSelected
+                , "베이스 타입", IsBaseTypeSelectable), _baseTypeField);
         }
 
         private void HandleBaseTypeSelected(Type selectedType)
