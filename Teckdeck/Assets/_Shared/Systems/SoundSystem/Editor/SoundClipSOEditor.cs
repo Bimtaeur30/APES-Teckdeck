@@ -25,6 +25,8 @@ namespace SoundSystem.Editor
         private Label          _endLabel;
         private Button         _playBtn;
         private VisualElement  _waveformSection;
+        private VisualElement  _randomBlendSection;
+        private VisualElement  _randomBlendTimes;
         private IMGUIContainer _waveformContainer;
 
         // 에디터 전용 프리뷰 AudioSource (HideAndDontSave — 씬에 저장되지 않음)
@@ -62,10 +64,12 @@ namespace SoundSystem.Editor
             var root = uiAsset.CloneTree();
             root.Bind(serializedObject);
 
-            _startLabel      = root.Q<Label>("start-label");
-            _endLabel        = root.Q<Label>("end-label");
-            _playBtn         = root.Q<Button>("play-btn");
-            _waveformSection = root.Q<VisualElement>("waveform-section");
+            _startLabel           = root.Q<Label>("start-label");
+            _endLabel             = root.Q<Label>("end-label");
+            _playBtn              = root.Q<Button>("play-btn");
+            _waveformSection      = root.Q<VisualElement>("waveform-section");
+            _randomBlendSection   = root.Q<VisualElement>("random-blend-section");
+            _randomBlendTimes     = root.Q<VisualElement>("random-blend-times");
 
             // 웨이브폼은 IMGUI로 렌더링 (드래그 핸들 처리를 위해 IMGUIContainer 사용)
             _waveformContainer = new IMGUIContainer(() => OnWaveformGUI(so));
@@ -76,6 +80,11 @@ namespace SoundSystem.Editor
             root.Q<PropertyField>("clip-field")
                 .RegisterValueChangeCallback(evt => OnClipFieldChanged(so, evt));
 
+            root.Q<PropertyField>("loop-field")
+                .RegisterValueChangeCallback(_ => RefreshRandomBlendVisibility());
+            root.Q<PropertyField>("use-random-blend-field")
+                .RegisterValueChangeCallback(_ => RefreshRandomBlendVisibility());
+
             // 재생 버튼
             _playBtn.clicked += () => OnPlayButtonClicked(so);
 
@@ -83,6 +92,7 @@ namespace SoundSystem.Editor
             _cachedClip = so.clip;
             bool hasClip = so.clip != null;
             _waveformSection.style.display = hasClip ? DisplayStyle.Flex : DisplayStyle.None;
+            RefreshRandomBlendVisibility();
             if (hasClip) UpdateLabels(so);
 
             return root;
@@ -262,6 +272,18 @@ namespace SoundSystem.Editor
             if (so == null) return;
             if (_startLabel != null) _startLabel.text = $"Start: {so.startTime:F3} s";
             if (_endLabel   != null) _endLabel.text   = $"End: {so.endTime:F3} s";
+        }
+
+        private void RefreshRandomBlendVisibility()
+        {
+            serializedObject.Update();
+            bool loop     = serializedObject.FindProperty("loop").boolValue;
+            bool useBlend = serializedObject.FindProperty("useRandomBlend").boolValue;
+
+            if (_randomBlendSection != null)
+                _randomBlendSection.style.display = loop ? DisplayStyle.Flex : DisplayStyle.None;
+            if (_randomBlendTimes != null)
+                _randomBlendTimes.style.display = (loop && useBlend) ? DisplayStyle.Flex : DisplayStyle.None;
         }
 
         // ── Preview AudioSource ───────────────────────────────────────────

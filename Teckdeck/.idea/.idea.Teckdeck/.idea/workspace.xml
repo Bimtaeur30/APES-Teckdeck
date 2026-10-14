@@ -11,7 +11,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44da0101-9d20-4f5a-9088-489447dcff59" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/01_Scene/RepairShop_KTJ.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/01_Scene/RepairShop_KTJ.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Teckdeck/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Teckdeck/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemberWorkspace/KTJ/01_Scene/PlayerTestScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemberWorkspace/KTJ/01_Scene/PlayerTestScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemberWorkspace/KTJ/02_Script/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemberWorkspace/KTJ/02_Script/Player/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MemberWorkspace/KTJ/03_Library/Fsm/Player FSM Registry.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MemberWorkspace/KTJ/03_Library/Fsm/Player FSM Registry.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +25,15 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/_MemeberWorkspace/KTJ/02_Script/System/RepairShop/View/ViewDefinition.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/49fcb209645d4ccfb3e373da32345d37a6aa00/2e/b257c714/MonoScript.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/49fcb209645d4ccfb3e373da32345d37a6aa00/81/962c4f99/AdvancedDropdownState.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6603030657fe4a5c821a78aa7ef7a4b537a00/48/49b2f783/StateMachine.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_MemberWorkspace/KTJ/02_Script/Player/FSM/PlayerState.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Editor/CodeFormat.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Shared/Systems/RegistrySystem/Runtime/IRegistryItem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.annulusgames.alchemy@4d291ce19319/Runtime/Inspector/InspectorAttributes.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@57d0e36f6123/InputSystem/NativeInputRuntime.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@191c0d7e3b69/Runtime/VisualScripting.State/IStateTransition.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="McpProjectServerCommands">
     <commands />
@@ -30,67 +41,73 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0" />
-      <entry key="S5" value="1.0" />
-      <entry key="S10" value="1.0" />
-      <entry key="S30" value="1.0" />
-      <entry key="S60" value="1.000000000000116" />
-      <entry key="M2" value="1.0000009083662176" />
-      <entry key="M5" value="1.017784300533432" />
-      <entry key="M10" value="1.7762495606469035" />
-      <entry key="M15" value="4.113709190943111" />
-      <entry key="M30" value="14.397640897109094" />
-      <entry key="H1" value="34.45496072060416" />
-      <entry key="H2" value="86.9160887712861" />
-      <entry key="H4" value="181.51352217771912" />
-      <entry key="D1" value="379.312770408398" />
-      <entry key="W1" value="434.0501063459972" />
+      <entry key="MS100" value="1.4497621079854703E-86" />
+      <entry key="MS500" value="7.574067253685603E-18" />
+      <entry key="S2" value="1.7845073300564826E-4" />
+      <entry key="S5" value="0.11167193632199096" />
+      <entry key="S10" value="0.9881935568863895" />
+      <entry key="S30" value="4.312986303059006" />
+      <entry key="S60" value="6.736807085406009" />
+      <entry key="M2" value="10.787407635766348" />
+      <entry key="M5" value="29.534698606422534" />
+      <entry key="M10" value="66.2643490236233" />
+      <entry key="M15" value="95.75911591087484" />
+      <entry key="M30" value="150.66257641048477" />
+      <entry key="H1" value="205.89453785138758" />
+      <entry key="H2" value="275.1333267572921" />
+      <entry key="H4" value="384.0204450894376" />
+      <entry key="D1" value="1016.3953437195607" />
+      <entry key="W1" value="1433.4214318747743" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="0.0" />
-      <entry key="S2" value="0.0" />
-      <entry key="S5" value="4.24591007473418E-169" />
-      <entry key="S10" value="1.398992191504174E-84" />
-      <entry key="S30" value="4.321857394174727E-28" />
-      <entry key="S60" value="7.080157250249887E-14" />
-      <entry key="M2" value="9.89702441411239E-7" />
-      <entry key="M5" value="0.02072252291132746" />
-      <entry key="M10" value="0.6435777105999332" />
-      <entry key="M15" value="2.1320455039122255" />
-      <entry key="M30" value="7.4118273762130835" />
-      <entry key="H1" value="15.70925726410872" />
-      <entry key="H2" value="33.07716180253193" />
-      <entry key="H4" value="62.20135975922615" />
-      <entry key="D1" value="121.68508414559314" />
-      <entry key="W1" value="138.03161791497357" />
+      <entry key="MS100" value="1.0000839564454567" />
+      <entry key="MS500" value="1.1635432193821136" />
+      <entry key="S2" value="2.147744584297949" />
+      <entry key="S5" value="3.1317059014324498" />
+      <entry key="S10" value="4.263333562788222" />
+      <entry key="S30" value="7.0983036914276605" />
+      <entry key="S60" value="9.052295875708335" />
+      <entry key="M2" value="11.689835853181304" />
+      <entry key="M5" value="18.880744735661324" />
+      <entry key="M10" value="28.839481073814238" />
+      <entry key="M15" value="35.93270107149683" />
+      <entry key="M30" value="48.688286500779576" />
+      <entry key="H1" value="62.43589809732916" />
+      <entry key="H2" value="82.80059822298476" />
+      <entry key="H4" value="123.03063953757963" />
+      <entry key="D1" value="381.2993287383088" />
+      <entry key="W1" value="544.557122379553" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.21763764082403103" />
-      <entry key="MS500" value="0.7371346086455506" />
-      <entry key="S2" value="0.9265880618903709" />
-      <entry key="S5" value="0.9699619103417348" />
-      <entry key="S10" value="0.9848664428955506" />
-      <entry key="S30" value="0.9949298176622132" />
-      <entry key="S60" value="0.9974616873156498" />
-      <entry key="M2" value="0.9987319256052377" />
-      <entry key="M5" value="1.0379111835709804" />
-      <entry key="M10" value="2.4179890156572657" />
-      <entry key="M15" value="6.241767161046848" />
-      <entry key="M30" value="21.802042819118086" />
-      <entry key="H1" value="50.1561525616162" />
-      <entry key="H2" value="119.98518064965906" />
-      <entry key="H4" value="243.70765580115358" />
-      <entry key="D1" value="500.99558411678004" />
-      <entry key="W1" value="572.0813582664961" />
+      <entry key="MS100" value="0.0026323737480437094" />
+      <entry key="MS500" value="0.37275063693819455" />
+      <entry key="S2" value="1.6596909510585331" />
+      <entry key="S5" value="2.9282353013422346" />
+      <entry key="S10" value="4.990406003591001" />
+      <entry key="S30" value="11.22773197458189" />
+      <entry key="S60" value="15.663551530900978" />
+      <entry key="M2" value="22.38932922257466" />
+      <entry key="M5" value="48.347670280274436" />
+      <entry key="M10" value="95.04395954741375" />
+      <entry key="M15" value="131.63888881510616" />
+      <entry key="M30" value="199.31228081120219" />
+      <entry key="H1" value="268.3044014220817" />
+      <entry key="H2" value="357.91609682648414" />
+      <entry key="H4" value="507.0377863520508" />
+      <entry key="D1" value="1397.6879029866398" />
+      <entry key="W1" value="1977.9771736080463" />
     </decayedShown>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
   <component name="ProjectId" id="3HoCcgankYTdYW5cbGYCJtEZiFn" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -104,9 +121,10 @@
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;SearchEverywhere.PersistedScope.SymbolSearchEverywhereContributor&quot;: &quot;모든 위치&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;KTJ&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;JTH&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -161,6 +179,7 @@
       <option name="presentableId" value="Default" />
       <updated>1786525117269</updated>
       <workItem from="1786525120029" duration="1000" />
+      <workItem from="1791585499446" duration="503000" />
     </task>
     <servers />
   </component>

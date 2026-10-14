@@ -13,9 +13,9 @@ TagManager:
   - UI
   - Ground
   - MonitorRender
-  - 
-  - 
-  - 
+  - Wall
+  - Player
+  - Enemy
   - 
   - 
   - 

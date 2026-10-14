@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55eee9fca617441294486e25bc466dec, type: 3}
+  m_Name: Player FSM Registry
+  m_EditorClassIdentifier: RegistrySystem_runtime_assembly::_Shared.Systems.RegistrySystem.Runtime.RegistrySO
+  baseTypeName: FsmSystem.AbstractState, FsmSystem_assembly
+  entries:
+  - enumValue: 4
+    enumKeyName: Idle
+    typeName: KTJ._02_Script.Player.FSM.IdleState, KTJ
+    registryItem:
+      rid: 1971265137090232748
+  - enumValue: 5
+    enumKeyName: Jump
+    typeName: KTJ._02_Script.Player.FSM.JumpState, KTJ
+    registryItem:
+      rid: 1971265137090232749
+  - enumValue: 6
+    enumKeyName: Walk
+    typeName: KTJ._02_Script.Player.FSM.WalkState, KTJ
+    registryItem:
+      rid: 1971265137090232750
+  enumName: PlayerState
+  enumFolderGuid: faa298bb3e1915c44bf8732ff8f329b8
+  lastEnumValue: 6
+  lastEnums:
+  - 4 = Idle
+  - 5 = Jump
+  - 6 = Walk
+  skipNamespaces:
+  - _MemberWorkspace
+  references:
+    version: 2
+    RefIds:
+    - rid: 1971265137090232748
+      type: {class: IdleState, ns: KTJ._02_Script.Player.FSM, asm: KTJ}
+      data:
+        StateAnimParam: {fileID: 0}
+    - rid: 1971265137090232749
+      type: {class: JumpState, ns: KTJ._02_Script.Player.FSM, asm: KTJ}
+      data:
+        StateAnimParam: {fileID: 0}
+    - rid: 1971265137090232750
+      type: {class: WalkState, ns: KTJ._02_Script.Player.FSM, asm: KTJ}
+      data:
+        StateAnimParam: {fileID: 0}

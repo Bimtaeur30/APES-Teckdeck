@@ -55,10 +55,6 @@ namespace _Shared.Systems.ObjectPool.Editor
         }
 
         #endregion
-        
-        
-        
-        
 
         public void CreateGUI()
         {

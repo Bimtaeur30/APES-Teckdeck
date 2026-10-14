@@ -8,7 +8,15 @@
 
     <uie:PropertyField binding-path="audioType" />
     <uie:PropertyField name="clip-field" binding-path="clip" />
-    <uie:PropertyField binding-path="loop" />
+    <uie:PropertyField name="loop-field" binding-path="loop" />
+    <ui:VisualElement name="random-blend-section">
+        <uie:PropertyField name="use-random-blend-field" binding-path="useRandomBlend" />
+        <ui:VisualElement name="random-blend-times">
+            <uie:PropertyField binding-path="randomBlendMinTime" />
+            <uie:PropertyField binding-path="randomBlendMaxTime" />
+            <uie:PropertyField binding-path="blendTime" />
+        </ui:VisualElement>
+    </ui:VisualElement>
     <uie:PropertyField binding-path="randomizePitch" />
     <uie:PropertyField binding-path="randomPitchModifier" />
     <uie:PropertyField binding-path="volume" />

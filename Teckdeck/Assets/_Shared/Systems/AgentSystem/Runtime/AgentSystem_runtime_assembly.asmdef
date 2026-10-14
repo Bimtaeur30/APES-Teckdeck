@@ -1,0 +1,18 @@
+{
+    "name": "AgentSystem_assembly",
+    "rootNamespace": "",
+    "references": [
+        "GUID:d80c6f192861519408d558611f4dc5ad",
+        "GUID:a4c11f64615d58d4ca846dc89a4976a1",
+        "GUID:87186655acd904d46af01a2ca7074885"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

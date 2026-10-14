@@ -2,6 +2,6 @@
 {
     public interface IAfterInitModule
     {
-        void AfterInit();
+       public void AfterInit();
     }
 }
