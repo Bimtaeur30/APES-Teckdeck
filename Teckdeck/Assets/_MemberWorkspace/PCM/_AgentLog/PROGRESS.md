@@ -4,7 +4,7 @@
 
 - 이름/이니셜: `PCM`
 - 작업폴더: `Assets/_MemeberWorkspace/PCM/`
-- 마지막 갱신: `2026-10-08 09:35 (UTC+9)`
+- 마지막 갱신: `2026-10-14 23:36 (UTC+9)`
 
 ## 현재 요청
 
@@ -28,11 +28,12 @@
 | 020 | 완료 | EnemyBT 블랙보드 null 변수 복구 | `phases/PHASE-020.md` |
 | 021 | 완료 | 근접 적 BT를 추적-공격 루프로 전환 | `phases/PHASE-021.md` |
 | 022 | 완료 | EnemyBT를 Editor API로 적용 | `phases/PHASE-022.md` |
+| 023 | 완료 | 풀에서 꺼낸 적을 한 콜라이더 기준으로 초기화 | `phases/PHASE-023.md` |
 
 ## 현재 재개 지점
 
-- 마지막 완료 작업: TestEnemySkill이 IRenderer 없이 자식 Animator로 공격 클립을 재생하도록 수정
-- 다음에 할 작업: 플레이에서 CHASE/ATTACK 상태가 해당 Animator 스테이트로 바뀌는지 확인
+- 마지막 완료 작업: TestWaveManager가 SpawnChannel로 소환 요청을 보내고 SpawnManager가 구독
+- 다음에 할 작업: SpawnChannel, 적 PoolItem, 플레이어를 인스펙터에 연결한 뒤 플레이로 소환 확인
 - 관련 파일: `Editor/EnemyBTMeleeLoopBuilder.cs`, `GameModule/Enemy/BT/EnemyBT.asset`, `UseSkillAction.cs`
 
 ## 검증 요약

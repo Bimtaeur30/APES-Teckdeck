@@ -7,7 +7,9 @@
         "ModuleSystem",
         "Unity.Behavior",
         "Unity.Behavior.SerializableGUID",
-        "AnimatorSystem_assembly"
+        "AnimatorSystem_assembly",
+        "ObjectPool.Runtime.Assembly",
+        "CoreSystem_assembly"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

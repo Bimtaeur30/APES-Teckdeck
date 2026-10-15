@@ -23,7 +23,7 @@ namespace Enemy.BT.Actions
         {
             if (Enemy.Value == null || SkillNumber.Value < 0)
             {
-                Debug.LogError("UseSkill action :  Enemy ¶Ç´Â Number°¡ ÇÒ´çµÇÁö ¾Ê¾Æ Çàµ¿ÀÌ ½ÇÆÐ");
+                Debug.LogError("UseSkill action :  Enemy ï¿½Ç´ï¿½ Numberï¿½ï¿½ ï¿½Ò´ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¾ï¿½ ï¿½àµ¿ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
                 return Status.Failure;
             }
 
