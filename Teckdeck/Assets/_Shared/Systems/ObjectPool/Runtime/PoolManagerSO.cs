@@ -13,6 +13,9 @@ namespace _Shared.Systems.ObjectPool.Runtime
 
         public void InitializePool(Transform rootTrm)
         {
+            if (_pools != null)
+                return;
+
             _rootTrm = rootTrm;
             _pools = new Dictionary<PoolItemSO, Pool>();
 

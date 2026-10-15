@@ -1,4 +1,5 @@
 using AnimatorSystem;
+using Assets._MemeberWorkspace.PCM.Scripts.Spawn.Interface;
 using CombatSystem;
 using Enemy.BT;
 using Enemy.Interface;
@@ -62,27 +63,40 @@ namespace Enemy
         protected override void HandleDeath()
         {
             base.HandleDeath();
-
-            Collider[] bodyColliders = GetComponents<Collider>();
-            foreach (var c in bodyColliders)
-                c.enabled = false;
-
             StateChannel?.SendEventMessage(StateCommands.DIE);
+        }
+
+        public void PrepareForSpawn()
+        {
+            CreateOwnChannels();
+            IsDead = false;
+            CurrentWayPointIndex = -1;
+
+            if (Health != null)
+                Health.SetHealth(Health.MaxHealth, Health.MaxHealth);
+
+            NavMovement?.StopImmediately();
+            SetVariableValue("TargetGameObject", (GameObject)null);
+            SetVariableValue(BtVar.Enemy, this);
+            BTAgent?.Restart();
         }
 
         protected virtual void Start()
         {
-            if (GetVariable(BtVar.StateChannel, out BlackboardVariable<CommandChange> channel))
-                StateChannel = channel.Value;
-
-            if (GetVariable(BtVar.AnimationChannel, out BlackboardVariable<AnimationChannel> animationChannel)
-                && animationChannel.Value != null)
-            {
-                _animationChannel = animationChannel.Value;
-                _animationChannel.Event += HandleAnimation;
-            }
-
+            CreateOwnChannels();
             SetVariableValue(BtVar.Enemy, this);
+        }
+        private void CreateOwnChannels()
+        {
+            CommandChange stateChannel = ScriptableObject.CreateInstance<CommandChange>();
+            AnimationChannel animationChannel = ScriptableObject.CreateInstance<AnimationChannel>();
+            SetVariableValue(BtVar.StateChannel, stateChannel);
+            SetVariableValue(BtVar.AnimationChannel, animationChannel);
+            StateChannel = stateChannel;
+            if (_animationChannel != null)
+                _animationChannel.Event -= HandleAnimation;
+            _animationChannel = animationChannel;
+            _animationChannel.Event += HandleAnimation;
         }
 
         private void HandleAnimation(HashDataSO hash)
@@ -103,7 +117,7 @@ namespace Enemy
 
         public void SetVariableValue<T>(string variableName, T value)
         {
-            Debug.Assert(!string.IsNullOrEmpty(variableName), "���� �̸��� ��������� �ȵ˴ϴ�.");
+            Debug.Assert(!string.IsNullOrEmpty(variableName), "���� �̸��� ��������� �ȵ˴ϴ�."); //아 라이더 오류;;;
 
             if (BTAgent.GetVariable(variableName, out BlackboardVariable<T> variable))
             {
@@ -125,5 +139,7 @@ namespace Enemy
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(transform.position, EnemyData.DetectRadius);
         }
+
+
     }
 }
