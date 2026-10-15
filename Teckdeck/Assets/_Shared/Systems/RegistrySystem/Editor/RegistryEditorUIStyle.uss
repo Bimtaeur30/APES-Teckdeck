@@ -16,6 +16,31 @@
     min-width: 48px;
 }
 
+.registry__folder-row {
+    flex-direction: row;
+    align-items: center;
+}
+
+.registry__folder-field {
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+.registry__folder-field--drop {
+    background-color: rgba(80, 140, 230, 0.25);
+}
+
+.registry__folder-btn {
+    min-width: 48px;
+}
+
+.registry__namespace-preview {
+    margin: 0 3px 4px 3px;
+    font-size: 11px;
+    color: rgb(150, 150, 150);
+    white-space: normal;
+}
+
 .registry__error {
     display: none;
     color: rgb(235, 95, 95);
@@ -29,6 +54,18 @@
 }
 
 .registry__error--visible {
+    display: flex;
+}
+
+.registry__warning {
+    display: none;
+    color: rgb(230, 180, 60);
+    white-space: normal;
+    margin: 3px 0 0 0;
+    font-size: 11px;
+}
+
+.registry__warning--visible {
     display: flex;
 }
 
@@ -60,6 +97,8 @@
     padding: 3px 4px;
     border-left-width: 3px;
     border-left-color: rgba(0, 0, 0, 0);
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 .registry-row__body {
@@ -68,7 +107,6 @@
 }
 
 .registry-row__key-field {
-    flex-grow: 1;
     margin: 0;
     -unity-font-style: bold;
 }
@@ -78,6 +116,10 @@
     padding: 0 4px;
     color: rgb(150, 150, 150);
     -unity-text-align: middle-right;
+    font-size: 20px;
+    text-overflow: ellipsis;
+    flex-grow: 1;
+    height: 100%;
 }
 
 .registry-row__type:hover {

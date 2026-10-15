@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.Behavior.Authoring::Unity.Behavior.BehaviorProjectSettings
   m_GraphOwnerName: Self
   m_AutoSaveLastSaveLocation: 1
-  m_SaveFolder: _MemeberWorkspace/PCM/Scripts/Enemy/EnemyBT/Actions
+  m_SaveFolder: _MemeberWorkspace/PCM/Scripts/Enemy/EnemyBT/Events
   m_UseSeparateSaveFolders: 0
   m_SaveFolderAction: 
   m_SaveFolderModifier: 
