@@ -82,7 +82,7 @@ public class IdleState : AbstractState
         bool getMouseMovement = TryGetMouseMovement(out vector);
         if (getMouseMovement && vector.Direction.sqrMagnitude > 0f && IsEnableJumpAngle(vector.Direction))
         {
-            Transition.ChangeState((int)StateEnum.Jump, new MovementContainer(vector, forceMultiplier));
+            Transition.ChangeState((int)StateEnum.Jump, new MovementEnterContainer(vector, forceMultiplier));
         }
     }
 }

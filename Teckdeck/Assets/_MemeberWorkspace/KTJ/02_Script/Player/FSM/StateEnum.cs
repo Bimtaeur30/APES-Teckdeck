@@ -1,4 +1,4 @@
 public enum StateEnum
 {
-    Idle = 0, Walk = 1,Jump = 2
+    Idle = 0,Walk = 1,Jump = 2,GrapplePull = 3
 }

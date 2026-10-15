@@ -3,6 +3,7 @@ using _MemeberWorkspace.KTJ._02_Script.Player.InputSystem;
 using _Shared.Systems.FsmSystem.Runtime;
 using ModuleSystem;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 /*
 구조 설계
@@ -48,6 +49,11 @@ public class Player : ModuleOwner
     {
         Fsm.UpdateMachine();
         CalculateJumpCharging();
+        if (Keyboard.current.rKey.wasPressedThisFrame) // 테스트이다. 이후 이 아래 동작은 스킬이 사용된 이후 시점에서 실행되도록 옮겨야한다.
+        {
+            HandleOnAttackKeyPressed();
+        }
+
     }
 
     private void OnCollisionStay(Collision other)
@@ -105,6 +111,34 @@ public class Player : ModuleOwner
             
             ChargingUI.UnSet();
         }
+    }
+    
+    private void HandleOnAttackKeyPressed()
+    {
+        if (Fsm.CurrentState is JumpState)
+        {
+            Fsm.ChangeState((int)StateEnum.GrapplePull);
+        }
+    }
+
+    public bool TryGetMouseDirection(out Vector3 direction)
+    {
+        direction = Vector3.zero;
+        if (Camera.main == null || Mouse.current == null)
+            return false;
+
+        Ray ray = Camera.main.ScreenPointToRay(PlayerInputSO.GetMouseScreenPosition());
+        Plane plane = new Plane(Vector3.up, transform.position);
+        if (!plane.Raycast(ray, out float rayDistance))
+            return false;
+
+        Vector3 offset = ray.GetPoint(rayDistance) - transform.position;
+        offset.y = 0f;
+        if (offset.sqrMagnitude <= 0.0001f)
+            return false;
+
+        direction = offset.normalized;
+        return true;
     }
 
     private void HandleOnMovementChanged(Vector2 obj)

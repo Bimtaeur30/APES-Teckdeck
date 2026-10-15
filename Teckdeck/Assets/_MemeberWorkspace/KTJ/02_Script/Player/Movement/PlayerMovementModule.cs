@@ -16,6 +16,8 @@ public class PlayerMovementModule : MonoBehaviour, IModule, IPlayerMovementModul
     
     private bool isWall = false;
     private bool isJumping;
+    private bool isJumpPaused;
+    private bool landedDuringFlight;
     private Action onJumpLand;
     private Player player;
 
@@ -37,16 +39,73 @@ public class PlayerMovementModule : MonoBehaviour, IModule, IPlayerMovementModul
     private void Update()
     {
         CheckIsWall();
-        JumpUpdate();
+        if (!isJumpPaused)
+            JumpUpdate();
     }
 
     private void JumpUpdate()
     {
         if (!isJumping) return;
 
+        if (landedDuringFlight)
+        {
+            landedDuringFlight = false;
+            CompleteJump();
+            return;
+        }
+
         Vector3 movement = _currentMovementVector.Direction * (jumpForce * _currentJumpCharge * Time.deltaTime);
+        if (MoveWithWallCollision(movement, out Vector3 wallNormal))
+        {
+            RotateTo(wallNormal);
+            CompleteJump();
+        }
+    }
+
+    public void PauseJump()
+    {
+        if (isJumping)
+            isJumpPaused = true;
+    }
+
+    public void ResumeJump()
+    {
+        isJumpPaused = false;
+    }
+
+    public bool MoveFlightStep(Vector3 direction, float distance)
+    {
+        if (!isJumping || !isJumpPaused || direction.sqrMagnitude <= 0f || distance <= 0f)
+            return false;
+
+        Vector3 flightDirection = direction.normalized;
+        RotateTo(flightDirection);
+        bool hitWall = MoveWithWallCollision(flightDirection * distance, out Vector3 wallNormal);
+        if (hitWall)
+        {
+            RotateTo(wallNormal);
+            landedDuringFlight = true;
+        }
+
+        return hitWall;
+    }
+
+    public void SetJumpDirection(Vector3 direction)
+    {
+        direction.y = 0f;
+        if (!isJumping || !isJumpPaused || landedDuringFlight || direction.sqrMagnitude <= 0.0001f)
+            return;
+
+        Vector3 normalizedDirection = direction.normalized;
+        _currentMovementVector = new MovementVector(normalizedDirection, _currentMovementVector.Distance);
+        RotateTo(normalizedDirection);
+    }
+
+    private bool MoveWithWallCollision(Vector3 movement, out Vector3 wallNormal)
+    {
+        wallNormal = default;
         float distance = movement.magnitude;
-        if (distance <= 0f) return;
+        if (distance <= 0f) return false;
 
         Vector3 direction = movement / distance;
         Vector3 center = _bodyCollider.transform.TransformPoint(_bodyCollider.center);
@@ -56,6 +115,7 @@ public class PlayerMovementModule : MonoBehaviour, IModule, IPlayerMovementModul
 
         float allowedDistance = distance;
         bool wallAhead = false;
+        float nearestAllowedDistance = float.MaxValue;
 
         // SphereCast는 시작 위치에서 이미 겹친 가까운 벽을 놓칠 수 있다.
         if (Physics.Raycast(center, direction, out RaycastHit rayHit,
@@ -64,7 +124,8 @@ public class PlayerMovementModule : MonoBehaviour, IModule, IPlayerMovementModul
             allowedDistance = Mathf.Min(allowedDistance,
                 Mathf.Max(0f, rayHit.distance - radius));
             wallAhead = true;
-            RotateTo(rayHit.normal);
+            nearestAllowedDistance = Mathf.Max(0f, rayHit.distance - radius);
+            wallNormal = rayHit.normal;
         }
 
         if (Physics.SphereCast(center, radius, direction, out RaycastHit sphereHit,
@@ -73,32 +134,35 @@ public class PlayerMovementModule : MonoBehaviour, IModule, IPlayerMovementModul
             allowedDistance = Mathf.Min(allowedDistance,
                 Mathf.Max(0f, sphereHit.distance));
             wallAhead = true;
-            RotateTo(sphereHit.normal);
+            if (sphereHit.distance < nearestAllowedDistance)
+                wallNormal = sphereHit.normal;
         }
 
         _body.position += direction * allowedDistance;
 
-        Vector3 wallNormal = default;
-        if (!wallAhead && !TryGetArrivalWallNormal(center + direction * allowedDistance, radius, direction, out wallNormal))
-            return;
-
-        if (!wallAhead)
-            RotateTo(wallNormal);
-
-        isJumping = false;
-        OnWallEnter();
+        return wallAhead || TryGetArrivalWallNormal(
+            center + direction * allowedDistance, radius, direction, out wallNormal);
     }
 
-    public bool JumpStart(MovementContainer movement, Action onJumpLand)
+    private void CompleteJump()
+    {
+        isJumping = false;
+        isJumpPaused = false;
+        onJumpLand?.Invoke();
+    }
+
+    public bool JumpStart(MovementEnterContainer movementEnter, Action onJumpLand)
     {
         CheckIsWall();
-        if (!isWall || isJumping || movement.Vector.Direction.sqrMagnitude <= 0f) return false;
+        if (!isWall || isJumping || movementEnter.Vector.Direction.sqrMagnitude <= 0f) return false;
 
-        _currentMovementVector = movement.Vector;
-        _currentJumpCharge = movement.JumpCharge;
+        _currentMovementVector = movementEnter.Vector;
+        _currentJumpCharge = movementEnter.JumpCharge;
         isJumping = true;
+        isJumpPaused = false;
+        landedDuringFlight = false;
         this.onJumpLand = onJumpLand;
-        RotateTo(movement.Vector.Direction); // 진행방향 바라보기
+        RotateTo(movementEnter.Vector.Direction); // 진행방향 바라보기
         return true;
     }
 
@@ -121,12 +185,6 @@ public class PlayerMovementModule : MonoBehaviour, IModule, IPlayerMovementModul
         }
 
         return false;
-    }
-
-    private void OnWallEnter()
-    {
-        Debug.Log("OnWallEnter");
-        onJumpLand?.Invoke();
     }
 
     private void CheckIsWall()
